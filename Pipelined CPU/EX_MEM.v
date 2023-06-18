@@ -25,16 +25,18 @@ module EX_MEM (
         // when forwarded, this value should be whatever that's passed to alu as rs2.
 
     // control signals for mem
-    input [1:0] MemRead_in,
-    output reg[1:0] MemRead_out,
     input [1:0] MemWrite_in,
+    input [2:0] NPCOp_in,
+    input [2:0] DMType_in,
     output reg[1:0] MemWrite_out,
+    output reg[2:0] NPCOp_out,
+    output reg[2:0] DMType_out,
 
     // control signals for wb
     input [1:0] RegWrite_in,
+    input [2:0] WDSel_in,
     output reg[1:0] RegWrite_out,
-    input [1:0] MemtoReg_in,
-    output reg[1:0] MemtoReg_out,
+    output reg[2:0] WDSel_out,
 
     // control for stall
     input stall,
@@ -52,10 +54,13 @@ always @(posedge clk or negedge rst) begin
             rd_out <= 0;
             alures_out <= 0;
             rs2_data_out <= 0;
-            MemRead_out <= 0;
+            // MemRead_out <= 0;
             MemWrite_out <= 0;
             RegWrite_out <= 0;
-            MemtoReg_out <= 0; 
+            // MemtoReg_out <= 0; 
+            NPCOp_out <= 0;
+            DMType_out <= 0;
+            WDSel_out <= 0;
         end
     else if(!stall)
         begin
@@ -66,10 +71,13 @@ always @(posedge clk or negedge rst) begin
             rs2_out <= rs2_in;
             rd_out <= rd_in;
             rs2_data_out <= rs2_data_in;
-            MemRead_out <= MemRead_in;
+            // MemRead_out <= MemRead_in;
             MemWrite_out <= MemWrite_in;
             RegWrite_out <= RegWrite_in;
-            MemtoReg_out <= MemtoReg_in;
+            // MemtoReg_out <= MemtoReg_in;
+            NPCOp_out <= NPCOp_in;
+            DMType_out <= DMType_in;
+            WDSel_out <= WDSel_in;
         end
 
   end
