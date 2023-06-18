@@ -97,12 +97,22 @@ wire flush;
          .inst_out(inst_out), .stall(stall), .flush(flush)
     );  
 
+wire sbtype;
+wire i_jal;
+wire i_jalr;
+
+  assign NPCOp[0] = sbtype & Zero;
+  assign NPCOp[1] = i_jal;
+  assign NPCOp[2] = i_jalr;
+
 // instantiation of control unit
 	ctrl U_ctrl(
-		.Op(Op), .Funct7(Funct7), .Funct3(Funct3), .Zero(Zero), 
+		.Op(Op), .Funct7(Funct7), .Funct3(Funct3), 
+        //.Zero(Zero), 
 		.RegWrite(RegWrite), .MemWrite(mem_w),
 		.EXTOp(EXTOp), .ALUOp(ALUOp), .NPCOp(NPCOp), 
-		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), .DMType(DMType)
+		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), .DMType(DMType),
+        .sbtype(sbtype), .i_jal(i_jal), .i_jalr(i_jalr)
 	);
 // instantiation of pc unit
 	PC U_PC(.clk(clk), .rst(reset), .NPC(NPC), .PC(PC_out) );
@@ -123,6 +133,8 @@ wire flush;
 	);
 // instantiation of alu unit
 	alu U_alu(.A(RD1), .B(B), .ALUOp(ALUOp), .C(aluout), .Zero(Zero), .PC(PC_out));
+
+
 
 //please connnect the CPU by yourself
 

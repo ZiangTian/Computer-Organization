@@ -49,7 +49,15 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
 
       // control for stall
     input stall,
-    input flush
+    input flush,
+
+      // added by me
+    input sbtype_in,
+    input i_jal_in,
+    input i_jalr_in,
+    output reg[1:0] sbtype_out,
+    output reg[1:0] i_jal_out,
+    output reg[1:0] i_jalr_out
 );
     always @(posedge clk or negedge rst) begin
     if(!rst || flush) 
@@ -75,6 +83,10 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
             DMType_out <= 0;
             RegWrite_out <= 0;
             WDSel_out <= 0;
+
+            sbtype_out <= 0;
+            i_jal_out <= 0;
+            i_jalr_out <= 0;
         end
     else if(!stall)
         begin
@@ -98,7 +110,11 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
             NPCOp_out <= NPCOp_in;
             DMType_out <= DMType_in;
             RegWrite_out <= RegWrite_in;
-            WDSel_out <= WDSel_in;            
+            WDSel_out <= WDSel_in;        
+
+            sbtype_out <= sbtype_in;
+            i_jal_out <= i_jal_in;
+            i_jalr_out <= i_jalr_in;    
         end
 
   end

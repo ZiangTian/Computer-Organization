@@ -10,7 +10,7 @@ module EX_MEM (
     input [4:0] rd_in,
     input [31:0] alures_in,
     input [31:0] rs2_data_in,
-    input ,
+    input Zero_in,
 
     // corresponding outputs
     output reg[31:0] PC_out,
@@ -20,6 +20,7 @@ module EX_MEM (
     output reg[4:0] rd_out,
     output reg[31:0] alures_out,
     output reg[31:0] rs2_data_out, 
+    output reg Zero_out,
         // the supposed rs2. 
         // when forwarded, this value should be whatever that's passed to alu as rs2.
 
@@ -43,6 +44,7 @@ module EX_MEM (
 always @(posedge clk or negedge rst) begin
     if(!rst || flush) 
         begin 
+            Zero_out <= 0;
             inst_out <= 0; 
             PC_out <= 0;
             rs1_out <= 0;
@@ -57,6 +59,7 @@ always @(posedge clk or negedge rst) begin
         end
     else if(!stall)
         begin
+            Zero_out <= Zero_in;
             inst_out <= inst_in; 
             PC_out <= PC_in;
             rs1_out <= rs1_in;
