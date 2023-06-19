@@ -11,8 +11,8 @@ module SCPU(
     output [31:0] Addr_out,   // ALU output
     output [31:0] Data_out,// data to data memory
 
-    input  [4:0] reg_sel,    // register selection (for debug use)
-    output [31:0] reg_data,  // selected register data (for debug use)
+    // input  [4:0] reg_sel,    // register selection (for debug use)
+    // output [31:0] reg_data,  // selected register data (for debug use)
     output [31:0] pcW,
     output [2:0] DMType  
 );
@@ -50,9 +50,9 @@ module SCPU(
 	wire [19:0] uimm,jimm;
 	wire [31:0] immout;
 wire[31:0] aluout;
-assign Addr_out=aluout;
-	assign B = (ALUSrc) ? immout : RD2;
-	assign Data_out = RD2;
+// assign Addr_out=aluout;
+
+// 	assign Data_out = RD2;
 	
 	// assign iimm_shamt=inst_in[24:20];
 	// assign iimm=inst_in[31:20];
@@ -109,12 +109,12 @@ wire i_jalr;
   assign NPCOp[0] = sbtype & Zero;
   assign NPCOp[1] = i_jal;
   assign NPCOp[2] = i_jalr;
-
+wire MemWrite_out;
 // instantiation of control unit
 	ctrl U_ctrl(
 		.Op(Op), .Funct7(Funct7), .Funct3(Funct3), 
         // .Zero(Zero), 
-		.RegWrite(RegWrite), .MemWrite(mem_w),
+		.RegWrite(RegWrite), .MemWrite(MemWrite_out),
 		.EXTOp(EXTOp), .ALUOp(ALUOp), 
         // .NPCOp(NPCOp), // implemented with assign above
 		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), .DMType(DMType),
@@ -157,29 +157,113 @@ wire [4:0]ID_EX_rd;
 wire [31:0]ID_EX_rs1data;
 wire [31:0]ID_EX_rs2data;
 
-wire [31:0]EX_MEM_imm;
-wire [31:0]EX_MEM_PC;
+wire [4:0] ID_EX_ALUOp;
+wire [1:0] ID_EX_ALUSrc;
+wire [1:0] ID_EX_GPRSel;
+wire [5:0] ID_EX_EXTop;
+
+wire [1:0] ID_EX_MemWrite;
+wire [2:0] ID_EX_NPCOp;
+wire [2:0] ID_EX_DMType;
+
+wire [1:0] ID_EX_RegWrite;
+wire [2:0] ID_EX_WDSel;
 
 // instantiation of id/ex reg
     ID_EX U_ID_EX(
         // inputs
             // data
         .clk(clk), .rst(reset),
-        .PC_in(IF_ID_PC), .inst_in(IF_ID_inst), .imm_in(immout),
-        .rs1_in(ID_EX_rs1), .rs2_in(ID_EX_rs2), .rd_in(ID_EX_rd),
-        .rs1_data_in(ID_EX_rs1data), .rs2_data_in(ID_EX_rs2data),
-            // control (inputs)
-        .ALUOp_in(ALUOp), .ALUSrc_in(ALUSrc), .GPRSel_in(GPRSel), .EXTop_in(EXTOp),
 
+        .PC_in(IF_ID_PC), .inst_in(IF_ID_inst), .imm_in(immout),
+        .rs1_in(rs1), .rs2_in(rs2), .rd_in(rd),
+        .rs1_data_in(RD1), .rs2_data_in(RD2),
+
+        .PC_out(ID_EX_PC), .inst_out(ID_EX_inst), .imm_out(ID_EX_imm),
+        .rs1_out(ID_EX_rs1), .rs2_out(ID_EX_rs2), .rd_out(ID_EX_rd),
+        .rs1_data_out(ID_EX_rs1data), .rs2_data_out(ID_EX_rs2data),
+
+        // control for ex
+        .ALUOp_in(ALUOp), .ALUSrc_in(ALUSrc), .GPRSel_in(GPRSel), .EXTop_in(EXTOp),
+        .ALUOp_out(ID_EX_ALUOp), .ALUSrc_out(ID_EX_ALUSrc), .GPRSel_out(ID_EX_GPRSel), .EXTop_out(ID_EX_EXTop),
+
+        // control for mem
+        .MemWrite_in(MemWrite_out), .NPCOp_in(NPCOp), .DMType_in(DMType),
+        .MemWrite_out(ID_EX_MemWrite), .NPCOp_out(ID_EX_NPCOp), .DMType_out(ID_EX_DMType),
+
+        // control for wb
+        .RegWrite_in(RegWrite), .WDSel_in(WDSel),
+        .RegWrite_out(ID_EX_RegWrite), .WDSel_out(ID_EX_WDSel),
+
+        .stall(stall), .flush(flush)
         
-        .sbtype(sbtype), .i_jal(i_jal), .i_jalr(i_jalr) // outputs added by myself
+        // .sbtype(sbtype), .i_jal(i_jal), .i_jalr(i_jalr) // outputs added by myself
     );
 
+	assign B = (ID_EX_ALUSrc) ? ID_EX_imm : ID_EX_rs2data;
 
 // instantiation of alu unit
-	alu U_alu(.A(RD1), .B(B), .ALUOp(ALUOp), .C(aluout), .Zero(Zero), .PC(PC_out));
+	alu U_alu(.A(ID_EX_rs1data), .B(B), .ALUOp(ID_EX_ALUOp), .C(aluout), .Zero(Zero), .PC(PC_out));
 
+// instantiation of ex/mem reg
+wire [31:0] EX_MEM_PC;
+wire [31:0] EX_MEM_inst;
+wire [4:0] EX_MEM_rs1;
+wire [4:0] EX_MEM_rs2;
+wire [4:0] EX_MEM_rd;
+wire [31:0] EX_MEM_alures;
+wire [31:0] EX_MEM_rs2data;
+wire [1:0] EX_MEM_Zero;
+wire [1:0] EX_MEM_MemWrite;
+wire [2:0] EX_MEM_DMType;
+wire [2:0] EX_MEM_NPCOp;
+wire [1:0] EX_MEM_RegWrite;
+wire [2:0] EX_MEM_WDSel;
 
+EX_MEM U_EX_MEM(
+    .clk(clk), 
+    .rst(reset),
+    .PC_in(ID_EX_PC),
+    .inst_in(ID_EX_inst),
+    .rs1_in(ID_EX_rs1), 
+    rs2_in(ID_EX_rs2), 
+    .rd_in(ID_EX_rd),
+    .alures_in(aluout), 
+    .rs2_data_in(ID_EX_rs2data),
+    .Zero_in(Zero),
+
+    .PC_out(EX_MEM_PC), 
+    .inst_out(EX_MEM_inst),
+    .rs1_out(EX_MEM_rs1), 
+    .rs2_out(EX_MEM_rs2), 
+    .rd_out(EX_MEM_rd),
+    .alures_out(EX_MEM_alures), 
+    .rs2_data_out(EX_MEM_rs2data),
+    .Zero_out(EX_MEM_Zero),
+
+    .MemWrite_in(ID_EX_MemWrite), 
+    .NPCOp_in(ID_EX_NPCOp), 
+    .DMType_in(ID_EX_DMType),
+    .MemWrite_out(EX_MEM_MemWrite), 
+    .NPCOp_out(EX_MEM_NPCOp), 
+    .DMType_out(EX_MEM_DMType),
+
+    .RegWrite_in(ID_EX_RegWrite), 
+    .WDSel_in(ID_EX_WDSel),
+    .RegWrite_out(EX_MEM_RegWrite), 
+    .WDSel_out(EX_MEM_WDSel),
+
+    .stall(stall), .flush(flush)
+);
+
+// assign一下输出
+
+assign mem_w = EX_MEM_MemWrite;          // output: memory write signal
+assign PC_out = EX_MEM_PC;     // PC address
+assign Addr_out = EX_MEM_alures; // ALU output
+      // memory write
+assign Data_out = EX_MEM_rs2data; // data to data memory
+assign DMType = EX_MEM_DMType;
 
 //please connnect the CPU by yourself
 
@@ -204,6 +288,5 @@ begin
 		`WDSel_FromPC: WD<=PC_out+4;
 	endcase
 end
-
 
 endmodule

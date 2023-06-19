@@ -38,7 +38,11 @@ module xgriscv_sc(clk, rstn, pcW);
          .DMType(DMType),
          .dout(dm_dout)    // output: data from ram
          );
-         
+   
+   // MEM/WB reg 在这个文件里实现
+   MEM_WB U_MEM_WB(
+
+   );
   // instantiation of intruction memory (used for simulation)
    im    U_imem ( 
       .addr(PC[8:2]),     // input:  rom address
