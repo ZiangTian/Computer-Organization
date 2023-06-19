@@ -4,7 +4,8 @@
 module ctrl(Op, Funct7, Funct3, 
             //Zero, 
             RegWrite, MemWrite,
-            EXTOp, ALUOp, NPCOp, 
+            EXTOp, ALUOp, 
+            //NPCOp, 
             ALUSrc, GPRSel, WDSel,DMType, 
             sbtype, i_jal, i_jalr
             );
@@ -18,7 +19,7 @@ module ctrl(Op, Funct7, Funct3,
    output       MemWrite; // control signal for memory write
    output [5:0] EXTOp;    // control signal to signed extension
    output [4:0] ALUOp;    // ALU opertion
-   output [2:0] NPCOp;    // next pc operation
+   // output [2:0] NPCOp;    // next pc operation
    output       ALUSrc;   // ALU source for rs2: from imm or from reg?
 	 output [2:0] DMType;   // how many bytes to load/store
    output [1:0] GPRSel;   // general purpose register selection

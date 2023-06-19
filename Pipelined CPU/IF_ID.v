@@ -1,4 +1,4 @@
-module IF_ID (
+module IF_ID (  // connected to RF, ctrl, and ext
     input clk,
     input rst,
     input [31:0]inst_in,
