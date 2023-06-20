@@ -1,19 +1,20 @@
-//top module for seg7.v
+////top module for seg7.v
+`timescale 1ns / 1ps
+
 
 module top_module (
-    input clk,
-    input rstn,
-    input [31:0] i_data,
-    output [7:0] o_seg,
-    output [7:0] o_sel
+   input clk,
+   input rstn,
+   output [7:0] disp_an_o,
+   output [7:0] disp_seg_o
 );
 wire [31:0] nums = 32'h012345AB;
-    seg7 seg7_inst (
-        .clk(clk),
-        .rstn(rstn),
-        .i_data(i_data),
-        .o_seg(o_seg),
-        .o_sel(o_sel)
-    );
+   simple seg7_inst (
+       .clk(clk),
+       .rstn(rstn),
+       .i_data(nums),
+       .o_seg(disp_seg_o),
+       .o_sel(disp_an_o)
+   );
 
 endmodule
