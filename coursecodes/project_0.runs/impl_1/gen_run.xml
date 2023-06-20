@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1687161636">
+  <File Type="ROUTE-PWR" Name="tmpfile_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="tmpfile.tcl"/>
+  <File Type="BITSTR-BMM" Name="tmpfile_bd.bmm"/>
+  <File Type="ROUTE-PWR-SUM" Name="tmpfile_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="tmpfile_reports.tcl"/>
+  <File Type="OPT-DCP" Name="tmpfile_opt.dcp"/>
+  <File Type="OPT-DRC" Name="tmpfile_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="tmpfile.hwdef"/>
+  <File Type="PWROPT-DCP" Name="tmpfile_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="tmpfile_placed.dcp"/>
+  <File Type="PLACE-IO" Name="tmpfile_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="tmpfile_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="tmpfile_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="tmpfile_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="tmpfile_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="tmpfile.bgn"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="tmpfile_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="tmpfile.bin"/>
+  <File Type="PHYSOPT-DCP" Name="tmpfile_physopt.dcp"/>
+  <File Type="BITSTR-MSK" Name="tmpfile.msk"/>
+  <File Type="ROUTE-ERROR-DCP" Name="tmpfile_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="tmpfile_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="tmpfile_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="tmpfile_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="tmpfile_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="tmpfile_drc_routed.rpx"/>
+  <File Type="BITSTR-LTX" Name="tmpfile.ltx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="tmpfile_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="tmpfile.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="tmpfile_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="tmpfile_methodology_drc_routed.pb"/>
+  <File Type="BITSTR-SYSDEF" Name="tmpfile.sysdef"/>
+  <File Type="ROUTE-PWR-RPX" Name="tmpfile_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="tmpfile_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="tmpfile_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="tmpfile_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="tmpfile_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="tmpfile_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-CLK" Name="tmpfile_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="tmpfile_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="tmpfile_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="tmpfile_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="tmpfile_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="tmpfile_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BIT" Name="tmpfile.bit"/>
+  <File Type="BITSTR-RBT" Name="tmpfile.rbt"/>
+  <File Type="BITSTR-NKY" Name="tmpfile.nky"/>
+  <File Type="BG-DRC" Name="tmpfile.drc"/>
+  <File Type="RDI-RDI" Name="tmpfile.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/tmpfile.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="tmpfile"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../icf.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
