@@ -4,7 +4,7 @@ module MEM_WB (
     
     // info to be passed to WB
     input [31:0] PC_in,
-    input [31:0] inst_in,
+    // input [31:0] inst_in,
     // input [4:0] rs1_in,
     // input [4:0] rs2_in,
     input [4:0] rd_in,
@@ -13,7 +13,7 @@ module MEM_WB (
 
     // corresponding outputs
     output reg[31:0] PC_out,
-    output reg[31:0] inst_out,
+    // output reg[31:0] inst_out,
     // output reg[4:0] rs1_out,
     // output reg[4:0] rs2_out,
     output reg[4:0] rd_out,
@@ -34,8 +34,8 @@ module MEM_WB (
 always @(posedge clk or negedge rst) begin
     if(!rst || flush) 
         begin 
-            inst_out <= 0; 
-            PC_out <= 0;
+            // inst_out <= 0; 
+            // PC_out <= 0;
             // rs1_out <= 0;
             // rs2_out <= 0;
             rd_out <= 0;
@@ -46,8 +46,8 @@ always @(posedge clk or negedge rst) begin
         end
     else if(!stall)
         begin
-            inst_out <= inst_in; 
-            PC_out <= PC_in;
+            // inst_out <= inst_in; 
+            // PC_out <= PC_in;
             // rs1_out <= rs1_in;
             // rs2_out <= rs2_in;
             rd_out <= rd_in;

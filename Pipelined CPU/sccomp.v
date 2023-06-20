@@ -4,6 +4,7 @@ module xgriscv_sc(clk, rstn, pcW);
    // input [4:0]    reg_sel;
    // output [31:0]  reg_data;
    output [31:0]   pcW;  // addr of current instruction
+   // output regw;  // sent to rf from mem/wb
    wire [31:0]    instr;
    wire [31:0]    PC;
    wire           MemWrite;
@@ -11,7 +12,7 @@ module xgriscv_sc(clk, rstn, pcW);
    wire [2:0]     DMType;
    
    wire rst = rstn;
-       
+   wire [4:0] rd_from_EX_MEM;
   // instantiation of single-cycle CPU   
    SCPU U_SCPU(
          .clk(clk),                 // input:  cpu clock
@@ -38,11 +39,7 @@ module xgriscv_sc(clk, rstn, pcW);
          .DMType(DMType),
          .dout(dm_dout)    // output: data from ram
          );
-   
-   // MEM/WB reg 在这个文件里实现
-   MEM_WB U_MEM_WB(
 
-   );
   // instantiation of intruction memory (used for simulation)
    im    U_imem ( 
       .addr(PC[8:2]),     // input:  rom address

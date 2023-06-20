@@ -1,20 +1,23 @@
 `include "ctrl_encode_def.v"
-module SCPU(
+module SCPU( 
     input      clk,            // clock
     input      reset,          // reset
     input [31:0]  inst_in,     // instruction
     input [31:0]  Data_in,     // data from data memory
    
-    output    mem_w,          // output: memory write signal
+    
     output [31:0] PC_out,     // PC address
       // memory write
     output [31:0] Addr_out,   // ALU output
     output [31:0] Data_out,// data to data memory
 
-    // input  [4:0] reg_sel,    // register selection (for debug use)
-    // output [31:0] reg_data,  // selected register data (for debug use)
+                // input  [4:0] reg_sel,    // register selection (for debug use)
+                // output [31:0] reg_data,  // selected register data (for debug use)
     output [31:0] pcW,
-    output [2:0] DMType  
+
+    // control signals for dm
+    output [2:0] DMType,
+    output    mem_w          // output: memory write signal
 );
 
 
@@ -95,6 +98,14 @@ wire [31:0]IF_ID_PC;
 wire stall;
 wire flush;
 
+// wires of MEM_WB delcared here because RF will be needing them
+   wire [31:0] MEM_WB_rd;
+   wire [31:0] MEM_WB_alures;
+   wire [4:0] MEM_WB_RegWrite;
+   wire [31:0] MEM_WB_Datain;
+   wire [2:0] MEM_WB_WDSel;
+   wire [31:0] MEM_WB_PC;
+
 // instantiation of IF/ID reg
     IF_ID U_IF_ID(
         .clk(clk), .rst(reset),
@@ -120,15 +131,15 @@ wire MemWrite_out;
 		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), .DMType(DMType),
         .sbtype(sbtype), .i_jal(i_jal), .i_jalr(i_jalr) // outputs added by myself
 	);
-
+wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_read_dm_data : MEM_WB_ALUres;
 // instantiation of register file
     // the RegWrite of RF comes from MEM/WB
 	RF U_RF(
 		.clk(clk), .rst(reset),
-		.RFWr(MEM_WB_RegWrite), // from WB
+		.RFWr(MEM_WB_RegWrite), // whether to write regs
 		.A1(rs1), .A2(rs2), .A3(rd), 
-		.WD(WD), 
-		.RD1(RD1), .RD2(RD2)
+		.WD(WD),  // write back data
+		.RD1(RD1), .RD2(RD2)  // data read from the regs
 		//.reg_sel(reg_sel),
 		//.reg_data(reg_data)
 	);
@@ -220,41 +231,41 @@ wire [2:0] EX_MEM_NPCOp;
 wire [1:0] EX_MEM_RegWrite;
 wire [2:0] EX_MEM_WDSel;
 
-EX_MEM U_EX_MEM(
-    .clk(clk), 
-    .rst(reset),
-    .PC_in(ID_EX_PC),
-    .inst_in(ID_EX_inst),
-    .rs1_in(ID_EX_rs1), 
-    rs2_in(ID_EX_rs2), 
-    .rd_in(ID_EX_rd),
-    .alures_in(aluout), 
-    .rs2_data_in(ID_EX_rs2data),
-    .Zero_in(Zero),
+    EX_MEM U_EX_MEM(
+        .clk(clk), 
+        .rst(reset),
+        .PC_in(ID_EX_PC),
+        .inst_in(ID_EX_inst),
+        .rs1_in(ID_EX_rs1), 
+        .rs2_in(ID_EX_rs2), 
+        .rd_in(ID_EX_rd),
+        .alures_in(aluout), 
+        .rs2_data_in(ID_EX_rs2data),
+        .Zero_in(Zero),
 
-    .PC_out(EX_MEM_PC), 
-    .inst_out(EX_MEM_inst),
-    .rs1_out(EX_MEM_rs1), 
-    .rs2_out(EX_MEM_rs2), 
-    .rd_out(EX_MEM_rd),
-    .alures_out(EX_MEM_alures), 
-    .rs2_data_out(EX_MEM_rs2data),
-    .Zero_out(EX_MEM_Zero),
+        .PC_out(EX_MEM_PC), 
+        .inst_out(EX_MEM_inst),
+        .rs1_out(EX_MEM_rs1), 
+        .rs2_out(EX_MEM_rs2), 
+        .rd_out(EX_MEM_rd),
+        .alures_out(EX_MEM_alures), 
+        .rs2_data_out(EX_MEM_rs2data),
+        .Zero_out(EX_MEM_Zero),
 
-    .MemWrite_in(ID_EX_MemWrite), 
-    .NPCOp_in(ID_EX_NPCOp), 
-    .DMType_in(ID_EX_DMType),
-    .MemWrite_out(EX_MEM_MemWrite), 
-    .NPCOp_out(EX_MEM_NPCOp), 
-    .DMType_out(EX_MEM_DMType),
+        .MemWrite_in(ID_EX_MemWrite), 
+        .NPCOp_in(ID_EX_NPCOp), 
+        .DMType_in(ID_EX_DMType),
+        .MemWrite_out(EX_MEM_MemWrite), 
+        .NPCOp_out(EX_MEM_NPCOp), 
+        .DMType_out(EX_MEM_DMType),
 
-    .RegWrite_in(ID_EX_RegWrite), 
-    .WDSel_in(ID_EX_WDSel),
-    .RegWrite_out(EX_MEM_RegWrite), 
-    .WDSel_out(EX_MEM_WDSel),
+        .RegWrite_in(ID_EX_RegWrite), 
+        .WDSel_in(ID_EX_WDSel),
+        .RegWrite_out(EX_MEM_RegWrite), 
+        .WDSel_out(EX_MEM_WDSel),
 
-    .stall(stall), .flush(flush)
-);
+        .stall(stall), .flush(flush)
+    );
 
 // assign一下输出
 
@@ -264,6 +275,27 @@ assign Addr_out = EX_MEM_alures; // ALU output
       // memory write
 assign Data_out = EX_MEM_rs2data; // data to data memory
 assign DMType = EX_MEM_DMType;
+
+// instantiation of MEM/WB
+   
+   MEM_WB U_MEM_WB(
+      .clk(clk),
+      .rst(rst),
+
+      .PC_in(EX_MEM_PC), // share the same PC as DM
+      .rd_in(EX_MEM_rd),
+      .alures_in(EX_MEM_alures),
+      .read_data_in(Data_in), // data from data memory
+      .WDSel_in(EX_MEM_WDSel),
+      .RegWrite_in(EX_MEM_RegWrite),
+      
+      .PC_out(MEM_WB_PC),
+      .rd_out(MEM_WB_rd),
+      .alures_out(MEM_WB_alures),
+      .read_data_out(MEM_WB_Datain),
+      .WDSel_out(MEM_WB_WDSel),
+      .RegWrite_out(MEM_WB_RegWrite)
+   );
 
 //please connnect the CPU by yourself
 
@@ -278,14 +310,14 @@ assign DMType = EX_MEM_DMType;
 
 always @*
 begin
-	case(WDSel)
-		`WDSel_FromALU: WD<=aluout;
-		`WDSel_FromMEMWord: WD<=Data_in; 
-        `WDSel_FromMEMHW: WD<=$signed(Data_in[15:0]);
-        `WDSel_FromMEMBT: WD<=$signed(Data_in[7:0]);
-        `WDSel_FromMEMHWU: WD<=$unsigned(Data_in[15:0]);
-        `WDSel_FromMEMBTU: WD<=$unsigned(Data_in[7:0]);
-		`WDSel_FromPC: WD<=PC_out+4;
+	case(MEM_WB_WDSel)
+		`WDSel_FromALU: WD<=MEM_WB_alures;
+		`WDSel_FromMEMWord: WD<=MEM_WB_Datain; 
+        `WDSel_FromMEMHW: WD<=$signed(MEM_WB_Datain[15:0]);
+        `WDSel_FromMEMBT: WD<=$signed(MEM_WB_Datain[7:0]);
+        `WDSel_FromMEMHWU: WD<=$unsigned(MEM_WB_Datain[15:0]);
+        `WDSel_FromMEMBTU: WD<=$unsigned(MEM_WB_Datain[7:0]);
+		`WDSel_FromPC: WD<=MEM_WB_PC+4;
 	endcase
 end
 
