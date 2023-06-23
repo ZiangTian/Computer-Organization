@@ -24,7 +24,7 @@ module dm(clk, DMWr, addr, din, PC, DMType, dout);
       // in this case, we need to write the data into the memory in two times, one is the lower 2 bytes
       // dd == 2'b10 means the address is 2 bytes aligned
       // dd == 2'b11 means the address is 1 byte aligned
-   reg [31:0] dmem[4095:0];
+reg [31:0] dmem[4095:0];
 
 //    always @(posedge clk)     // write only when posedge 
 //       if (DMWr) begin
