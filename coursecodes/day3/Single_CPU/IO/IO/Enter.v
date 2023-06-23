@@ -19,10 +19,10 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module   Enter(input clk,
-                input[4:0] BTN,	 // äº”ä¸ªæŒ‰é”®
-                input[15:0] SW, // ï¿??ï¿??
+                input[4:0] BTN,	 // 5 buttons
+                input[15:0] SW, 
                 output[4:0] BTN_out,
-                output[15:0] SW_out // ï¿??ï¿??
+                output[15:0] SW_out 
             );
 	// TODO é˜²æŠ–
 

@@ -23,7 +23,7 @@ module Counter_x(input clk,
 					input clk0,
 					input clk1,
 					input clk2,
-					input counter_we,
+					input counter_we,					//Counter write enable
 					input [31:0] counter_val,
 					input [1:0] counter_ch,				//Counter channel set
 
