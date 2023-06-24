@@ -12,12 +12,12 @@ module xgriscv_tb();
    
    initial begin
     // $readmemh("E:/ModelSimProj/Test_8_Instr.dat", xgriscvp.U_imem.RAM);
-      xgriscv.U_imem.RAM[0]=32'h00000293;
-      xgriscv.U_imem.RAM[1]=32'h00000313;
-      xgriscv.U_imem.RAM[2]=32'hFFFFF3B7;
-      xgriscv.U_imem.RAM[3]=32'h00000013;
-      xgriscv.U_imem.RAM[4]=32'h00000013;
-      xgriscv.U_imem.RAM[5]=32'h00000013;
+      xgriscv.U_imem.RAM[0]=32'h00000293;//0
+      xgriscv.U_imem.RAM[1]=32'h00000313;//4
+      xgriscv.U_imem.RAM[2]=32'hFFFFF3B7;//8
+      xgriscv.U_imem.RAM[3]=32'h00000013;//c
+      xgriscv.U_imem.RAM[4]=32'h00000013;//10
+      xgriscv.U_imem.RAM[5]=32'h00000013;//14
       xgriscv.U_imem.RAM[6]=32'h16030A63;
       xgriscv.U_imem.RAM[7]=32'h00000013;
       xgriscv.U_imem.RAM[8]=32'h00000013;

@@ -32,7 +32,7 @@ module MEM_WB (
 );
 
 always @(posedge clk or negedge rst) begin
-    if(!rst 
+    if(rst //!!!!!!!!!!!!!!!!!!!!!!
     // || flush
     ) 
         begin 
