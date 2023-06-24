@@ -291,7 +291,7 @@ wire [31:0] EX_MEM_imm;
         .stall(stall) // .flush(flush)
     );
 
-	NPC U_NPC(.PC(PC), .NPCOp(EX_MEM_NPCOp), .IMM(EX_MEM_imm), .aluout(EX_MEM_alures), 
+	NPC U_NPC(.PC(PC_out), .NPCOp(EX_MEM_NPCOp), .IMM(EX_MEM_imm), .aluout(EX_MEM_alures), 
             .NPC(NPC), .pcW(pcW), .EX_MEM_PC(EX_MEM_PC));
 
 
