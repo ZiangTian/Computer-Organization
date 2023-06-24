@@ -26,17 +26,17 @@ module EX_MEM (
         // when forwarded, this value should be whatever that's passed to alu as rs2.
 
     // control signals for mem
-    input [1:0] MemWrite_in,
+    input MemWrite_in,
     input [2:0] NPCOp_in,
     input [2:0] DMType_in,
-    output reg[1:0] MemWrite_out,
+    output reg MemWrite_out,
     output reg[2:0] NPCOp_out,
     output reg[2:0] DMType_out,
 
     // control signals for wb
-    input [1:0] RegWrite_in,
+    input RegWrite_in,
     input [2:0] WDSel_in,
-    output reg[1:0] RegWrite_out,
+    output reg RegWrite_out,
     output reg[2:0] WDSel_out,
     output reg[31:0] imm_out,
 

@@ -11,7 +11,7 @@ module xgriscv_tb();
    integer counter = 0;
    
    initial begin
-     $readmemh("E:/ModelSimProj/riscv32_sim1.hex", xgriscvp.U_imem.RAM);
+     $readmemh("E:/ModelSimProj/Test_8_Instr.dat", xgriscvp.U_imem.RAM);
 //      xgriscvp.U_imem.RAM[0]=32'h00000293;
 //      xgriscvp.U_imem.RAM[1]=32'h00000313;
 //      xgriscvp.U_imem.RAM[2]=32'hFFFFF3B7;

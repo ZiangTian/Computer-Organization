@@ -24,27 +24,27 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
     // control signals
       // control for ex
     input [4:0] ALUOp_in,
-    input [1:0] ALUSrc_in,
+    input ALUSrc_in,
     input [1:0] GPRSel_in,
     output reg[4:0] ALUOp_out,
-    output reg[1:0] ALUSrc_out,
-    output reg[1:0] GPRSel_out,
+    output reg ALUSrc_out,
+    output reg [1:0] GPRSel_out,
 
 
       // control for mem
     input MemRead_in,
-    input [1:0] MemWrite_in,
+    input MemWrite_in,
     input [2:0] NPCOp_in,
     input [2:0] DMType_in,
-    output reg[1:0] MemRead_out,
-    output reg[1:0] MemWrite_out,
+    output reg MemRead_out,
+    output reg MemWrite_out,
     output reg[2:0] NPCOp_out,
     output reg[2:0] DMType_out,
 
       // control for wb
-    input [1:0] RegWrite_in,
+    input RegWrite_in,
     input [2:0] WDSel_in,
-    output reg[1:0] RegWrite_out,
+    output reg RegWrite_out,
     output reg[2:0] WDSel_out,
 
       // control for stall
@@ -55,9 +55,9 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
     input sbtype_in,
     input i_jal_in,
     input i_jalr_in,
-    output reg[1:0] sbtype_out,
-    output reg[1:0] i_jal_out,
-    output reg[1:0] i_jalr_out
+    output reg sbtype_out,
+    output reg i_jal_out,
+    output reg i_jalr_out
 );
     always @(posedge clk or negedge rst) begin
     if(!rst 

@@ -21,8 +21,8 @@ module MEM_WB (
     output reg[31:0] read_data_out, // read from memory
 
     // control signals for wb
-    input [1:0] RegWrite_in,
-    output reg[1:0] RegWrite_out,
+    input RegWrite_in,
+    output reg RegWrite_out,
     input [2:0] WDSel_in,
     output reg[2:0] WDSel_out,
 

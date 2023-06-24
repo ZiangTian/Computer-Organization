@@ -114,20 +114,20 @@ wire [31:0]ID_EX_rs1data;
 wire [31:0]ID_EX_rs2data;
 
 wire [4:0] ID_EX_ALUOp;
-wire [1:0] ID_EX_ALUSrc;
+wire ID_EX_ALUSrc;
 wire [1:0] ID_EX_GPRSel;
 
-wire [1:0] ID_EX_MemWrite;
-wire [1:0] ID_EX_MemRead;
+wire ID_EX_MemWrite;
+wire ID_EX_MemRead;
 // wire [2:0] ID_EX_NPCOp;  // non-exist
 wire [2:0] ID_EX_DMType;
 
-wire [1:0] ID_EX_RegWrite;
+wire ID_EX_RegWrite;
 wire [2:0] ID_EX_WDSel;
 
-wire [1:0] ID_EX_sbtype;
-wire [1:0] ID_EX_i_jal;
-wire [1:0] ID_EX_i_jalr;
+wire ID_EX_sbtype;
+wire ID_EX_i_jal;
+wire ID_EX_i_jalr;
 
 // wires of MEM_WB delcared here because RF will be needing them
    wire [31:0] MEM_WB_rd;
@@ -245,11 +245,11 @@ wire [4:0] EX_MEM_rs2;
 wire [4:0] EX_MEM_rd;
 wire [31:0] EX_MEM_alures;
 wire [31:0] EX_MEM_rs2data;
-// wire [1:0] EX_MEM_Zero;
-wire [1:0] EX_MEM_MemWrite;
+// wire EX_MEM_Zero;
+wire EX_MEM_MemWrite;
 wire [2:0] EX_MEM_DMType;
 wire [2:0] EX_MEM_NPCOp;
-wire [1:0] EX_MEM_RegWrite;
+wire EX_MEM_RegWrite;
 wire [2:0] EX_MEM_WDSel;
 wire [31:0] EX_MEM_imm;
 
@@ -295,7 +295,7 @@ wire [31:0] EX_MEM_imm;
             .NPC(NPC), .pcW(pcW), .EX_MEM_PC(EX_MEM_PC));
 
 
-// assign�??下输�??
+// assign�??下输�??
 
 assign mem_w = EX_MEM_MemWrite;          // output: memory write signal
 // assign PC_out = ;     // PC address to instruction memory
