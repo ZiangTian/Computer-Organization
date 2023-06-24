@@ -3,17 +3,12 @@ Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
 Running: D:/Vivado/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 8392496b15484e4fba9d0a698d62a047 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot xgriscv_tb_behav xil_defaultlib.xgriscv_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'ID_EXmemread_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:142]
-WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 1 for port 'ID_EXregwrite_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:144]
 WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 1 for port 'RFWr' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:178]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 64 for port 'imm_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:200]
 WARNING: [VRFC 10-3091] actual bit length 65 differs from formal bit length 64 for port 'imm_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:204]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUSrc_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:209]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'MemWrite_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:213]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'RegWrite_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:220]
 WARNING: [VRFC 10-3091] actual bit length 65 differs from formal bit length 32 for port 'imm_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:267]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 5 for port 'rd_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:321]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 2 for port 'RegWrite_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:325]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 1 for port 'RegWrite_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:325]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/sccomp.v" Line 1. Module xgriscv_sc doesn't have a timescale but at least one module in design has a timescale.

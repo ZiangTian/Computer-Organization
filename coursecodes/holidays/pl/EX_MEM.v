@@ -38,10 +38,10 @@ module EX_MEM (
     input [2:0] WDSel_in,
     output reg RegWrite_out,
     output reg[2:0] WDSel_out,
-    output reg[31:0] imm_out,
+    output reg[31:0] imm_out
 
     // control for stall
-    input stall
+    // input stall
     // input flush
 );
 
@@ -67,7 +67,7 @@ always @(posedge clk or negedge rst) begin
             WDSel_out <= 0;
             imm_out<=0;
         end
-    else if(!stall)
+    else 
         begin
             // Zero_out <= Zero_in;
             inst_out <= inst_in; 

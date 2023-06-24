@@ -26,7 +26,7 @@ module IF_ID (  // connected to RF, ctrl, and ext
 // to resolve data hazard, flush and stalls still needs to be added
 
   always @(posedge clk or negedge rst) begin
-    if(!rst 
+    if(rst 
       // || flush
       ) 
     begin 

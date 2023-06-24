@@ -286,9 +286,9 @@ wire [31:0] EX_MEM_imm;
         .RegWrite_in(ID_EX_RegWrite), 
         .WDSel_in(ID_EX_WDSel),
         .RegWrite_out(EX_MEM_RegWrite), 
-        .WDSel_out(EX_MEM_WDSel),
+        .WDSel_out(EX_MEM_WDSel)
 
-        .stall(stall) // .flush(flush)
+        // .stall(stall) // .flush(flush)
     );
 
 	NPC U_NPC(.PC(PC_out), .NPCOp(EX_MEM_NPCOp), .IMM(EX_MEM_imm), .aluout(EX_MEM_alures), 
@@ -308,7 +308,7 @@ assign DMType = EX_MEM_DMType;
    
    MEM_WB U_MEM_WB(
       .clk(clk),
-      .rst(rst),
+      .rst(reset),
 
       .PC_in(EX_MEM_PC), // share the same PC as DM
       .rd_in(EX_MEM_rd),
