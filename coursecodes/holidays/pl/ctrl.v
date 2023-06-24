@@ -3,7 +3,7 @@
 //123
 module ctrl(Op, Funct7, Funct3, 
             //Zero, 
-            RegWrite, MemWrite,
+            RegWrite, MemWrite, MemRead,
             EXTOp, ALUOp, 
             //NPCOp, 
             ALUSrc, GPRSel, WDSel,DMType, 
@@ -17,6 +17,7 @@ module ctrl(Op, Funct7, Funct3,
    
    output       RegWrite; // control signal for register write
    output       MemWrite; // control signal for memory write
+   output       MemRead;  // control signal for memory read
    output [5:0] EXTOp;    // control signal to signed extension
    output [4:0] ALUOp;    // ALU opertion
    // output [2:0] NPCOp;    // next pc operation
@@ -97,7 +98,7 @@ module ctrl(Op, Funct7, Funct3,
     assign RegWrite   = rtype | itype_r | i_jalr | i_jal | itype_l | i_lui | i_auipc;   // register write
     assign MemWrite   = stype;                              // memory write
     assign ALUSrc     = itype_r | stype | i_jal | i_jalr | itype_l | i_lui | i_auipc;   // ALU B is from instruction immediate
-    // assign MemRead    = itype_l;                            // memory read
+    assign MemRead    = itype_l;                            // memory read
 
   // signed extension
   // EXT_CTRL_ITYPE_SHAMT 6'b100000   // used for shift operations, so there are only 5 bits

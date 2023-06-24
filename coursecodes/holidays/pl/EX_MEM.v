@@ -41,12 +41,14 @@ module EX_MEM (
     output reg[31:0] imm_out,
 
     // control for stall
-    input stall,
-    input flush
+    input stall
+    // input flush
 );
 
 always @(posedge clk or negedge rst) begin
-    if(!rst || flush) 
+    if(!rst 
+    //|| flush
+    ) 
         begin 
             // Zero_out <= 0;
             inst_out <= 0; 

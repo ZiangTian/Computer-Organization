@@ -55,12 +55,9 @@ module SCPU(
 
     // wire [31:0] inst_out;
     wire stall;
-    wire flush;
+    // wire flush;
 
     wire MemWrite_out;
-// assign Addr_out=aluout;
-
-// 	assign Data_out = RD2;
 	
 	// assign iimm_shamt=inst_in[24:20];
 	// assign iimm=inst_in[31:20];
@@ -87,7 +84,7 @@ module SCPU(
     IF_ID U_IF_ID(
         .clk(clk), .rst(reset),
         .inst_in(inst_in), .PC_in(PC_out),
-        .inst_out(IF_ID_inst), .PC_out(IF_ID_PC), .stall(stall), .flush(flush)
+        .inst_out(IF_ID_inst), .PC_out(IF_ID_PC), .stall(stall)// .flush(flush)
     );  
 
     assign iimm_shamt=IF_ID_inst[24:20];
@@ -106,6 +103,31 @@ module SCPU(
     assign Imm12 =IF_ID_inst[31:20];// 12-bit immediate
     assign IMM = IF_ID_inst[31:12];  // 20-bit immediate
 
+// output wires of ID/EX
+wire [31:0]ID_EX_PC;
+wire [31:0]ID_EX_inst;
+wire [64:0]ID_EX_imm;
+wire [4:0]ID_EX_rs1;
+wire [4:0]ID_EX_rs2;
+wire [4:0]ID_EX_rd;
+wire [31:0]ID_EX_rs1data;
+wire [31:0]ID_EX_rs2data;
+
+wire [4:0] ID_EX_ALUOp;
+wire [1:0] ID_EX_ALUSrc;
+wire [1:0] ID_EX_GPRSel;
+
+wire [1:0] ID_EX_MemWrite;
+wire [1:0] ID_EX_MemRead;
+// wire [2:0] ID_EX_NPCOp;  // non-exist
+wire [2:0] ID_EX_DMType;
+
+wire [1:0] ID_EX_RegWrite;
+wire [2:0] ID_EX_WDSel;
+
+wire [1:0] ID_EX_sbtype;
+wire [1:0] ID_EX_i_jal;
+wire [1:0] ID_EX_i_jalr;
 
 // wires of MEM_WB delcared here because RF will be needing them
    wire [31:0] MEM_WB_rd;
@@ -115,18 +137,25 @@ module SCPU(
    wire [2:0] MEM_WB_WDSel;
    wire [31:0] MEM_WB_PC;
 
-
+    Stall U_stall(
+        .IF_IDrs1_in(rs1), .IF_IDrs2_in(rs2), 
+        .ID_EXmemread_in(ID_EX_MemRead),
+        .ID_EXrd_in(ID_EX_rd),
+        .ID_EXregwrite_in(ID_EX_RegWrite),
+        .stallout(stall)
+    );
 
 // take NPCOp out of control and put it here
     wire sbtype;
     wire i_jal;
     wire i_jalr;
+    wire Memread;
 
 // instantiation of control unit
 	ctrl U_ctrl(
 		.Op(Op), .Funct7(Funct7), .Funct3(Funct3), 
         // .Zero(Zero), 
-		.RegWrite(RegWrite), .MemWrite(MemWrite_out),
+		.RegWrite(RegWrite), .MemWrite(MemWrite_out), .MemRead(MemRead),
 		.EXTOp(EXTOp), .ALUOp(ALUOp), 
         // .NPCOp(NPCOp), // implemented with assign above
 		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), .DMType(DMType),
@@ -157,33 +186,10 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
 
 // instantiation of pc unit
 // in pc unit, the npc comes from EX/MEM and its control comes from EX/MEM
-	PC U_PC(.clk(clk), .rst(reset), .NPC(NPC), .PC(PC_out) );  // PC_out already set
+	PC U_PC(.clk(clk), .rst(reset), .NPC(NPC), .PC(PC_out), .stall(stall) );  // PC_out already set
     // NPC singal does not go over any regsiter; it goes directly back.
 
-// output wires of ID/EX
-wire [31:0]ID_EX_PC;
-wire [31:0]ID_EX_inst;
-wire [64:0]ID_EX_imm;
-wire [4:0]ID_EX_rs1;
-wire [4:0]ID_EX_rs2;
-wire [4:0]ID_EX_rd;
-wire [31:0]ID_EX_rs1data;
-wire [31:0]ID_EX_rs2data;
 
-wire [4:0] ID_EX_ALUOp;
-wire [1:0] ID_EX_ALUSrc;
-wire [1:0] ID_EX_GPRSel;
-
-wire [1:0] ID_EX_MemWrite;
-// wire [2:0] ID_EX_NPCOp;  // non-exist
-wire [2:0] ID_EX_DMType;
-
-wire [1:0] ID_EX_RegWrite;
-wire [2:0] ID_EX_WDSel;
-
-wire [1:0] ID_EX_sbtype;
-wire [1:0] ID_EX_i_jal;
-wire [1:0] ID_EX_i_jalr;
 
 // instantiation of id/ex reg
     ID_EX U_ID_EX(
@@ -206,6 +212,7 @@ wire [1:0] ID_EX_i_jalr;
         // control for mem
         .MemWrite_in(MemWrite_out), .DMType_in(DMType),
         .MemWrite_out(ID_EX_MemWrite), .DMType_out(ID_EX_DMType),
+        .MemRead_in(MemRead), .MemRead_out(ID_EX_MemRead),
         // .NPCOp_in(NPCOp),        // implemented in EX
         // .NPCOp_out(ID_EX_NPCOp), // implemented in EX
 
@@ -213,7 +220,7 @@ wire [1:0] ID_EX_i_jalr;
         .RegWrite_in(RegWrite), .WDSel_in(WDSel),
         .RegWrite_out(ID_EX_RegWrite), .WDSel_out(ID_EX_WDSel),
 
-        .stall(stall), .flush(flush),
+        .stall(stall), // .flush(flush),
 
         .sbtype_in(sbtype), .i_jal_in(i_jal), .i_jalr_in(i_jalr), // outputs added by myself
         .sbtype_out(ID_EX_sbtype), .i_jal_out(ID_EX_i_jal), .i_jalr_out(ID_EX_i_jalr) // outputs added by myself
@@ -281,14 +288,14 @@ wire [31:0] EX_MEM_imm;
         .RegWrite_out(EX_MEM_RegWrite), 
         .WDSel_out(EX_MEM_WDSel),
 
-        .stall(stall), .flush(flush)
+        .stall(stall) // .flush(flush)
     );
 
 	NPC U_NPC(.PC(PC), .NPCOp(EX_MEM_NPCOp), .IMM(EX_MEM_imm), .aluout(EX_MEM_alures), 
             .NPC(NPC), .pcW(pcW), .EX_MEM_PC(EX_MEM_PC));
 
 
-// assignä¸?ä¸‹è¾“å‡?
+// assignï¿??ä¸‹è¾“ï¿??
 
 assign mem_w = EX_MEM_MemWrite;          // output: memory write signal
 // assign PC_out = ;     // PC address to instruction memory

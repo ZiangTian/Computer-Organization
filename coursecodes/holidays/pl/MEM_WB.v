@@ -27,12 +27,14 @@ module MEM_WB (
     output reg[2:0] WDSel_out,
 
     // control for stall
-    input stall,
-    input flush
+    input stall
+    // input flush
 );
 
 always @(posedge clk or negedge rst) begin
-    if(!rst || flush) 
+    if(!rst 
+    // || flush
+    ) 
         begin 
             // inst_out <= 0; 
             // PC_out <= 0;

@@ -9,7 +9,7 @@ module Stall (
     // register stall
     input ID_EXregwrite_in,
 
-    output reg stallout
+    output reg stallout  
 
 );
     always @(*) begin

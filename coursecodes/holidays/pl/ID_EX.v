@@ -32,9 +32,11 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
 
 
       // control for mem
+    input MemRead_in,
     input [1:0] MemWrite_in,
     input [2:0] NPCOp_in,
     input [2:0] DMType_in,
+    output reg[1:0] MemRead_out,
     output reg[1:0] MemWrite_out,
     output reg[2:0] NPCOp_out,
     output reg[2:0] DMType_out,
@@ -47,7 +49,7 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
 
       // control for stall
     input stall,
-    input flush,
+    // input flush,
 
       // added by me
     input sbtype_in,
@@ -58,7 +60,9 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
     output reg[1:0] i_jalr_out
 );
     always @(posedge clk or negedge rst) begin
-    if(!rst || flush) 
+    if(!rst 
+    // || flush
+    ) 
         begin 
             inst_out <= 0; 
             PC_out <= 0;
@@ -75,7 +79,6 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
             RegWrite_out <= 0;
             // MemtoReg_out <= 0; 
             GPRSel_out <= 0;
-            MemWrite_out <= 0;
             NPCOp_out <= 0;
             DMType_out <= 0;
             RegWrite_out <= 0;
@@ -84,8 +87,10 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
             sbtype_out <= 0;
             i_jal_out <= 0;
             i_jalr_out <= 0;
+            MemRead_out <= 0;
         end
-    else if(!stall)
+    else 
+    if(!stall)
         begin
             inst_out <= inst_in; 
             PC_out <= PC_in;
@@ -100,9 +105,9 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
             // MemRead_out <= MemRead_in;
             MemWrite_out <= MemWrite_in;
             RegWrite_out <= RegWrite_in;
+            MemRead_out <= MemRead_in;
             // MemtoReg_out <= MemtoReg_in;
             GPRSel_out <= GPRSel_in;
-            MemWrite_out <= MemWrite_in;
             NPCOp_out <= NPCOp_in;
             DMType_out <= DMType_in;
             RegWrite_out <= RegWrite_in;
@@ -112,7 +117,35 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
             i_jal_out <= i_jal_in;
             i_jalr_out <= i_jalr_in;    
         end
+    else begin
+            inst_out <= inst_in; 
+            PC_out <= PC_in;
+            imm_out <= imm_in;
+            rs1_out <= rs1_in;
+            rs2_out <= rs2_in;
+            rd_out <= rd_in;
+            rs1_data_out <= rs1_data_in;
+            rs2_data_out <= rs2_data_in;
+            
+            ALUOp_out <= ALUOp_in;
+            ALUSrc_out <= ALUSrc_in;
+            // MemRead_out <= 0;
 
+            MemWrite_out <= 0;
+            RegWrite_out <= 0;
+            MemRead_out <= 0;
+            // MemtoReg_out <= 0; 
+            GPRSel_out <= GPRSel_in;
+
+            NPCOp_out <= NPCOp_in;
+            DMType_out <= DMType_in;
+            RegWrite_out <= RegWrite_in;
+            WDSel_out <= WDSel_in;
+
+            sbtype_out <= sbtype_in;
+            i_jal_out <= i_jal_in;
+            i_jalr_out <= i_jalr_in;      
+    end
   end
 
 
