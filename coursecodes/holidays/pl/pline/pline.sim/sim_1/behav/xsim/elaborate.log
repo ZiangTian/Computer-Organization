@@ -1,0 +1,17 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 69a648f6529b4589962e269bd5633e93 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot xgriscv_tb_behav xil_defaultlib.xgriscv_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 1 for port 'RFWr' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:149]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 64 for port 'imm_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:194]
+WARNING: [VRFC 10-3091] actual bit length 65 differs from formal bit length 64 for port 'imm_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:198]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'ALUSrc_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:203]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'MemWrite_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:207]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'RegWrite_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:213]
+WARNING: [VRFC 10-3091] actual bit length 65 differs from formal bit length 32 for port 'imm_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:260]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'PC' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:287]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 5 for port 'rd_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:314]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 2 for port 'RegWrite_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:318]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
