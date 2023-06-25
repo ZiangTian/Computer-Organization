@@ -41,7 +41,7 @@ module ctrl(Op, Funct7, Funct3,
     wire i_sra  = rtype& ~Funct7[6]& Funct7[5]&~Funct7[4]&~Funct7[3]&~Funct7[2]&~Funct7[1]&~Funct7[0]& Funct3[2]&~Funct3[1]& Funct3[0]; // sra 0100000 101
 
     wire i_slt  = rtype& ~Funct7[6]&~Funct7[5]&~Funct7[4]&~Funct7[3]&~Funct7[2]&~Funct7[1]&~Funct7[0]&~Funct3[2]& Funct3[1]&~Funct3[0]; // slt 0000000 010
-    wire i_sltu = rtype& ~Funct7[6]&~Funct7[5]&~Funct7[4]&~Funct7[3]&~Funct7[2]&~Funct7[1]&~Funct7[0]&~Funct3[2]& Funct3[1]& Funct3[0]; //sltu 0000000 101
+    wire i_sltu = rtype& ~Funct7[6]&~Funct7[5]&~Funct7[4]&~Funct7[3]&~Funct7[2]&~Funct7[1]&~Funct7[0]&~Funct3[2]& Funct3[1]& Funct3[0]; //sltu 0000000 111
 
   // u    
     wire i_lui    =  ~Op[6]&Op[5]&Op[4]&~Op[3]&Op[2]&Op[1]&Op[0]; // lui 0110111
@@ -108,7 +108,7 @@ module ctrl(Op, Funct7, Funct3,
   // EXT_CTRL_UTYPE	      6'b000010   //  used for lui and auipc 
   // EXT_CTRL_JTYPE	      6'b000001
   assign EXTOp[5]    = i_slli | i_srli | i_srai;
-  assign EXTOp[4]    = i_ori | i_andi | i_jalr | i_xori | i_addi| i_slti | i_sltiu | itype_l;  
+  assign EXTOp[4]    = i_ori | i_andi | i_jalr | i_xori | i_addi| i_slti | i_sltiu | i_lb | i_lh | i_lw | i_lbu | i_lhu;  
   assign EXTOp[3]    = stype; 
   assign EXTOp[2]    = sbtype; 
   assign EXTOp[1]    = i_lui | i_auipc;   
@@ -154,9 +154,9 @@ module ctrl(Op, Funct7, Funct3,
 //`define ALUOp_sll  5'b01111
 //`define ALUOp_srl  5'b10000
 //`define ALUOp_sra  5'b10001
-  assign ALUOp[0] = itype_l|i_jalr|stype|i_addi|i_ori|i_add|i_or|i_lui|i_sltu|i_sltiu|i_sll|i_slli|i_sra|i_srai|i_bge|i_bgeu;
+  assign ALUOp[0] = itype_l|i_jalr|stype|i_addi|i_ori|i_add|i_or|i_lui|i_sltu|i_sltiu|i_sll|i_slli|i_sra|i_srai|i_bge|i_bgeu|i_bne;
   assign ALUOp[1] = i_jalr|itype_l|stype|i_addi|i_add|i_and|i_andi|i_auipc|i_slt|i_slti|i_sltu|i_sltiu|i_sll|i_slli|i_blt|i_bge;
-  assign ALUOp[2] = i_andi|i_and|i_ori|i_or|i_beq|i_sub|i_xor|i_xori|i_sll|i_slli|i_blt|i_bge;
+  assign ALUOp[2] = i_andi|i_and|i_ori|i_or|i_beq|i_sub|i_xor|i_xori|i_sll|i_slli|i_blt|i_bge|i_bne;
   assign ALUOp[3] = i_andi|i_and|i_ori|i_or|i_xor|i_xori|i_slt|i_slti|i_sltu|i_sltiu|i_sll|i_slli|i_bltu|i_bgeu;
   assign ALUOp[4] = i_srl|i_srli|i_sra|i_srai;
 
