@@ -234,7 +234,8 @@ wire  [31:0] pcW;
 // U5_Multi_8CH32
 
     wire [63:0] point_in;
-    assign point_in = {32'b0, clkdiv};
+//    assign point_in = {32'b0, clkdiv};
+    assign point_in = {clkdiv, clkdiv};
 
     wire[31:0] Disp_num;
     wire[7:0] LE_out;

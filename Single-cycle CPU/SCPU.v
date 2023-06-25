@@ -83,8 +83,8 @@ assign Addr_out=aluout;
 		.RegWrite(RegWrite), .MemWrite(mem_w),
 		.EXTOp(EXTOp), .ALUOp(ALUOp), .NPCOp(NPCOp), 
 		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), 
-		//.DMType(DMType)
-		.dm_ctrl(DMType)
+		.DMType(DMType)
+		//.dm_ctrl(DMType)
 	);
  // instantiation of pc unit
 	PC U_PC(.clk(clk), .rst(reset), .NPC(NPC), .PC(PC_out) );

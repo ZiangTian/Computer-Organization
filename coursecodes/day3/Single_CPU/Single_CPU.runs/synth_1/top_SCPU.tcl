@@ -49,8 +49,8 @@ read_verilog -library xil_defaultlib {
   {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SSeg7.v}
   {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/alu.v}
   {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/clk_div.v}
+  {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/ctrl.v}
   {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/dm_controller.v}
-  {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/lj_ctrl.v}
   {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/test/multi_8CH32.v}
   {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/new/top_SCPU.v}
 }

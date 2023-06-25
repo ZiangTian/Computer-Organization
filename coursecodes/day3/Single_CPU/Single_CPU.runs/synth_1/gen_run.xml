@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1687689772">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1687701825">
   <File Type="PA-TCL" Name="top_SCPU.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_SCPU_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_SCPU_reports.tcl"/>
@@ -139,14 +139,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/edf_file/edf_file/dm_controller.v">
+    <File Path="$PPRDIR/../../../Single-cycle CPU/ctrl.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../../ref/lj_ctrl.v">
+    <File Path="$PPRDIR/edf_file/edf_file/dm_controller.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
