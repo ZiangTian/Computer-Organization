@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Wed Jun 21 18:16:16 2023
+| Date             : Sun Jun 25 18:44:39 2023
 | Host             : Benjamin running 64-bit major release  (build 9200)
 | Command          : report_power -file top_SCPU_power_routed.rpt -pb top_SCPU_power_summary_routed.pb -rpx top_SCPU_power_routed.rpx
 | Design           : top_SCPU
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.100        |
+| Total On-Chip Power (W)  | 0.104        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.003        |
+| Dynamic (W)              | 0.007        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.5         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     3908 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     1888 |     63400 |            2.98 |
-|   CARRY4       |    <0.001 |       55 |     15850 |            0.35 |
-|   Register     |    <0.001 |     1362 |    126800 |            1.07 |
-|   BUFG         |    <0.001 |        7 |        32 |           21.88 |
-|   F7/F8 Muxes  |    <0.001 |      371 |     63400 |            0.59 |
-|   Others       |     0.000 |       24 |       --- |             --- |
-| Signals        |    <0.001 |     2986 |       --- |             --- |
+| Slice Logic    |     0.002 |     4654 |       --- |             --- |
+|   LUT as Logic |     0.002 |     2274 |     63400 |            3.59 |
+|   CARRY4       |    <0.001 |       63 |     15850 |            0.40 |
+|   F7/F8 Muxes  |    <0.001 |      480 |     63400 |            0.76 |
+|   Register     |    <0.001 |     1650 |    126800 |            1.30 |
+|   BUFG         |    <0.001 |        8 |        32 |           25.00 |
+|   Others       |     0.000 |       29 |       --- |             --- |
+| Signals        |     0.002 |     3547 |       --- |             --- |
 | Block RAM      |    <0.001 |        1 |       135 |            0.74 |
-| I/O            |     0.002 |       55 |       210 |           26.19 |
+| I/O            |     0.003 |       55 |       210 |           26.19 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.100 |          |           |                 |
+| Total          |     0.104 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.016 |       0.001 |      0.015 |
+| Vccint    |       1.000 |     0.019 |       0.004 |      0.015 |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -140,11 +140,15 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------+-----------+
-| Name       | Power (W) |
-+------------+-----------+
-| top_SCPU   |     0.003 |
-|   U6_SSeg7 |     0.002 |
-+------------+-----------+
++-----------------------------------+-----------+
+| Name                              | Power (W) |
++-----------------------------------+-----------+
+| top_SCPU                          |     0.007 |
+|   U1_SCPU                         |     0.002 |
+|   U2_ROMD                         |     0.001 |
+|     U0                            |     0.001 |
+|       synth_options.dist_mem_inst |     0.001 |
+|   U6_SSeg7                        |     0.003 |
++-----------------------------------+-----------+
 
 

@@ -51,6 +51,21 @@ module top_SCPU(
         .SW_out(SW_out)
     );
 
+    wire mem_w;
+    wire[31:0] PC_out;
+    wire[31:0] Data_out;
+    wire[31:0] Addr_out;
+    wire[2:0] dm_ctrl;
+    wire CPU_MIO;
+
+    wire [31:0]Cpu_data4bus;
+    wire [31:0]ram_data_in;
+    wire [9:0]ram_addr;
+    wire data_ram_we;
+    wire GPIOf0000000_we;
+    wire GPIOe0000000_we;
+    wire counter_we;
+    wire [31:0]Peripheral_in;
 // U8_clk_div
     // outputs of U8_clk_div
     wire rst_i;
@@ -154,13 +169,23 @@ module top_SCPU(
 
 // U1_SCPU
 
-    wire mem_w;
-    wire[31:0] PC_out;
-    wire[31:0] Data_out;
-    wire[31:0] Addr_out;
-    wire[2:0] dm_ctrl;
-    wire CPU_MIO;
 
+//    SCPU U1_SCPU(
+//        .clk(Clk_CPU),
+//        .reset(rst_i),
+//        .MIO_ready(CPU_MIO),  // self connected to CPU_MIO
+//        .inst_in(spo),
+//        .Data_in(Data_read),
+//        .INT(counter0_OUT),
+
+//        .mem_w(mem_w),
+//        .PC_out(PC_out),
+//        .Data_out(Data_out),
+//        .Addr_out(Addr_out),
+//        .dm_ctrl(dm_ctrl),
+//        .CPU_MIO(CPU_MIO)
+//    );
+wire  [31:0] pcW;
     SCPU U1_SCPU(
         .clk(Clk_CPU),
         .reset(rst_i),
@@ -174,19 +199,12 @@ module top_SCPU(
         .Data_out(Data_out),
         .Addr_out(Addr_out),
         .dm_ctrl(dm_ctrl),
+        // .pcW(pcW)
         .CPU_MIO(CPU_MIO)
     );
 
 // U4_MIO
 
-    wire [31:0]Cpu_data4bus;
-    wire [31:0]ram_data_in;
-    wire [9:0]ram_addr;
-    wire data_ram_we;
-    wire GPIOf0000000_we;
-    wire GPIOe0000000_we;
-    wire counter_we;
-    wire [31:0]Peripheral_in;
 
     MIO_BUS U4_MIO_BUS(
         .clk(clk),
@@ -216,7 +234,7 @@ module top_SCPU(
 // U5_Multi_8CH32
 
     wire [63:0] point_in;
-    assign point_in = {clkdiv, clkdiv};
+    assign point_in = {32'b0, clkdiv};
 
     wire[31:0] Disp_num;
     wire[7:0] LE_out;
@@ -226,11 +244,11 @@ module top_SCPU(
         .clk(IO_clk_i),
         .rst(rst_i),
         .EN(GPIOe0000000_we),
-        .LES(64'hffffffff),
+        .LES(64'hffffffffffffffff),
         .Switch(SW_out[7:5]),
         .point_in(point_in),
         .data0(Peripheral_in),
-        .data1(PC_out),
+        .data1(PC_out&32'h3fffffff),
         .data7(PC_out),
         .data2(spo),
         .data3(counter_out),

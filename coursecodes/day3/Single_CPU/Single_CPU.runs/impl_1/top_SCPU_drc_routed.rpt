@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed Jun 21 18:16:13 2023
+| Date         : Sun Jun 25 18:44:36 2023
 | Host         : Benjamin running 64-bit major release  (build 9200)
 | Command      : report_drc -file top_SCPU_drc_routed.rpt -pb top_SCPU_drc_routed.pb -rpx top_SCPU_drc_routed.rpx
 | Design       : top_SCPU
@@ -167,7 +167,7 @@ Related violations: <none>
 
 RTSTAT-10#1 Warning
 No routable loads  
-182 net(s) have no routable loads. The problem bus(es) and/or net(s) are U1_SCPU/U_RF/C_reg[0]_i_11_n_2, U1_SCPU/U_RF/C_reg[0]_i_11_n_3, U1_SCPU/U_RF/C_reg[0]_i_11_n_4, U1_SCPU/U_RF/C_reg[0]_i_12_n_2, U1_SCPU/U_RF/C_reg[0]_i_12_n_3, U1_SCPU/U_RF/C_reg[0]_i_12_n_4, U1_SCPU/U_RF/C_reg[0]_i_22_n_2, U1_SCPU/U_RF/C_reg[0]_i_22_n_3, U1_SCPU/U_RF/C_reg[0]_i_22_n_4, U1_SCPU/U_RF/C_reg[0]_i_38_n_2, U1_SCPU/U_RF/C_reg[0]_i_38_n_3, U1_SCPU/U_RF/C_reg[0]_i_38_n_4, U1_SCPU/U_RF/C_reg[0]_i_39_n_2, U1_SCPU/U_RF/C_reg[0]_i_39_n_3, U1_SCPU/U_RF/C_reg[0]_i_39_n_4 (the first 15 of 169 listed).
+205 net(s) have no routable loads. The problem bus(es) and/or net(s) are U1_SCPU/U_EXT/C_reg[0]_i_11_n_3, U1_SCPU/U_EXT/C_reg[0]_i_11_n_4, U1_SCPU/U_EXT/C_reg[0]_i_11_n_5, U1_SCPU/U_RF/C_reg[0]_i_14_n_3, U1_SCPU/U_RF/C_reg[0]_i_14_n_4, U1_SCPU/U_RF/C_reg[0]_i_14_n_5, U1_SCPU/U_EXT/C_reg[0]_i_15_n_3, U1_SCPU/U_EXT/C_reg[0]_i_15_n_4, U1_SCPU/U_EXT/C_reg[0]_i_15_n_5, U1_SCPU/U_EXT/C_reg[0]_i_16_n_4, U1_SCPU/U_EXT/C_reg[0]_i_16_n_5, U1_SCPU/U_EXT/C_reg[0]_i_20_n_3, U1_SCPU/U_EXT/C_reg[0]_i_20_n_4, U1_SCPU/U_EXT/C_reg[0]_i_20_n_5, U1_SCPU/U_RF/C_reg[0]_i_30_n_3 (the first 15 of 192 listed).
 Related violations: <none>
 
 

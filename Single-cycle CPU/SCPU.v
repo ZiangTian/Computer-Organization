@@ -2,8 +2,12 @@
 module SCPU(
     input      clk,            // clock
     input      reset,          // reset
+
     input [31:0]  inst_in,     // instruction
     input [31:0]  Data_in,     // data from data memory
+    input CPU_MIO,
+    input INT,
+    input MIO_ready,
    
     output    mem_w,          // output: memory write signal
     output [31:0] PC_out,     // PC address
@@ -11,11 +15,16 @@ module SCPU(
     output [31:0] Addr_out,   // ALU output
     output [31:0] Data_out,// data to data memory
 
-    input  [4:0] reg_sel,    // register selection (for debug use)
-    output [31:0] reg_data,  // selected register data (for debug use)
+    // input  [4:0] reg_sel,    // register selection (for debug use)
+    // output [31:0] reg_data,  // selected register data (for debug use)
     output [31:0] pcW,
-    output [2:0] DMType  
+    output [2:0] dm_ctrl      ///////////////////// changed from DMType to dm_ctrl!!!
 );
+//    wire CPU_MIO;
+//    wire INT;
+//    wire MIO_ready;
+    wire [2:0] DMType;
+    assign DMType = dm_ctrl;
     wire        RegWrite;    // control signal to register write
     wire [5:0]       EXTOp;       // control signal to signed extension
     wire [4:0]  ALUOp;       // ALU opertion
@@ -73,7 +82,9 @@ assign Addr_out=aluout;
 		.Op(Op), .Funct7(Funct7), .Funct3(Funct3), .Zero(Zero), 
 		.RegWrite(RegWrite), .MemWrite(mem_w),
 		.EXTOp(EXTOp), .ALUOp(ALUOp), .NPCOp(NPCOp), 
-		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), .DMType(DMType)
+		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), 
+		//.DMType(DMType)
+		.dm_ctrl(DMType)
 	);
  // instantiation of pc unit
 	PC U_PC(.clk(clk), .rst(reset), .NPC(NPC), .PC(PC_out) );
@@ -110,12 +121,13 @@ always @*
 begin
 	case(WDSel)
 		`WDSel_FromALU: WD<=aluout;
-		`WDSel_FromMEMWord: WD<=Data_in; 
-        `WDSel_FromMEMHW: WD<=$signed(Data_in[15:0]);
-        `WDSel_FromMEMBT: WD<=$signed(Data_in[7:0]);
-        `WDSel_FromMEMHWU: WD<=$unsigned(Data_in[15:0]);
-        `WDSel_FromMEMBTU: WD<=$unsigned(Data_in[7:0]);
+		// `WDSel_FromMEMWord: WD<=Data_in; 
+        // `WDSel_FromMEMHW: WD<=$signed(Data_in[15:0]);
+        // `WDSel_FromMEMBT: WD<=$signed(Data_in[7:0]);
+        // `WDSel_FromMEMHWU: WD<=$unsigned(Data_in[15:0]);
+        // `WDSel_FromMEMBTU: WD<=$unsigned(Data_in[7:0]);
 		`WDSel_FromPC: WD<=PC_out+4;
+        `WDSel_FromMEM:WD<=Data_in;
 	endcase
 end
 

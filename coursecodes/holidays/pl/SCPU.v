@@ -226,10 +226,45 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
         .sbtype_out(ID_EX_sbtype), .i_jal_out(ID_EX_i_jal), .i_jalr_out(ID_EX_i_jalr) // outputs added by myself
     );
 
-	assign B = (ID_EX_ALUSrc) ? ID_EX_imm : ID_EX_rs2data;
+    wire [31:0] EX_MEM_PC;
+    wire [31:0] EX_MEM_inst;
+    wire [4:0] EX_MEM_rs1;
+    wire [4:0] EX_MEM_rs2;
+    wire [4:0] EX_MEM_rd;
+    wire [31:0] EX_MEM_alures;
+    wire [31:0] EX_MEM_rs2data;
+    // wire EX_MEM_Zero;
+    wire EX_MEM_MemWrite;
+    wire [2:0] EX_MEM_DMType;
+    wire [2:0] EX_MEM_NPCOp;
+    wire EX_MEM_RegWrite;
+    wire [2:0] EX_MEM_WDSel;
+    wire [31:0] EX_MEM_imm;
+
+    wire [1:0] forwardA;
+    wire [1:0] forwardB;
+
+    Forward U_forward(
+        .EX_MEM_RegWrite(EX_MEM_RegWrite),
+        .EX_MEM_rd(EX_MEM_rd),
+        .ID_EX_rs1(ID_EX_rs1),
+        .ID_EX_rs2(ID_EX_rs2),
+
+        .MEM_WB_RegWrite(MEM_WB_RegWrite),
+        .MEM_WB_rd(MEM_WB_rd),
+
+        .forwardA(forwardA),
+        .forwardB(forwardB)
+    );
+    wire [31:0] A;
+    assign A = (forwardA[0]==1) ? MEM_WB_alures : (forwardA[1]==1) ? EX_MEM_alures : ID_EX_rs1data;
+    
+    assign ori_B = (ID_EX_ALUSrc) ? ID_EX_imm : ID_EX_rs2data;
+    assign B = (forwardB[0]==1) ? MEM_WB_alures : (forwardB[1]==1) ? EX_MEM_alures : ori_B;
+	
     
 // instantiation of alu unit
-	alu U_alu(.A(ID_EX_rs1data), .B(B), .ALUOp(ID_EX_ALUOp), .C(aluout), .Zero(Zero), .PC(ID_EX_PC));
+	alu U_alu(.A(A), .B(B), .ALUOp(ID_EX_ALUOp), .C(aluout), .Zero(Zero), .PC(ID_EX_PC));
 
     assign NPCOp[0] = ID_EX_sbtype & Zero;
     assign NPCOp[1] = ID_EX_i_jal;
@@ -238,20 +273,7 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
 // instantiation of branch unit
 
 // instantiation of ex/mem reg
-wire [31:0] EX_MEM_PC;
-wire [31:0] EX_MEM_inst;
-wire [4:0] EX_MEM_rs1;
-wire [4:0] EX_MEM_rs2;
-wire [4:0] EX_MEM_rd;
-wire [31:0] EX_MEM_alures;
-wire [31:0] EX_MEM_rs2data;
-// wire EX_MEM_Zero;
-wire EX_MEM_MemWrite;
-wire [2:0] EX_MEM_DMType;
-wire [2:0] EX_MEM_NPCOp;
-wire EX_MEM_RegWrite;
-wire [2:0] EX_MEM_WDSel;
-wire [31:0] EX_MEM_imm;
+
 
     EX_MEM U_EX_MEM(
         .clk(clk), 

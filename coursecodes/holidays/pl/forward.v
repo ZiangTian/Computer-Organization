@@ -1,4 +1,4 @@
-module forward (
+module Forward (
 
     // ex hazard
     input EX_MEM_RegWrite,
@@ -11,19 +11,21 @@ module forward (
     input [4:0] MEM_WB_rd,
 
     // output
-    input [1:0] forwardA,
-    input [1:0] forwardB
+    output [1:0] forwardA,
+    output [1:0] forwardB
 );
 
     wire ex_hazard_rs1, ex_hazard_rs2;
     wire mem_hazard_rs1, mem_hazard_rs2;
 
-    assign ex_hazard_rs1 = (EX_MEM_RegWrite && (EX_MEM_rd != 0) && (EX_MEM_rd == ID_EX_rs1));
-    assign ex_hazard_rs2 = (EX_MEM_RegWrite && (EX_MEM_rd != 0) && (EX_MEM_rd == ID_EX_rs2));
+    assign ex_hazard_rs1 = (EX_MEM_RegWrite && (EX_MEM_rd != 0) && (EX_MEM_rd == ID_EX_rs1)); // ex_hazard caused by rs1
+    assign ex_hazard_rs2 = (EX_MEM_RegWrite && (EX_MEM_rd != 0) && (EX_MEM_rd == ID_EX_rs2)); // ex_hazard caused by rs2
 
     assign mem_hazard_rs1 = (MEM_WB_RegWrite && (MEM_WB_rd != 0) && (MEM_WB_rd == ID_EX_rs1));
     assign mem_hazard_rs2 = (MEM_WB_RegWrite && (MEM_WB_rd != 0) && (MEM_WB_rd == ID_EX_rs2));
 
+    assign forwardA = (mem_hazard_rs1) ? 2'b01 : (ex_hazard_rs1) ? 2'b10 : 2'b00;
+    assign forwardB = (mem_hazard_rs2) ? 2'b01 : (ex_hazard_rs2) ? 2'b10 : 2'b00;
     // assign forwardA = (ex_hazard_rs1) ? 2'b10 : (mem_hazard_rs1) ? 2'b01 : 2'b00;
     // assign forwardB = (ex_hazard_rs2) ? 2'b10 : (mem_hazard_rs2) ? 2'b01 : 2'b00;
     
