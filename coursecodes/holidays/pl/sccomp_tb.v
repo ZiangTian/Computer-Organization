@@ -12,14 +12,14 @@ module xgriscv_tb();
    
    initial begin
     // $readmemh("E:/ModelSimProj/Test_8_Instr.dat", xgriscvp.U_imem.RAM);
-/*
-      xgriscv.U_imem.RAM[0]=32'h00000293;
-      xgriscv.U_imem.RAM[1]=32'h00000313;
-      xgriscv.U_imem.RAM[2]=32'hFFFFF3B7;
-      xgriscv.U_imem.RAM[3]=32'h00000013;
-      xgriscv.U_imem.RAM[4]=32'h00000013;
-      xgriscv.U_imem.RAM[5]=32'h00000013;
-      xgriscv.U_imem.RAM[6]=32'h16030A63;
+
+      xgriscv.U_imem.RAM[0]=32'h00000293; // addi x5, x0, 0
+      xgriscv.U_imem.RAM[1]=32'h00000313; // addi x6, x0, 0
+      xgriscv.U_imem.RAM[2]=32'hFFFFF3B7; // lui, x7, fff...  // set all higher 20 bits of x7 to 1
+      xgriscv.U_imem.RAM[3]=32'h00000013; // nop
+      xgriscv.U_imem.RAM[4]=32'h00000013; // nop
+      xgriscv.U_imem.RAM[5]=32'h00000013; // nop
+      xgriscv.U_imem.RAM[6]=32'h16030A63; // beq x6, x0, 372  
       xgriscv.U_imem.RAM[7]=32'h00000013;
       xgriscv.U_imem.RAM[8]=32'h00000013;
       xgriscv.U_imem.RAM[9]=32'h00000013;
@@ -205,7 +205,7 @@ module xgriscv_tb();
                                              xgriscv.U_imem.RAM[189]=32'h00000013;
                                               xgriscv.U_imem.RAM[190]=32'h00000013;
                                                xgriscv.U_imem.RAM[191]=32'h00000013;
-*/
+
       
       clk = 1;
       rstn = 1;

@@ -65,7 +65,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property board_part digilentinc.com:nexys-a7-100t:part0:1.3 [current_project]
   set_property design_mode GateLvl [current_fileset]
@@ -81,7 +80,6 @@ set rc [catch {
   read_edif {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SSeg7.edf}}
   read_edif {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/Multi_8CH32.edf}}
   read_edif {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/MIO_BUS.edf}}
-  read_edif {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/dm_controller.edf}}
   read_edif {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SPIO.edf}}
   read_xdc {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/icf.xdc}}
   link_design -top top_SCPU -part xc7a100tcsg324-1

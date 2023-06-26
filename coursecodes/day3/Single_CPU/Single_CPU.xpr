@@ -85,12 +85,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/edf_file/edf_file/dm_controller.edf">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/edf_file/edf_file/SPIO.edf">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -181,7 +175,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/IO/IO/clk_div.v">
+      <File Path="$PPRDIR/../../day5/clk_div.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -195,7 +189,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/edf_file/edf_file/dm_controller.v">
+      <File Path="$PPRDIR/../../day4/dm_controller.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
