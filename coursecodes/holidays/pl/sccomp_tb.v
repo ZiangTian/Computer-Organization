@@ -223,7 +223,7 @@ module xgriscv_tb();
          //$display("pc:\t\t%h", xgriscvp.pcF);  // pcF undeclared
          $display("counter:\t", counter);
          $display("instr:\t%h", xgriscv.instr);
-         $display("pcw:\t%h", pcW);
+         //$display("pcw:\t%h", pcW);
           if (pcW == 32'h000000ff) // set to the address of the last instruction
           begin
             //$display("pcW:\t\t%h", pcW);

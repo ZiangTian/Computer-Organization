@@ -317,7 +317,7 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
             .NPC(NPC), .pcW(pcW), .EX_MEM_PC(EX_MEM_PC));
 
 
-// assign�??下输�??
+// assign�???下输�???
 
 assign mem_w = EX_MEM_MemWrite;          // output: memory write signal
 // assign PC_out = ;     // PC address to instruction memory
