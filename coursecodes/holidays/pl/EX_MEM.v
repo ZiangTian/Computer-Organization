@@ -35,9 +35,9 @@ module EX_MEM (
 
     // control signals for wb
     input RegWrite_in,
-    input [2:0] WDSel_in,
+    input [1:0] WDSel_in,
     output reg RegWrite_out,
-    output reg[2:0] WDSel_out,
+    output reg[1:0] WDSel_out,
     output reg[31:0] imm_out
 
     // control for stall
@@ -75,6 +75,7 @@ always @(posedge clk or negedge rst) begin
             rs1_out <= rs1_in;
             rs2_out <= rs2_in;
             rd_out <= rd_in;
+            alures_out <= alures_in;
             rs2_data_out <= rs2_data_in;
             // MemRead_out <= MemRead_in;
             MemWrite_out <= MemWrite_in;

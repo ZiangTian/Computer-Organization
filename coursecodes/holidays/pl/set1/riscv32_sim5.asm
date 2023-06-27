@@ -26,7 +26,7 @@ proc1:
         addi    x0, x0, 0                                                       0x44
         addi    x0, x0, 0               #x1 <== 0x80000018                                        0x48
         addi    x5, x5, 1               #x5 <== 0x1             00128293        0x4c
-        jalr    x0, 0(x1)               #                       00008067        0x50 cc13
+        jalr    x0, 0(x1)               #rd = 0, rs1 = 1                      00008067        0x50 cc13
         addi    x0, x0, 0
         addi    x0, x0, 0 
         addi    x0, x0, 0

@@ -23,8 +23,8 @@ module MEM_WB (
     // control signals for wb
     input RegWrite_in,
     output reg RegWrite_out,
-    input [2:0] WDSel_in,
-    output reg[2:0] WDSel_out
+    input [1:0] WDSel_in,
+    output reg[1:0] WDSel_out
 
     // control for stall
     // input stall
@@ -37,7 +37,7 @@ always @(posedge clk or negedge rst) begin
     ) 
         begin 
             // inst_out <= 0; 
-            // PC_out <= 0;
+            PC_out <= 0;
             // rs1_out <= 0;
             // rs2_out <= 0;
             rd_out <= 0;
@@ -49,7 +49,7 @@ always @(posedge clk or negedge rst) begin
     else 
         begin
             // inst_out <= inst_in; 
-            // PC_out <= PC_in;
+            PC_out <= PC_in;
             // rs1_out <= rs1_in;
             // rs2_out <= rs2_in;
             rd_out <= rd_in;

@@ -18,14 +18,16 @@ module SCPU(
     output [2:0] DMType,
     output    mem_w          // output: memory write signal
 );
-
+`define WDSel_FromALU 2'b00 // : itype_l, r_type
+`define WDSel_FromPC  2'b10 // : i_jal, i_jalr
+`define WDSel_FromMEM 2'b01
 
     wire        RegWrite;    // control signal to register write
     wire [5:0]  EXTOp;       // control signal to signed extension
     wire [4:0]  ALUOp;       // ALU operation
     wire [2:0]  NPCOp;       // next PC operation
 
-    wire [2:0]  WDSel;       // (register) write data selection pattern : from alu, memory or in words/bytes
+    wire [1:0]  WDSel;       // (register) write data selection pattern : from alu, memory or in words/bytes
     wire [1:0]  GPRSel;      // general purpose register selection
    
     wire        ALUSrc;      // ALU source for A
@@ -123,7 +125,7 @@ wire ID_EX_MemRead;
 wire [2:0] ID_EX_DMType;
 
 wire ID_EX_RegWrite;
-wire [2:0] ID_EX_WDSel;
+wire [1:0] ID_EX_WDSel;
 
 wire ID_EX_sbtype;
 wire ID_EX_i_jal;
@@ -134,7 +136,7 @@ wire ID_EX_i_jalr;
    wire [31:0] MEM_WB_alures;
    wire [4:0] MEM_WB_RegWrite;
    wire [31:0] MEM_WB_Datain;
-   wire [2:0] MEM_WB_WDSel;
+   wire [1:0] MEM_WB_WDSel;
    wire [31:0] MEM_WB_PC;
 
     Stall U_stall(
@@ -176,7 +178,7 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
 	RF U_RF(
 		.clk(clk), .rst(reset),
 		.RFWr(MEM_WB_RegWrite), // whether to write regs
-		.A1(rs1), .A2(rs2), .A3(rd), 
+		.A1(rs1), .A2(rs2), .A3(MEM_WB_rd), 
 		.WD(WD),  // write back data
 		.RD1(RD1), .RD2(RD2)  // data read from the regs
 		//.reg_sel(reg_sel),
@@ -317,7 +319,7 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
             .NPC(NPC), .pcW(pcW), .EX_MEM_PC(EX_MEM_PC));
 
 
-// assign�???下输�???
+// assign�???下输�???
 
 assign mem_w = EX_MEM_MemWrite;          // output: memory write signal
 // assign PC_out = ;     // PC address to instruction memory
@@ -362,13 +364,28 @@ always @*
 begin
 	case(MEM_WB_WDSel)
 		`WDSel_FromALU: WD<=MEM_WB_alures;
-		`WDSel_FromMEMWord: WD<=MEM_WB_Datain; 
-        `WDSel_FromMEMHW: WD<=$signed(MEM_WB_Datain[15:0]);
-        `WDSel_FromMEMBT: WD<=$signed(MEM_WB_Datain[7:0]);
-        `WDSel_FromMEMHWU: WD<=$unsigned(MEM_WB_Datain[15:0]);
-        `WDSel_FromMEMBTU: WD<=$unsigned(MEM_WB_Datain[7:0]);
+		//`WDSel_FromMEMWord: WD<=MEM_WB_Datain; 
+        //`WDSel_FromMEMHW: WD<=$signed(MEM_WB_Datain[15:0]);
+        //`WDSel_FromMEMBT: WD<=$signed(MEM_WB_Datain[7:0]);
+        //`WDSel_FromMEMHWU: WD<=$unsigned(MEM_WB_Datain[15:0]);
+        //`WDSel_FromMEMBTU: WD<=$unsigned(MEM_WB_Datain[7:0]);
 		`WDSel_FromPC: WD<=MEM_WB_PC+4;
+        `WDSel_FromMEM: WD<=MEM_WB_Datain; 
 	endcase
 end
+
+// always @*
+// begin
+// 	case(WDSel)
+// 		`WDSel_FromALU: WD<=aluout;
+// 		// `WDSel_FromMEMWord: WD<=Data_in; 
+//         // `WDSel_FromMEMHW: WD<=$signed(Data_in[15:0]);
+//         // `WDSel_FromMEMBT: WD<=$signed(Data_in[7:0]);
+//         // `WDSel_FromMEMHWU: WD<=$unsigned(Data_in[15:0]);
+//         // `WDSel_FromMEMBTU: WD<=$unsigned(Data_in[7:0]);
+// 		`WDSel_FromPC: WD<=PC_out+4;
+//         `WDSel_FromMEM:WD<=Data_in;
+// 	endcase
+// end
 
 endmodule

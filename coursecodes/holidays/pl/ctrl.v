@@ -24,7 +24,7 @@ module ctrl(Op, Funct7, Funct3,
    output       ALUSrc;   // ALU source for rs2: from imm or from reg?
 	 output [2:0] DMType;   // how many bytes to load/store
    output [1:0] GPRSel;   // general purpose register selection
-   output [2:0] WDSel;    // (register) write data selection, which means the source of write data to register. For example, if WDSel = 2'b01, then the write data is from ALU output.
+   output [1:0] WDSel;    // (register) write data selection, which means the source of write data to register. For example, if WDSel = 2'b01, then the write data is from ALU output.
    output sbtype; // added by me
    output i_jal; // added by me
    output i_jalr; // added by me
@@ -124,9 +124,8 @@ module ctrl(Op, Funct7, Funct3,
   // WDSel_FromMEMWordU non-existent
   // WDSel_FromMEMHWU 3'b101 : i_lhu
   // WDSel_FromMEMBTU 3'b110 : i_lbu
-  assign WDSel[0] = i_jal | i_jalr | i_lh | i_lhu;
-  assign WDSel[1] = i_lw | i_lh | i_lbu;
-  assign WDSel[2] = i_lb | i_lhu | i_lbu;
+  assign WDSel[0] = itype_l;
+  assign WDSel[1] = i_jal | i_jalr ;
 
   // NPC_PLUS4   3'b000
   // NPC_BRANCH  3'b001

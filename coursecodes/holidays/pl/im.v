@@ -1,6 +1,6 @@
 
 // instruction memory
-module im(input  [8:2]  addr,
+module im(input  [31:2]  addr,
             output [31:0] dout );
 
   reg  [31:0] RAM[4095:0];

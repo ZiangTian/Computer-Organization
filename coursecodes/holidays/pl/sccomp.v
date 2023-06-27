@@ -35,7 +35,7 @@ module xgriscv_sc(clk, rstn, pcW);
          );
    
    im    U_imem ( 
-         .addr(PC[8:2]),     // input:  rom address
+         .addr(PC[31:2]),     // input:  rom address
          .dout(instr)        // output: instruction
          );
          

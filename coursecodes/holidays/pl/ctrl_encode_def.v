@@ -23,14 +23,17 @@
 `define GPRSel_RT 2'b01     // : i_lw, i_lh, i_lb, i_lhu, i_lbu
 `define GPRSel_31 2'b10         // : i_jal, i_jalr  
 
-`define WDSel_FromALU 3'b000 // : itype_l, r_type
-`define WDSel_FromPC  3'b001 // : i_jal, i_jalr
-`define WDSel_FromMEMWord 3'b010 // : i_lw
-`define WDSel_FromMEMHW 3'b011 // : i_lh
-`define WDSel_FromMEMBT 3'b100 // : i_lb
-// WDSel_FromMEMWordU non-existent
-`define WDSel_FromMEMHWU 3'b101 // : i_lhu
-`define WDSel_FromMEMBTU 3'b110 // : i_lbu
+// `define WDSel_FromALU 3'b000 // : itype_l, r_type
+// `define WDSel_FromPC  3'b001 // : i_jal, i_jalr
+// `define WDSel_FromMEMWord 3'b010 // : i_lw
+// `define WDSel_FromMEMHW 3'b011 // : i_lh
+// `define WDSel_FromMEMBT 3'b100 // : i_lb
+// // WDSel_FromMEMWordU non-existent
+// `define WDSel_FromMEMHWU 3'b101 // : i_lhu
+// `define WDSel_FromMEMBTU 3'b110 // : i_lbu
+`define WDSel_FromALU 2'b00 // : itype_l, r_type
+`define WDSel_FromPC  2'b10 // : i_jal, i_jalr
+`define WDSel_FromMEM 2'b01
 
 `define ALUOp_nop 5'b00000
 `define ALUOp_lui 5'b00001

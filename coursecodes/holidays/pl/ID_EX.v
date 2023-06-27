@@ -5,7 +5,7 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
     // info to be passed to EX
     input [31:0] PC_in,
     input [31:0] inst_in,
-    input [63:0] imm_in,
+    input [31:0] imm_in,
     input [4:0] rs1_in,
     input [4:0] rs2_in, 
     input [4:0] rd_in,
@@ -14,7 +14,7 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
       // corresponding outputs
     output reg[31:0] PC_out,
     output reg[31:0] inst_out,
-    output reg[63:0] imm_out,
+    output reg[31:0] imm_out,
     output reg[4:0] rs1_out,
     output reg[4:0] rs2_out,
     output reg[4:0] rd_out,
@@ -43,9 +43,9 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
 
       // control for wb
     input RegWrite_in,
-    input [2:0] WDSel_in,
+    input [1:0] WDSel_in,
     output reg RegWrite_out,
-    output reg[2:0] WDSel_out,
+    output reg[1:0] WDSel_out,
 
       // control for stall
     input stall,
