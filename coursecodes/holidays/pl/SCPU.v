@@ -140,14 +140,14 @@ wire ID_EX_i_jalr;
    wire [1:0] MEM_WB_WDSel;
    wire [31:0] MEM_WB_PC;
 
-    Stall U_stall(
-        .IF_IDrs1_in(rs1), .IF_IDrs2_in(rs2), 
-        .ID_EXmemread_in(ID_EX_MemRead),
-        .ID_EXrd_in(ID_EX_rd),
-        .ID_EXregwrite_in(ID_EX_RegWrite),
-        .stallout(stall)
-    );
-    // assign stall = 0;
+    // Stall U_stall(
+    //     .IF_IDrs1_in(rs1), .IF_IDrs2_in(rs2), 
+    //     .ID_EXmemread_in(ID_EX_MemRead),
+    //     .ID_EXrd_in(ID_EX_rd),
+    //     .ID_EXregwrite_in(ID_EX_RegWrite),
+    //     .stallout(stall)
+    // );
+    assign stall = 0;
 
 // take NPCOp out of control and put it here
     wire sbtype;

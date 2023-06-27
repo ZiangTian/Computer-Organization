@@ -11,8 +11,10 @@ module xgriscv_tb();
    integer counter = 0;
    
    initial begin
-    // $readmemh("E:/ModelSimProj/Test_8_Instr.dat", xgriscvp.U_imem.RAM);
-
+    
+    $readmemh("E:/imp/Test_37_Instr.dat", xgriscv.U_imem.RAM);
+    // $readmemb("E:/file1.txt",memory);
+/*
       xgriscv.U_imem.RAM[0]=32'h00000293; // addi x5, x0, 0
       xgriscv.U_imem.RAM[1]=32'h00000313; // addi x6, x0, 0
       xgriscv.U_imem.RAM[2]=32'hFFFFF3B7; // lui, x7, fff...  // set all higher 20 bits of x7 to 1
@@ -205,23 +207,24 @@ module xgriscv_tb();
                                              xgriscv.U_imem.RAM[189]=32'h00000013;
                                               xgriscv.U_imem.RAM[190]=32'h00000013;
                                                xgriscv.U_imem.RAM[191]=32'h00000013;
+*/
 
 
-//      xgriscv.U_imem.RAM[0]=32'hF1F2F2B7; // lui 	x5, 0xF1F2F	
-//      xgriscv.U_imem.RAM[1]=32'h00006317; // addi x6, x0, 0
-//      xgriscv.U_imem.RAM[2]=32'h00000013; // lui, x7, fff...  // set all higher 20 bits of x7 to 1
-//      xgriscv.U_imem.RAM[3]=32'h00000013; // nop
-//      xgriscv.U_imem.RAM[4]=32'h00000013; // nop
-//      xgriscv.U_imem.RAM[5]=32'h3F428293; // nop
-//      xgriscv.U_imem.RAM[6]=32'h00000013; // beq x6, x0, 372  
-//      xgriscv.U_imem.RAM[7]=32'h00000013;
-//      xgriscv.U_imem.RAM[8]=32'h00000013;
-//      xgriscv.U_imem.RAM[9]=32'h00000013;
-//      xgriscv.U_imem.RAM[10]=32'h00500023;
-//      xgriscv.U_imem.RAM[11]=32'h005000A3;
-//      xgriscv.U_imem.RAM[12]=32'h00501123;
-//      xgriscv.U_imem.RAM[13]=32'h00502223;
-//      xgriscv.U_imem.RAM[14]=32'h00000013;
+    //  xgriscv.U_imem.RAM[0]=32'hF1F2F2B7; // lui 	x5, 0xF1F2F	
+    //  xgriscv.U_imem.RAM[1]=32'h3F428293; // addi x6, x0, 0
+    //  xgriscv.U_imem.RAM[2]=32'h00502223; // lui, x7, fff...  // set all higher 20 bits of x7 to 1
+    //  xgriscv.U_imem.RAM[3]=32'h00402683; // nop
+    //  xgriscv.U_imem.RAM[4]=32'h00000013; // nop
+    //  xgriscv.U_imem.RAM[5]=32'h00000013; // nop
+    //  xgriscv.U_imem.RAM[6]=32'h00000013; // beq x6, x0, 372  
+    //  xgriscv.U_imem.RAM[7]=32'h00140413;
+    //  xgriscv.U_imem.RAM[8]=32'h00138393;
+    //  xgriscv.U_imem.RAM[9]=32'h00000067;
+    //  xgriscv.U_imem.RAM[10]=32'h00140413;
+    //  xgriscv.U_imem.RAM[11]=32'h70F36513;
+    //  xgriscv.U_imem.RAM[12]=32'h70F37593;
+    //  xgriscv.U_imem.RAM[13]=32'h40C35733;
+    //  xgriscv.U_imem.RAM[14]=32'h00C297B3;
 //      xgriscv.U_imem.RAM[15]=32'h00000013;
 //      xgriscv.U_imem.RAM[16]=32'h00000013;
 //      xgriscv.U_imem.RAM[17]=32'h00000013;
