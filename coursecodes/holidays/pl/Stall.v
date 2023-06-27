@@ -8,12 +8,19 @@ module Stall (
 
     // register stall
     input ID_EXregwrite_in,
+    
+    // when load
+    input load,   // taken directly from ctrl
+
+    // when branch taken
+    input[2:0] NPCOp,
 
     output reg stallout  
 
 );
+// stall when load, and on load, stall for one cycle immediately
     always @(*) begin
-        if (ID_EXrd_in!=0) begin
+        if (load && (ID_EXrd_in!=0)) begin
             if(ID_EXmemread_in&&(ID_EXrd_in==IF_IDrs1_in||ID_EXrd_in==IF_IDrs2_in))
                 stallout<=1;
             else if ((ID_EXregwrite_in)&&(ID_EXrd_in==IF_IDrs1_in||ID_EXrd_in==IF_IDrs2_in))
@@ -21,6 +28,7 @@ module Stall (
             else
                 stallout<=0;
         end
+        else if (NPCOp[0]) stallout<=1;
         else stallout<=0;
     end
 endmodule

@@ -140,20 +140,25 @@ wire ID_EX_i_jalr;
    wire [1:0] MEM_WB_WDSel;
    wire [31:0] MEM_WB_PC;
 
-    // Stall U_stall(
-    //     .IF_IDrs1_in(rs1), .IF_IDrs2_in(rs2), 
-    //     .ID_EXmemread_in(ID_EX_MemRead),
-    //     .ID_EXrd_in(ID_EX_rd),
-    //     .ID_EXregwrite_in(ID_EX_RegWrite),
-    //     .stallout(stall)
-    // );
-    assign stall = 0;
+   wire load;
+
+    Stall U_stall(
+        .IF_IDrs1_in(rs1), .IF_IDrs2_in(rs2), 
+        .ID_EXmemread_in(ID_EX_MemRead),
+        .ID_EXrd_in(ID_EX_rd),
+        .ID_EXregwrite_in(ID_EX_RegWrite),
+        .load(load),
+        .NPCOp(NPCOp),
+        .stallout(stall)
+    );
+    // assign stall = 0;
 
 // take NPCOp out of control and put it here
     wire sbtype;
     wire i_jal;
     wire i_jalr;
     wire Memread;
+
 
 // instantiation of control unit
 	ctrl U_ctrl(
@@ -163,7 +168,7 @@ wire ID_EX_i_jalr;
 		.EXTOp(EXTOp), .ALUOp(ALUOp), 
         // .NPCOp(NPCOp), // implemented with assign above
 		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), .DMType(DMType),
-        .sbtype(sbtype), .i_jal(i_jal), .i_jalr(i_jalr) // outputs added by myself
+        .sbtype(sbtype), .i_jal(i_jal), .i_jalr(i_jalr), .itype_l(load) // outputs added by myself
 	);
 
     // instantiation of imm unit
@@ -271,7 +276,7 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
 // instantiation of alu unit
 	alu U_alu(.A(A), .B(B), .ALUOp(ID_EX_ALUOp), .C(aluout), .Zero(Zero), .PC(ID_EX_PC));
 
-    assign NPCOp[0] = ID_EX_sbtype & Zero;
+    assign NPCOp[0] = ID_EX_sbtype & Zero;   // branch taken, stall
     assign NPCOp[1] = ID_EX_i_jal;
     assign NPCOp[2] = ID_EX_i_jalr;
 

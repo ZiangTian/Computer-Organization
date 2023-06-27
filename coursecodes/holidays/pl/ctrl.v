@@ -7,7 +7,7 @@ module ctrl(Op, Funct7, Funct3,
             EXTOp, ALUOp, 
             //NPCOp, 
             ALUSrc, GPRSel, WDSel,DMType, 
-            sbtype, i_jal, i_jalr
+            sbtype, i_jal, i_jalr, itype_l
             );
             
    input  [6:0] Op;       // opcode
@@ -28,6 +28,7 @@ module ctrl(Op, Funct7, Funct3,
    output sbtype; // added by me
    output i_jal; // added by me
    output i_jalr; // added by me
+   output itype_l; // added by me
 
   // r format
     wire rtype  = ~Op[6]& Op[5] & Op[4]&~Op[3]&~Op[2]&Op[1]&Op[0]; //0110011

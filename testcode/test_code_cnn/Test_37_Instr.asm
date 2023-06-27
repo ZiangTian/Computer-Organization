@@ -18,9 +18,9 @@
 
 	##################
 	# Test Subset 2  #
-	 ori x5, x0, 0x234
-                 lui x6, 0x1
-                 or x5,x5,x6                         #x5=0x00001234
+	ori x5, x0, 0x234
+	lui x6, 0x1
+    or x5,x5,x6                         #x5=0x00001234
 	lui x6, 0x98765                     #x6=0x98765000
 	addi x7, x5, 0x345
 	addi x8, x6, -1024             
