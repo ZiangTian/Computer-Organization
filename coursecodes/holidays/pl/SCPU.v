@@ -21,6 +21,7 @@ module SCPU(
 `define WDSel_FromALU 2'b00 // : itype_l, r_type
 `define WDSel_FromPC  2'b10 // : i_jal, i_jalr
 `define WDSel_FromMEM 2'b01
+// `define WDSel_auipc   2'b11 // : i_auipc
 
     wire        RegWrite;    // control signal to register write
     wire [5:0]  EXTOp;       // control signal to signed extension
@@ -146,6 +147,7 @@ wire ID_EX_i_jalr;
         .ID_EXregwrite_in(ID_EX_RegWrite),
         .stallout(stall)
     );
+    // assign stall = 0;
 
 // take NPCOp out of control and put it here
     wire sbtype;
@@ -371,6 +373,7 @@ begin
         //`WDSel_FromMEMBTU: WD<=$unsigned(MEM_WB_Datain[7:0]);
 		`WDSel_FromPC: WD<=MEM_WB_PC+4;
         `WDSel_FromMEM: WD<=MEM_WB_Datain; 
+        
 	endcase
 end
 

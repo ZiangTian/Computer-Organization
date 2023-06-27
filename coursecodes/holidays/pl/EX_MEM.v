@@ -45,7 +45,7 @@ module EX_MEM (
     // input flush
 );
 
-always @(posedge clk or negedge rst) begin
+always @(posedge clk, posedge rst) begin
     if(rst //!!!!!!!!!!!!!!!!!!!!!!!!!!! 
     //|| flush
     ) 

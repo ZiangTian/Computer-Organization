@@ -118,14 +118,11 @@ module ctrl(Op, Funct7, Funct3,
   // WDSel_FromALU 3'b000 : itype_l, r_type
   // WDSel_FromPC  3'b001  : i_jal, i_jalr
 
-  // WDSel_FromMEMWord 3'b010 : i_lw
-  // WDSel_FromMEMHW 3'b011 : i_lh
-  // WDSel_FromMEMBT 3'b100 : i_lb
-  // WDSel_FromMEMWordU non-existent
-  // WDSel_FromMEMHWU 3'b101 : i_lhu
-  // WDSel_FromMEMBTU 3'b110 : i_lbu
+// `define WDSel_FromALU 2'b00 // : itype_l, r_type
+// `define WDSel_FromPC  2'b10 // : i_jal, i_jalr
+// `define WDSel_FromMEM 2'b01
   assign WDSel[0] = itype_l;
-  assign WDSel[1] = i_jal | i_jalr ;
+  assign WDSel[1] = i_jal | i_jalr | i_auipc;
 
   // NPC_PLUS4   3'b000
   // NPC_BRANCH  3'b001

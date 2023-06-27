@@ -59,7 +59,7 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
     output reg i_jal_out,
     output reg i_jalr_out
 );
-    always @(posedge clk or negedge rst) begin
+    always @(posedge clk, posedge rst) begin
     if(rst   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
     // || flush
     ) 

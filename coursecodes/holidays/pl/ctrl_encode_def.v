@@ -34,6 +34,7 @@
 `define WDSel_FromALU 2'b00 // : itype_l, r_type
 `define WDSel_FromPC  2'b10 // : i_jal, i_jalr
 `define WDSel_FromMEM 2'b01
+// `define WDSel_auipc   2'b11
 
 `define ALUOp_nop 5'b00000
 `define ALUOp_lui 5'b00001

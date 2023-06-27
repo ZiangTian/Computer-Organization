@@ -1,4 +1,4 @@
-Running: xsim.dir/xgriscv_tb_behav/xsimk.exe -simmode gui -wdb xgriscv_tb_behav.wdb -simrunnum 0 -socket 5079
+Running: xsim.dir/xgriscv_tb_behav/xsimk.exe -simmode gui -wdb xgriscv_tb_behav.wdb -simrunnum 0 -socket 6961
 Design successfully loaded
-Design Loading Memory Usage: 7748 KB (Peak: 7748 KB)
+Design Loading Memory Usage: 7764 KB (Peak: 7764 KB)
 Design Loading CPU Usage: 0 ms

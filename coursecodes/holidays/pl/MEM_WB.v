@@ -31,7 +31,7 @@ module MEM_WB (
     // input flush
 );
 
-always @(posedge clk or negedge rst) begin
+always @(posedge clk, posedge rst) begin
     if(rst //!!!!!!!!!!!!!!!!!!!!!!
     // || flush
     ) 
