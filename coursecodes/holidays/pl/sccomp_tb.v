@@ -12,7 +12,9 @@ module xgriscv_tb();
    
    initial begin
     
-    $readmemh("E:/imp/Test_37_Instr.dat", xgriscv.U_imem.RAM);
+    //$readmemh("E:/imp/Test_37_Instr.dat", xgriscv.U_imem.RAM);
+    $readmemh("E:/imp/ld_sd.dat", xgriscv.U_imem.RAM);
+    
     // $readmemb("E:/file1.txt",memory);
 /*
       xgriscv.U_imem.RAM[0]=32'h00000293; // addi x5, x0, 0
@@ -209,7 +211,6 @@ module xgriscv_tb();
                                                xgriscv.U_imem.RAM[191]=32'h00000013;
 */
 
-
     //  xgriscv.U_imem.RAM[0]=32'hF1F2F2B7; // lui 	x5, 0xF1F2F	
     //  xgriscv.U_imem.RAM[1]=32'h3F428293; // addi x6, x0, 0
     //  xgriscv.U_imem.RAM[2]=32'h00502223; // lui, x7, fff...  // set all higher 20 bits of x7 to 1
@@ -242,7 +243,6 @@ module xgriscv_tb();
 //        xgriscv.U_imem.RAM[29]=32'h00405903;
 //        xgriscv.U_imem.RAM[29]=32'h00605983;
 
-
       clk = 1;
       rstn = 1;
       #5 ;
@@ -257,7 +257,7 @@ module xgriscv_tb();
          counter = counter + 1;
          //$display("clock: %d", counter);
          //$display("pc:\t\t%h", xgriscvp.pcF);  // pcF undeclared
-         //$display("counter:\t", counter);
+         $display("counter:\t%d, instr: \t%h", counter, xgriscv.instr);
 //         $display("instr:\t%h", xgriscv.instr);
 //         $display("pcw:\t%h", pcW);
           if (pcW == 32'h000000ff) // set to the address of the last instruction

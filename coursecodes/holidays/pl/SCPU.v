@@ -158,7 +158,7 @@ wire ID_EX_i_jalr;
     wire i_jal;
     wire i_jalr;
     wire Memread;
-
+    wire [2:0] ctrl_dm_type;
 
 // instantiation of control unit
 	ctrl U_ctrl(
@@ -167,7 +167,7 @@ wire ID_EX_i_jalr;
 		.RegWrite(RegWrite), .MemWrite(MemWrite_out), .MemRead(MemRead),
 		.EXTOp(EXTOp), .ALUOp(ALUOp), 
         // .NPCOp(NPCOp), // implemented with assign above
-		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), .DMType(DMType),
+		.ALUSrc(ALUSrc), .GPRSel(GPRSel), .WDSel(WDSel), .DMType(ctrl_dm_type),
         .sbtype(sbtype), .i_jal(i_jal), .i_jalr(i_jalr), .itype_l(load) // outputs added by myself
 	);
 
@@ -219,7 +219,7 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
         .ALUOp_out(ID_EX_ALUOp), .ALUSrc_out(ID_EX_ALUSrc), .GPRSel_out(ID_EX_GPRSel), 
 
         // control for mem
-        .MemWrite_in(MemWrite_out), .DMType_in(DMType),
+        .MemWrite_in(MemWrite_out), .DMType_in(ctrl_dm_type),
         .MemWrite_out(ID_EX_MemWrite), .DMType_out(ID_EX_DMType),
         .MemRead_in(MemRead), .MemRead_out(ID_EX_MemRead),
         // .NPCOp_in(NPCOp),        // implemented in EX

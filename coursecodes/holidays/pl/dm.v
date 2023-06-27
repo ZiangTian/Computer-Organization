@@ -60,13 +60,14 @@ module dm(clk, DMWr, addr, din, PC, DMType, dout);
       if (DMWr) begin
          case(DMType)         // only need to implement sw, but did all of sw, sb, sh anyway
             `dm_word: 
-                  dmem[addr[31:2]]<= din[31:0];
+                  dmem[addr[31:2]] = din[31:0];
             `dm_halfword: 
-                  dmem[addr[31:2]][15:0] <= din[15:0];
+                  dmem[addr[31:2]][15:0] = din[15:0];
             `dm_byte: 
-                  dmem[addr[31:2]][7:0] <= din[7:0];
+                  dmem[addr[31:2]][7:0] = din[7:0];
          endcase
-         $display("pc = %h: dataaddr = %h, memdata = %h", PC, {addr [31:2],2'b00}, din);
+         $display("pc = %h: addr = %h, data = %h", PC, {addr [31:2],2'b00}, din);
+         $display("location = %h, data = %h", addr[31:2], dmem[addr[31:2]]);
       end
 
 
