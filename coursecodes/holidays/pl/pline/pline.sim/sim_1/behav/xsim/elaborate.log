@@ -8,11 +8,11 @@ WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 5 fo
 WARNING: [VRFC 10-3091] actual bit length 65 differs from formal bit length 32 for port 'imm_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:208]
 WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 1 for port 'MEM_WB_RegWrite' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:257]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 5 for port 'MEM_WB_rd' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:258]
-WARNING: [VRFC 10-3091] actual bit length 65 differs from formal bit length 32 for port 'imm_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:293]
-WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for port 'WDSel_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:315]
-WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for port 'WDSel_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:343]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 5 for port 'rd_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:347]
-WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 1 for port 'RegWrite_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:351]
+WARNING: [VRFC 10-3091] actual bit length 65 differs from formal bit length 32 for port 'imm_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:294]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for port 'WDSel_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:316]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 2 for port 'WDSel_in' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:344]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 5 for port 'rd_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:348]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 1 for port 'RegWrite_out' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:352]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/sccomp.v" Line 1. Module xgriscv_sc doesn't have a timescale but at least one module in design has a timescale.

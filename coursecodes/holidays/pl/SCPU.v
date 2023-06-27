@@ -261,6 +261,7 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
         .forwardB(forwardB)
     );
     wire [31:0] A;
+    wire [31:0] ori_B;
     assign A = (forwardA[0]==1) ? MEM_WB_alures : (forwardA[1]==1) ? EX_MEM_alures : ID_EX_rs1data;
     
     assign ori_B = (ID_EX_ALUSrc) ? ID_EX_imm : ID_EX_rs2data;
