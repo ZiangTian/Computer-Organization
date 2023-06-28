@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 25128 
+INFO: Helper process launched with PID 19944 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 493.801 ; gain = 100.699
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 494.523 ; gain = 99.793
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_SCPU' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/new/top_SCPU.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Enter' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/Enter.v:21]
@@ -35,8 +35,8 @@ WARNING: [Synth 8-5788] Register clr0_reg in module Counter_x is has both Set an
 WARNING: [Synth 8-3848] Net counter1 in module/entity Counter_x does not have driver. [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/Counter_3_IO.v:36]
 WARNING: [Synth 8-3848] Net counter2 in module/entity Counter_x does not have driver. [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/Counter_3_IO.v:36]
 INFO: [Synth 8-6155] done synthesizing module 'Counter_x' (3#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/Counter_3_IO.v:21]
-INFO: [Synth 8-6157] synthesizing module 'ROM_D' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-20688-Benjamin/realtime/ROM_D_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ROM_D' (4#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-20688-Benjamin/realtime/ROM_D_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ROM_D' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-28920-Benjamin/realtime/ROM_D_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ROM_D' (4#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-28920-Benjamin/realtime/ROM_D_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'dm_controller' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:17]
 INFO: [Synth 8-226] default block is never used [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:59]
 INFO: [Synth 8-226] default block is never used [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:69]
@@ -45,35 +45,59 @@ INFO: [Synth 8-226] default block is never used [E:/One Drive/OneDrive - whu.edu
 INFO: [Synth 8-226] default block is never used [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:102]
 INFO: [Synth 8-155] case statement is not full and has no default [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:84]
 INFO: [Synth 8-6155] done synthesizing module 'dm_controller' (5#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:17]
-INFO: [Synth 8-6157] synthesizing module 'RAM_B' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-20688-Benjamin/realtime/RAM_B_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'RAM_B' (6#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-20688-Benjamin/realtime/RAM_B_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'SCPU' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/SCPU.v:2]
-INFO: [Synth 8-6157] synthesizing module 'ctrl' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/ctrl.v:4]
-WARNING: [Synth 8-3848] Net GPRSel in module/entity ctrl does not have driver. [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/ctrl.v:22]
-INFO: [Synth 8-6155] done synthesizing module 'ctrl' (7#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/ctrl.v:4]
-WARNING: [Synth 8-689] width (3) of port connection 'WDSel' does not match port width (2) of module 'ctrl' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/SCPU.v:85]
-INFO: [Synth 8-6157] synthesizing module 'PC' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/PC.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'PC' (8#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/PC.v:1]
-INFO: [Synth 8-6157] synthesizing module 'NPC' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/NPC.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'NPC' (9#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/NPC.v:3]
-INFO: [Synth 8-6157] synthesizing module 'EXT' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/EXT.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'EXT' (10#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/EXT.v:2]
-INFO: [Synth 8-6157] synthesizing module 'RF' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/RF.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'RF' (11#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/RF.v:2]
-INFO: [Synth 8-6157] synthesizing module 'alu' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/alu.v:3]
-INFO: [Synth 8-155] case statement is not full and has no default [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/alu.v:15]
-INFO: [Synth 8-6155] done synthesizing module 'alu' (12#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/alu.v:3]
-INFO: [Synth 8-155] case statement is not full and has no default [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/SCPU.v:122]
-WARNING: [Synth 8-3848] Net dm_ctrl in module/entity SCPU does not have driver. [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/SCPU.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'SCPU' (13#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/SCPU.v:2]
-WARNING: [Synth 8-350] instance 'U1_SCPU' of module 'SCPU' requires 13 connections, but only 12 given [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/new/top_SCPU.v:189]
-INFO: [Synth 8-6157] synthesizing module 'MIO_BUS' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/MIO_BUS.V:15]
-INFO: [Synth 8-6157] synthesizing module 'Multi_8CH32' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/test/multi_8CH32.v:15]
-INFO: [Synth 8-6157] synthesizing module 'SSeg7' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SSeg7.v:15]
+INFO: [Synth 8-6157] synthesizing module 'RAM_B' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-28920-Benjamin/realtime/RAM_B_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'RAM_B' (6#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-28920-Benjamin/realtime/RAM_B_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'SCPU' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:2]
+INFO: [Synth 8-6157] synthesizing module 'IF_ID' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/IF_ID.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (7#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/IF_ID.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Stall' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/Stall.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Stall' (8#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/Stall.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ctrl' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/ctrl.v:4]
+WARNING: [Synth 8-3848] Net GPRSel in module/entity ctrl does not have driver. [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/ctrl.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl' (9#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/ctrl.v:4]
+INFO: [Synth 8-6157] synthesizing module 'EXT' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/EXT.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'EXT' (10#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/EXT.v:2]
+INFO: [Synth 8-6157] synthesizing module 'RF' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/RF.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'RF' (11#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/RF.v:2]
+WARNING: [Synth 8-689] width (5) of port connection 'RFWr' does not match port width (1) of module 'RF' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:193]
+WARNING: [Synth 8-689] width (32) of port connection 'A3' does not match port width (5) of module 'RF' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:194]
+INFO: [Synth 8-6157] synthesizing module 'PC' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/PC.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PC' (12#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/PC.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/ID_EX.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX' (13#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/ID_EX.v:1]
+WARNING: [Synth 8-689] width (65) of port connection 'imm_out' does not match port width (32) of module 'ID_EX' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:219]
+WARNING: [Synth 8-350] instance 'U_ID_EX' of module 'ID_EX' requires 45 connections, but only 43 given [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:210]
+INFO: [Synth 8-6157] synthesizing module 'Forward' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/forward_mod.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Forward' (14#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/forward_mod.v:1]
+WARNING: [Synth 8-689] width (5) of port connection 'MEM_WB_RegWrite' does not match port width (1) of module 'Forward' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:269]
+WARNING: [Synth 8-689] width (32) of port connection 'MEM_WB_rd' does not match port width (5) of module 'Forward' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:270]
+INFO: [Synth 8-6157] synthesizing module 'alu' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/alu.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/alu.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (15#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/alu.v:3]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/EX_MEM.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM' (16#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/EX_MEM.v:1]
+WARNING: [Synth 8-689] width (65) of port connection 'imm_in' does not match port width (32) of module 'EX_MEM' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:320]
+WARNING: [Synth 8-689] width (3) of port connection 'WDSel_out' does not match port width (2) of module 'EX_MEM' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:344]
+INFO: [Synth 8-6157] synthesizing module 'NPC' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/NPC.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'NPC' (17#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/NPC.v:3]
+WARNING: [Synth 8-689] width (1) of port connection 'pcW' does not match port width (32) of module 'NPC' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:350]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/MEM_WB.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB' (18#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/MEM_WB.v:1]
+WARNING: [Synth 8-689] width (3) of port connection 'WDSel_in' does not match port width (2) of module 'MEM_WB' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:371]
+WARNING: [Synth 8-689] width (32) of port connection 'rd_out' does not match port width (5) of module 'MEM_WB' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:377]
+WARNING: [Synth 8-689] width (5) of port connection 'RegWrite_out' does not match port width (1) of module 'MEM_WB' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:381]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:397]
+INFO: [Synth 8-6155] done synthesizing module 'SCPU' (19#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:2]
+INFO: [Synth 8-6157] synthesizing module 'MIO_BUS' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/edf_file/MIO_BUS.V:15]
+WARNING: [Synth 8-350] instance 'U4_MIO_BUS' of module 'MIO_BUS' requires 22 connections, but only 21 given [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/new/top_SCPU.v:209]
+INFO: [Synth 8-6157] synthesizing module 'Multi_8CH32' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/edf_file/Multi_8CH32.v:15]
+INFO: [Synth 8-6157] synthesizing module 'SSeg7' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/edf_file/SSeg7.v:15]
 WARNING: [Synth 8-3848] Net CPU_MIO in module/entity top_SCPU does not have driver. [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/new/top_SCPU.v:59]
-INFO: [Synth 8-6155] done synthesizing module 'top_SCPU' (14#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/new/top_SCPU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_SCPU' (20#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/new/top_SCPU.v:23]
 WARNING: [Synth 8-3331] design ctrl has unconnected port GPRSel[1]
 WARNING: [Synth 8-3331] design ctrl has unconnected port GPRSel[0]
+WARNING: [Synth 8-3331] design Stall has unconnected port NPCOp[2]
+WARNING: [Synth 8-3331] design Stall has unconnected port NPCOp[1]
 WARNING: [Synth 8-3331] design SCPU has unconnected port CPU_MIO
 WARNING: [Synth 8-3331] design SCPU has unconnected port INT
 WARNING: [Synth 8-3331] design SCPU has unconnected port MIO_ready
@@ -113,7 +137,7 @@ WARNING: [Synth 8-3331] design Counter_x has unconnected port clk1
 WARNING: [Synth 8-3331] design Counter_x has unconnected port clk2
 WARNING: [Synth 8-3331] design Enter has unconnected port clk
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 550.488 ; gain = 157.387
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 550.906 ; gain = 156.176
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -122,58 +146,59 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin U_ID_EX:NPCOp_in[2] to constant 0 [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:210]
+WARNING: [Synth 8-3295] tying undriven pin U_ID_EX:NPCOp_in[1] to constant 0 [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:210]
+WARNING: [Synth 8-3295] tying undriven pin U_ID_EX:NPCOp_in[0] to constant 0 [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:210]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 550.488 ; gain = 157.387
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 550.906 ; gain = 156.176
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 550.488 ; gain = 157.387
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 550.906 ; gain = 156.176
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [e:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/ip/RAM_B/RAM_B/blk_mem_gen_0_in_context.xdc] for cell 'U4_RAM_B'
-Finished Parsing XDC File [e:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/ip/RAM_B/RAM_B/blk_mem_gen_0_in_context.xdc] for cell 'U4_RAM_B'
 Parsing XDC File [e:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/ip/ROM_D_1/ROM_D/ROM_D_in_context.xdc] for cell 'U2_ROMD'
 Finished Parsing XDC File [e:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/ip/ROM_D_1/ROM_D/ROM_D_in_context.xdc] for cell 'U2_ROMD'
+Parsing XDC File [e:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/ip/RAM_B/RAM_B/RAM_B_in_context.xdc] for cell 'U4_RAM_B'
+Finished Parsing XDC File [e:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/ip/RAM_B/RAM_B/RAM_B_in_context.xdc] for cell 'U4_RAM_B'
 Parsing XDC File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/icf.xdc]
 WARNING: [Vivado 12-507] No nets matched 'sw_i_IBUF[15]'. [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/icf.xdc:5]
 Finished Parsing XDC File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/icf.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/icf.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_SCPU_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/icf.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_SCPU_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_SCPU_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 911.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 915.602 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 911.305 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 915.605 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 911.305 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 911.305 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 915.605 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 915.605 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 911.305 ; gain = 518.203
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 915.605 ; gain = 520.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 911.305 ; gain = 518.203
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 915.605 ; gain = 520.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U4_RAM_B. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U2_ROMD. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U4_RAM_B. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 911.305 ; gain = 518.203
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 915.605 ; gain = 520.875
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "rf_reg[31]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rf_reg[30]" won't be mapped to RAM because it is too sparse
@@ -207,15 +232,14 @@ INFO: [Synth 8-5546] ROM "rf_reg[3]" won't be mapped to RAM because it is too sp
 INFO: [Synth 8-5546] ROM "rf_reg[2]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rf_reg[1]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rf_reg[0]" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/alu.v:15]
-INFO: [Synth 8-5544] ROM "WD" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/alu.v:15]
 WARNING: [Synth 8-327] inferring latch for variable 'Data_read_reg' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:85]
 WARNING: [Synth 8-327] inferring latch for variable 'Data_write_to_dm_reg' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:45]
 WARNING: [Synth 8-327] inferring latch for variable 'wea_mem_reg' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:44]
-WARNING: [Synth 8-327] inferring latch for variable 'C_reg' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/alu.v:16]
-WARNING: [Synth 8-327] inferring latch for variable 'WD_reg' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/Single-cycle CPU/SCPU.v:101]
+WARNING: [Synth 8-327] inferring latch for variable 'C_reg' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/alu.v:16]
+WARNING: [Synth 8-327] inferring latch for variable 'WD_reg' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:195]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 911.305 ; gain = 518.203
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:18 . Memory (MB): peak = 915.605 ; gain = 520.875
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -229,32 +253,36 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     33 Bit       Adders := 1     
-	   2 Input     32 Bit       Adders := 3     
 	   3 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
 	               33 Bit    Registers := 1     
-	               32 Bit    Registers := 34    
+	               32 Bit    Registers := 49    
 	               24 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                5 Bit    Registers := 8     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 16    
 +---Muxes : 
 	   5 Input     33 Bit        Muxes := 1     
 	   2 Input     33 Bit        Muxes := 3     
 	   4 Input     33 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     32 Bit        Muxes := 9     
 	   4 Input     32 Bit        Muxes := 2     
 	   6 Input     32 Bit        Muxes := 1     
-	   5 Input     32 Bit        Muxes := 1     
 	  19 Input     32 Bit        Muxes := 2     
 	  15 Input     32 Bit        Muxes := 1     
+	   5 Input     32 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 1     
 	   6 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
 	  19 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 38    
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 39    
 	   4 Input      1 Bit        Muxes := 5     
 	   6 Input      1 Bit        Muxes := 1     
 	  19 Input      1 Bit        Muxes := 1     
@@ -296,16 +324,14 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 1     
-Module PC 
+Module IF_ID 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
-Module NPC 
+	               32 Bit    Registers := 2     
+Module Stall 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 2     
 +---Muxes : 
-	   5 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 Module RF 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -313,6 +339,22 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 32    
+Module PC 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module ID_EX 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                5 Bit    Registers := 4     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
+Module Forward 
+Detailed RTL Component Info : 
++---Muxes : 
+	   3 Input      2 Bit        Muxes := 2     
 Module alu 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -324,14 +366,34 @@ Detailed RTL Component Info :
 	  15 Input     32 Bit        Muxes := 1     
 	  19 Input      4 Bit        Muxes := 1     
 	  19 Input      1 Bit        Muxes := 1     
+Module EX_MEM 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                5 Bit    Registers := 3     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
+Module NPC 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Muxes : 
+	   5 Input     32 Bit        Muxes := 1     
+Module MEM_WB 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 Module SCPU 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 6     
 	   4 Input     32 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
@@ -351,11 +413,16 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3331] design ctrl has unconnected port GPRSel[1]
 WARNING: [Synth 8-3331] design ctrl has unconnected port GPRSel[0]
+WARNING: [Synth 8-3331] design Stall has unconnected port NPCOp[2]
+WARNING: [Synth 8-3331] design Stall has unconnected port NPCOp[1]
 WARNING: [Synth 8-3331] design SCPU has unconnected port CPU_MIO
 WARNING: [Synth 8-3331] design SCPU has unconnected port INT
 WARNING: [Synth 8-3331] design SCPU has unconnected port MIO_ready
+INFO: [Synth 8-3886] merging instance 'U1_SCPU/U_ID_EX/WDSel_out_reg[0]' (FDC) to 'U1_SCPU/U_ID_EX/load_out_reg'
+INFO: [Synth 8-3886] merging instance 'U1_SCPU/U_EX_MEM/WDSel_out_reg[0]' (FDC) to 'U1_SCPU/U_EX_MEM/load_out_reg'
+INFO: [Synth 8-3886] merging instance 'U1_SCPU/U_MEM_WB/WDSel_out_reg[0]' (FDC) to 'U1_SCPU/U_MEM_WB/load_out_reg'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:18 . Memory (MB): peak = 911.305 ; gain = 518.203
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 915.605 ; gain = 520.875
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -367,13 +434,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 911.305 ; gain = 518.203
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:33 . Memory (MB): peak = 915.605 ; gain = 520.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 919.016 ; gain = 525.914
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:34 . Memory (MB): peak = 926.070 ; gain = 531.340
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -384,40 +451,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[31]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[30]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[29]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[28]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[27]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[26]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[25]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[24]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[23]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[22]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[21]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[20]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[19]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[18]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[17]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[16]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[15]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[14]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[13]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[12]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[11]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[10]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[9]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[8]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[7]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[6]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[5]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[4]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[3]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[2]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[1]) is unused and will be removed from module top_SCPU.
-WARNING: [Synth 8-3332] Sequential element (U3_dm_controller/Data_read_reg[0]) is unused and will be removed from module top_SCPU.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:25 . Memory (MB): peak = 979.449 ; gain = 586.348
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:35 . Memory (MB): peak = 959.477 ; gain = 564.746
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -440,8 +475,40 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[31]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[30]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[29]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[28]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[27]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[26]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[25]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[24]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[23]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[22]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[21]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[20]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[19]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[18]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[17]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[16]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[15]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[14]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[13]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[12]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[11]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[10]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[9]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[8]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[7]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[6]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[5]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[4]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[3]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[2]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[1]
+CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[0]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 979.449 ; gain = 586.348
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 959.477 ; gain = 564.746
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -454,7 +521,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 979.449 ; gain = 586.348
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 959.477 ; gain = 564.746
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -466,25 +533,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 979.449 ; gain = 586.348
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 959.477 ; gain = 564.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:26 . Memory (MB): peak = 979.449 ; gain = 586.348
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 959.477 ; gain = 564.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 979.449 ; gain = 586.348
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 959.477 ; gain = 564.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 979.449 ; gain = 586.348
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 959.477 ; gain = 564.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -512,19 +579,19 @@ Report Cell Usage:
 |4     |ROM_D              |     1|
 |5     |SPIO_bbox_0        |     1|
 |6     |SSeg7_bbox_3       |     1|
-|7     |BUFG               |     7|
+|7     |BUFG               |     8|
 |8     |CARRY4             |    63|
-|9     |LUT1               |    47|
-|10    |LUT2               |     9|
-|11    |LUT3               |   112|
-|12    |LUT4               |   182|
-|13    |LUT5               |   214|
-|14    |LUT6               |  1091|
+|9     |LUT1               |    52|
+|10    |LUT2               |    39|
+|11    |LUT3               |   134|
+|12    |LUT4               |   157|
+|13    |LUT5               |   328|
+|14    |LUT6               |  1049|
 |15    |MUXF7              |   256|
 |16    |MUXF8              |    64|
-|17    |FDCE               |  1156|
+|17    |FDCE               |  1633|
 |18    |FDRE               |     2|
-|19    |LD                 |    96|
+|19    |LD                 |   128|
 |20    |LDC                |     4|
 |21    |IBUF               |    23|
 |22    |OBUF               |    32|
@@ -534,32 +601,36 @@ Report Instance Areas:
 +------+-------------------+--------------+------+
 |      |Instance           |Module        |Cells |
 +------+-------------------+--------------+------+
-|1     |top                |              |  3644|
-|2     |  U1_SCPU          |SCPU          |  3028|
-|3     |    U_EXT          |EXT           |   284|
-|4     |    U_PC           |PC            |    73|
-|5     |    U_RF           |RF            |  2376|
-|6     |    U_alu          |alu           |   239|
-|7     |  U3_dm_controller |dm_controller |    67|
-|8     |  U8_clk_div       |clk_div       |    43|
-|9     |  U9_Counter       |Counter_x     |   154|
+|1     |top                |              |  4258|
+|2     |  U1_SCPU          |SCPU          |  3644|
+|3     |    U_EXT          |EXT           |     1|
+|4     |    U_EX_MEM       |EX_MEM        |   296|
+|5     |    U_ID_EX        |ID_EX         |   645|
+|6     |    U_IF_ID        |IF_ID         |   219|
+|7     |    U_MEM_WB       |MEM_WB        |   506|
+|8     |    U_PC           |PC            |    41|
+|9     |    U_RF           |RF            |  1865|
+|10    |    U_alu          |alu           |    39|
+|11    |  U3_dm_controller |dm_controller |    68|
+|12    |  U8_clk_div       |clk_div       |    43|
+|13    |  U9_Counter       |Counter_x     |   153|
 +------+-------------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 979.449 ; gain = 586.348
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 959.477 ; gain = 564.746
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:22 . Memory (MB): peak = 979.449 ; gain = 225.531
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:27 . Memory (MB): peak = 979.449 ; gain = 586.348
+Synthesis finished with 0 errors, 32 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:27 . Memory (MB): peak = 959.477 ; gain = 200.047
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:36 . Memory (MB): peak = 959.477 ; gain = 564.746
 INFO: [Project 1-571] Translating synthesized netlist
 Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SPIO.edf]
 Finished Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SPIO.edf]
-Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/MIO_BUS.edf]
-Finished Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/MIO_BUS.edf]
-Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/Multi_8CH32.edf]
-Finished Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/Multi_8CH32.edf]
-Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SSeg7.edf]
-Finished Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SSeg7.edf]
-INFO: [Netlist 29-17] Analyzing 531 Unisim elements for replacement
+Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/edf_file/MIO_BUS.edf]
+Finished Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/edf_file/MIO_BUS.edf]
+Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/edf_file/Multi_8CH32.edf]
+Finished Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/edf_file/Multi_8CH32.edf]
+Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/edf_file/SSeg7.edf]
+Finished Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/edf_file/SSeg7.edf]
+INFO: [Netlist 29-17] Analyzing 563 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2018.1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -669,9 +740,13 @@ WARNING: [Opt 31-35] Removing redundant IBUF, U4_MIO_BUS/SW_IBUF[8]_inst, from t
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 WARNING: [Opt 31-35] Removing redundant IBUF, U4_MIO_BUS/SW_IBUF[9]_inst, from the path connected to top-level port: sw_i[9] 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/addr_bus_IBUF[0]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/addr_bus_IBUF[10]_inst 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/addr_bus_IBUF[11]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/addr_bus_IBUF[1]_inst 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/addr_bus_IBUF[28]_inst 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
@@ -696,6 +771,12 @@ Resolution: The tool has removed redundant IBUF. To resolve this warning, check 
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/addr_bus_IBUF[8]_inst 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/addr_bus_IBUF[9]_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/counter0_out_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/counter1_out_IBUF_inst 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/counter2_out_IBUF_inst 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/led_out_IBUF[0]_inst 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
@@ -795,19 +876,13 @@ WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a t
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U4_MIO_BUS/ram_data_out_IBUF[9]_inst 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U6_SSeg7/Hexs_IBUF[0]_inst 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U6_SSeg7/Hexs_IBUF[10]_inst 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U6_SSeg7/Hexs_IBUF[11]_inst 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U6_SSeg7/Hexs_IBUF[12]_inst 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. U6_SSeg7/Hexs_IBUF[13]_inst 
-Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
 INFO: [Common 17-14] Message 'Opt 31-32' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Opt 31-35] Removing redundant IBUF, U6_SSeg7/SW0_IBUF_inst, from the path connected to top-level port: sw_i[0] 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_data_in_OBUF[14]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_data_in_OBUF[13]_inst 
+Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
 WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_addr_OBUF[0]_inst 
 Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
 WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_addr_OBUF[1]_inst 
@@ -835,10 +910,6 @@ Resolution: The tool has removed redundant OBUF. To resolve this warning, check 
 WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_data_in_OBUF[11]_inst 
 Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
 WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_data_in_OBUF[12]_inst 
-Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
-WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_data_in_OBUF[13]_inst 
-Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
-WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_data_in_OBUF[14]_inst 
 Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
 WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_data_in_OBUF[9]_inst 
 Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
@@ -1006,7 +1077,7 @@ WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level
 Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
 WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_data_in_OBUF[23]_inst 
 Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
-WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/counter_we_OBUF_inst 
+WARNING: [Opt 31-33] Removing redundant OBUF since it is not driving a top-level port. U4_MIO_BUS/ram_data_in_OBUF[22]_inst 
 Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
 INFO: [Common 17-14] Message 'Opt 31-33' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Opt 31-36] Removing redundant OBUF, disp_seg_o_OBUF[7]_inst, from the path connected to top-level port: disp_seg_o[7] 
@@ -1074,19 +1145,19 @@ Resolution: The tool has removed redundant OBUF. To resolve this warning, check 
 WARNING: [Opt 31-36] Removing redundant OBUF, led_o_OBUF[0]_inst, from the path connected to top-level port: led_o[0] 
 Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 979.449 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 959.477 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 100 instances were transformed.
-  LD => LDCE: 96 instances
+  A total of 132 instances were transformed.
+  LD => LDCE: 128 instances
   LDC => LDCE: 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-89 Infos, 352 Warnings, 0 Critical Warnings and 0 Errors encountered.
+103 Infos, 337 Warnings, 32 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:29 . Memory (MB): peak = 979.449 ; gain = 597.820
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 979.449 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:40 . Memory (MB): peak = 959.477 ; gain = 576.246
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 959.477 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/top_SCPU.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_SCPU_utilization_synth.rpt -pb top_SCPU_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jun 26 14:36:53 2023...
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 28 15:17:04 2023...

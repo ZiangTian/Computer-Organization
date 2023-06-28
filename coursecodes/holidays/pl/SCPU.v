@@ -4,15 +4,20 @@ module SCPU(
     input      reset,          // reset
     input [31:0]  inst_in,     // instruction
     input [31:0]  Data_in,     // data from data memory
-       
+
+    input CPU_MIO,
+    input INT,
+    input MIO_ready,
+
     output [31:0] PC_out,      // PC address to instruction memory
+
 
     output [31:0] Addr_out,    // ALU output to data memory
     output [31:0] Data_out,    // data to data memory
 
                 // input  [4:0] reg_sel,    // register selection (for debug use)
                 // output [31:0] reg_data,  // selected register data (for debug use)
-    output [31:0] pcW,
+    // output [31:0] pcW,
 
     // control signals for dm
     output [2:0] DMType,

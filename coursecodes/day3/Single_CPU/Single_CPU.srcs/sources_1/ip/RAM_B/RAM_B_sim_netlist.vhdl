@@ -1,11 +1,11 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Wed Jun 21 14:39:55 2023
+-- Date        : Wed Jun 28 15:09:40 2023
 -- Host        : Benjamin running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top RAM_B -prefix
---               RAM_B_ blk_mem_gen_0_sim_netlist.vhdl
--- Design      : blk_mem_gen_0
+-- Command     : write_vhdl -force -mode funcsim {E:/One Drive/OneDrive -
+--               whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/ip/RAM_B/RAM_B_sim_netlist.vhdl}
+-- Design      : RAM_B
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a100tcsg324-1
@@ -22,6 +22,8 @@ entity RAM_B_blk_mem_gen_prim_wrapper_init is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RAM_B_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end RAM_B_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of RAM_B_blk_mem_gen_prim_wrapper_init is
@@ -62,12 +64,12 @@ begin
       INITP_0D => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0E => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0F => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_00 => X"0000000000004400000042000000006000000050000003180000504200000000",
-      INIT_01 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_02 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_03 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_04 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_05 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_00 => X"800000000000FFFFFFF70000000000010000003F80000000000002ABF0000000",
+      INIT_01 => X"7777777766666666555555554444444433333333222222221111111100000000",
+      INIT_02 => X"FFFFFFFFEEEEEEEEDDDDDDDDCCCCCCCCBBBBBBBBAAAAAAAA9999999988888888",
+      INIT_03 => X"FF9EBCFFFFFF9CFFFFFFA3FFFFA3FFFFFFC0FFFFFFC6F0FFF9F6F6CFC6F6F6F0",
+      INIT_04 => X"FFC0FFFFFFC6F0FFF9F6F6CFFFC6F0FFFFA7B3FFFFA3FFFFFFC0FFFFFF9CFFFF",
+      INIT_05 => X"00000000000000000000000000000000000000000800230003DEF82003BDF020",
       INIT_06 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_07 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_08 => X"0000000000000000000000000000000000000000000000000000000000000000",
@@ -270,6 +272,8 @@ entity RAM_B_blk_mem_gen_prim_width is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RAM_B_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end RAM_B_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of RAM_B_blk_mem_gen_prim_width is
@@ -295,6 +299,8 @@ entity RAM_B_blk_mem_gen_generic_cstr is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RAM_B_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end RAM_B_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of RAM_B_blk_mem_gen_generic_cstr is
@@ -320,6 +326,8 @@ entity RAM_B_blk_mem_gen_top is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RAM_B_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end RAM_B_blk_mem_gen_top;
 
 architecture STRUCTURE of RAM_B_blk_mem_gen_top is
@@ -345,6 +353,8 @@ entity RAM_B_blk_mem_gen_v8_4_2_synth is
     dina : in STD_LOGIC_VECTOR ( 31 downto 0 );
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RAM_B_blk_mem_gen_v8_4_2_synth : entity is "blk_mem_gen_v8_4_2_synth";
 end RAM_B_blk_mem_gen_v8_4_2_synth;
 
 architecture STRUCTURE of RAM_B_blk_mem_gen_v8_4_2_synth is
@@ -511,9 +521,9 @@ entity RAM_B_blk_mem_gen_v8_4_2 is
   attribute C_INITB_VAL : string;
   attribute C_INITB_VAL of RAM_B_blk_mem_gen_v8_4_2 : entity is "0";
   attribute C_INIT_FILE : string;
-  attribute C_INIT_FILE of RAM_B_blk_mem_gen_v8_4_2 : entity is "blk_mem_gen_0.mem";
+  attribute C_INIT_FILE of RAM_B_blk_mem_gen_v8_4_2 : entity is "RAM_B.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of RAM_B_blk_mem_gen_v8_4_2 : entity is "blk_mem_gen_0.mif";
+  attribute C_INIT_FILE_NAME of RAM_B_blk_mem_gen_v8_4_2 : entity is "RAM_B.mif";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of RAM_B_blk_mem_gen_v8_4_2 : entity is 0;
   attribute C_LOAD_INIT_FILE : integer;
@@ -578,6 +588,8 @@ entity RAM_B_blk_mem_gen_v8_4_2 is
   attribute C_WRITE_WIDTH_B of RAM_B_blk_mem_gen_v8_4_2 : entity is 32;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of RAM_B_blk_mem_gen_v8_4_2 : entity is "artix7";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of RAM_B_blk_mem_gen_v8_4_2 : entity is "blk_mem_gen_v8_4_2";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of RAM_B_blk_mem_gen_v8_4_2 : entity is "yes";
 end RAM_B_blk_mem_gen_v8_4_2;
@@ -721,7 +733,7 @@ entity RAM_B is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of RAM_B : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of RAM_B : entity is "blk_mem_gen_0,blk_mem_gen_v8_4_2,{}";
+  attribute CHECK_LICENSE_TYPE of RAM_B : entity is "RAM_B,blk_mem_gen_v8_4_2,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of RAM_B : entity is "yes";
   attribute x_core_info : string;
@@ -832,9 +844,9 @@ architecture STRUCTURE of RAM_B is
   attribute C_INITB_VAL : string;
   attribute C_INITB_VAL of U0 : label is "0";
   attribute C_INIT_FILE : string;
-  attribute C_INIT_FILE of U0 : label is "blk_mem_gen_0.mem";
+  attribute C_INIT_FILE of U0 : label is "RAM_B.mem";
   attribute C_INIT_FILE_NAME : string;
-  attribute C_INIT_FILE_NAME of U0 : label is "blk_mem_gen_0.mif";
+  attribute C_INIT_FILE_NAME of U0 : label is "RAM_B.mif";
   attribute C_INTERFACE_TYPE : integer;
   attribute C_INTERFACE_TYPE of U0 : label is 0;
   attribute C_LOAD_INIT_FILE : integer;

@@ -1,0 +1,33 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/EXT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EXT
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/Forwarding.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Forward
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/GRE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module GRE_array
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/Hazard unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hazard
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/NPC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module NPC
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/RF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RF
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/SCPU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SCPU
+INFO: [VRFC 10-2458] undeclared symbol pcW, assumed default net type wire [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/SCPU.v:219]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/dm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dm
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/im.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module im
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/mux3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module forwardmux
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/sccomp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xgriscv_pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/sccomp_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+ERROR: [VRFC 10-2989] 'reg_sel' is not declared [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/sccomp_tb.v:27]
+ERROR: [VRFC 10-2865] module 'tb' ignored due to previous errors [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/sccomp_tb.v:3]

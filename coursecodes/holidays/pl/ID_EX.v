@@ -49,7 +49,7 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
 
       // control for stall
     input stall,
-    // input flush,
+    input flush,
 
       // added by me
     input sbtype_in,
@@ -62,9 +62,7 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
     output reg load_out
 );
     always @(posedge clk, posedge rst) begin
-    if(rst   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-    // || flush
-    ) 
+    if(rst || flush) 
         begin 
             inst_out <= 0; 
             PC_out <= 0;

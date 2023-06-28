@@ -15,7 +15,8 @@ module Stall (
     // when branch taken
     input[2:0] NPCOp,
 
-    output reg stallout  
+    output reg stallout,
+    output reg flushout
 
 );
 // stall when load, and on load, stall for one cycle immediately
@@ -28,7 +29,11 @@ module Stall (
             else
                 stallout<=0;
         end
-        else if (NPCOp[0]) stallout<=1;
         else stallout<=0;
+    end
+
+    always @(*) begin
+        if (NPCOp!=3'b000) flushout<=1;
+        else flushout<=0;
     end
 endmodule

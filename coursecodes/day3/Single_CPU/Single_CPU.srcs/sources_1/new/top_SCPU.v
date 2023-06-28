@@ -198,7 +198,7 @@ wire  [31:0] pcW;
         .PC_out(PC_out),
         .Data_out(Data_out),
         .Addr_out(Addr_out),
-        .dm_ctrl(dm_ctrl),
+        .DMType(dm_ctrl),
         // .pcW(pcW)
         .CPU_MIO(CPU_MIO)
     );

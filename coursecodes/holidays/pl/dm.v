@@ -24,7 +24,7 @@ module dm(clk, DMWr, addr, din, PC, DMType, dout);
       // in this case, we need to write the data into the memory in two times, one is the lower 2 bytes
       // dd == 2'b10 means the address is 2 bytes aligned
       // dd == 2'b11 means the address is 1 byte aligned
-   reg [31:0] dmem[4095:0];
+   reg [31:0] dmem[127:0];
 
 //    always @(posedge clk)     // write only when posedge 
 //       if (DMWr) begin
@@ -66,8 +66,8 @@ module dm(clk, DMWr, addr, din, PC, DMType, dout);
             `dm_byte: 
                   dmem[addr[31:2]][7:0] = din[7:0];
          endcase
-         $display("pc = %h: dataaddr = %h, memdata = %h", PC, {addr [31:2],2'b00}, din);
-         $display("location = %h, data = %h", addr[31:2], dmem[addr]);
+//         $display("pc = %h: dataaddr = %h, memdata = %h", PC, {addr [31:2],2'b00}, din);
+//         $display("location = %h, data = %h", addr[31:2], dmem[addr]);
       end
 
 

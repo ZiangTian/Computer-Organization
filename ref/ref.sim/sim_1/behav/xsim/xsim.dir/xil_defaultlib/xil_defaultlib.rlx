@@ -1,0 +1,21 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/ref/ref.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/EXT.v,1684246061,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/Forwarding.v,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/ctrl_encode_def.v,EXT,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/Forwarding.v,1687940273,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/GRE.v,,Forward,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/GRE.v,1687857591,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/Hazard unit.v,,GRE_array,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/Hazard unit.v,1687857586,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/NPC.v,,Hazard,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/NPC.v,1687618163,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/PC.v,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/ctrl_encode_def.v,NPC,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/PC.v,1687281494,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/RF.v,,PC,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/RF.v,1687688948,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/SCPU.v,,RF,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/SCPU.v,1687721577,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/alu.v,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/ctrl_encode_def.v,SCPU,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/alu.v,1684244652,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/ctrl.v,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/ctrl_encode_def.v,alu,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/ctrl.v,1687797774,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/dm.v,,ctrl,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/ctrl_encode_def.v,1684306727,verilog,,,,,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/dm.v,1687798165,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/im.v,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/ctrl_encode_def.v,dm,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/im.v,1685340829,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/mux3.v,,im,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/mux3.v,1687857593,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/sccomp.v,,forwardmux,,,,,,,,
+E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/sccomp.v,1687798106,verilog,,E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/ref/hyx_code/sccomp_tb.v,,xgriscv_pipeline,,,,,,,,
+,,,,,,tb,,,,,,,,

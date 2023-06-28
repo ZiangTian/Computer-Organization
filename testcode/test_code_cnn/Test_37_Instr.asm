@@ -70,18 +70,18 @@
 	sb x5, 8(x3)
 	
 	### Test for load
-	lw  x5, 0(x3)           #x5=0x98763DCC
-	sw x5, 12(x3)
-	lh x7, 2(x3)             #x7=0xFFFF9876
-	sw x7, 16(x3)
-	lhu x7, 2(x3)           #x7=0x00009876
-	sw x7, 20(x3)
-	lb x8, 3(x3)              #x8=0xFFFFFF98
-	sw x8, 24(x3)
-	lbu x8, 3(x3)            #x8=0x00000098
-	sw x8, 28(x3)
-	lbu x8, 1(x3)            #x8=0x0000003D
-	sw x8, 32(x3)
+	lw  x5, 0(x3)           #x5=0x98763DCC  0
+	sw x5, 12(x3)			#				0
+	lh x7, 2(x3)             #x7=0xFFFF9876    1
+	sw x7, 16(x3)							# 0
+	lhu x7, 2(x3)           #x7=0x00009876	# 2
+	sw x7, 20(x3)							# 0
+	lb x8, 3(x3)              #x8=0xFFFFFF98 # 3
+	sw x8, 24(x3)							# 0
+	lbu x8, 3(x3)            #x8=0x00000098 # 4
+	sw x8, 28(x3)							# 0
+	lbu x8, 1(x3)            #x8=0x0000003D # 4
+	sw x8, 32(x3)							# 0
 
 	
 	##################

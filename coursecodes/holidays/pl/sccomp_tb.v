@@ -12,8 +12,8 @@ module xgriscv_tb();
    
    initial begin
     
-    $readmemh("E:/imp/Test_37_Instr.dat", xgriscv.U_imem.RAM);
-//    $readmemh("E:/imp/ld_sd.dat", xgriscv.U_imem.RAM);
+     $readmemh("E:/imp/Test_37_Instr.dat", xgriscv.U_imem.RAM);
+    //$readmemh("E:/imp/set2/riscv32_forwarding_sim2.dat", xgriscv.U_imem.RAM);
     
     // $readmemb("E:/file1.txt",memory);
 /*
@@ -257,7 +257,7 @@ module xgriscv_tb();
          counter = counter + 1;
          //$display("clock: %d", counter);
          //$display("pc:\t\t%h", xgriscvp.pcF);  // pcF undeclared
-         $display("counter:\t%d, instr: \t%h", counter, xgriscv.instr);
+         //$display("counter:\t%d, instr: \t%h", counter, xgriscv.instr);
 //         $display("instr:\t%h", xgriscv.instr);
 //         $display("pcw:\t%h", pcW);
           if (pcW == 32'h000000ff) // set to the address of the last instruction

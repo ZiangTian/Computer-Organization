@@ -1,11 +1,11 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Wed Jun 21 14:39:55 2023
+// Date        : Wed Jun 28 15:09:40 2023
 // Host        : Benjamin running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top RAM_B -prefix
-//               RAM_B_ blk_mem_gen_0_stub.v
-// Design      : blk_mem_gen_0
+// Command     : write_verilog -force -mode synth_stub {E:/One Drive/OneDrive -
+//               whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/ip/RAM_B/RAM_B_stub.v}
+// Design      : RAM_B
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1
 // --------------------------------------------------------------------------------

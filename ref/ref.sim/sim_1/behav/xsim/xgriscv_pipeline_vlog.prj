@@ -1,0 +1,22 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../ref/hyx_code/EXT.v" \
+"../../../../../../ref/hyx_code/Forwarding.v" \
+"../../../../../../ref/hyx_code/GRE.v" \
+"../../../../../../ref/hyx_code/Hazard unit.v" \
+"../../../../../../ref/hyx_code/NPC.v" \
+"../../../../../../ref/hyx_code/PC.v" \
+"../../../../../../ref/hyx_code/RF.v" \
+"../../../../../../ref/hyx_code/SCPU.v" \
+"../../../../../../ref/hyx_code/alu.v" \
+"../../../../../../ref/hyx_code/ctrl.v" \
+"../../../../../../ref/hyx_code/dm.v" \
+"../../../../../../ref/hyx_code/im.v" \
+"../../../../../../ref/hyx_code/mux3.v" \
+"../../../../../../ref/hyx_code/sccomp_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -19,16 +19,15 @@ module IF_ID (  // connected to RF, ctrl, and ext
 
 
 
-    input stall
+    input stall,
+    input flush
     // input flush
 );
 
 // to resolve data hazard, flush and stalls still needs to be added
 
   always @(posedge clk, posedge rst) begin
-    if(rst 
-      // || flush
-      ) 
+    if(rst || flush) 
     begin 
       inst_out <= 0; PC_out <= 0; 
     end
