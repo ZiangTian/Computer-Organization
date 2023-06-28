@@ -21,7 +21,7 @@ module Stall (
 // stall when load, and on load, stall for one cycle immediately
     always @(*) begin
         if (load && (ID_EXrd_in!=0)) begin
-            if(ID_EXmemread_in&&(ID_EXrd_in==IF_IDrs1_in||ID_EXrd_in==IF_IDrs2_in))
+            if(ID_EXmemread_in&&(ID_EXrd_in==IF_IDrs1_in||ID_EXrd_in==IF_IDrs2_in))  // load
                 stallout<=1;
             else if ((ID_EXregwrite_in)&&(ID_EXrd_in==IF_IDrs1_in||ID_EXrd_in==IF_IDrs2_in))
             stallout<=1;

@@ -55,9 +55,11 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
     input sbtype_in,
     input i_jal_in,
     input i_jalr_in,
+    input load_in,
     output reg sbtype_out,
     output reg i_jal_out,
-    output reg i_jalr_out
+    output reg i_jalr_out,
+    output reg load_out
 );
     always @(posedge clk, posedge rst) begin
     if(rst   //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
@@ -88,6 +90,7 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
             i_jal_out <= 0;
             i_jalr_out <= 0;
             MemRead_out <= 0;
+            load_out <= 0;
         end
     else 
     if(!stall)
@@ -116,6 +119,7 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
             sbtype_out <= sbtype_in;
             i_jal_out <= i_jal_in;
             i_jalr_out <= i_jalr_in;    
+            load_out <= load_in;
         end
     else begin
             inst_out <= inst_in; 
@@ -144,7 +148,8 @@ module ID_EX (  // zero 不放在这里；直接把ALU的zero放在EX/MEM里面
 
             sbtype_out <= sbtype_in;
             i_jal_out <= i_jal_in;
-            i_jalr_out <= i_jalr_in;      
+            i_jalr_out <= i_jalr_in;     
+            load_out <= load_in; 
     end
   end
 

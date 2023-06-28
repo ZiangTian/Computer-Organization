@@ -131,6 +131,7 @@ wire [1:0] ID_EX_WDSel;
 wire ID_EX_sbtype;
 wire ID_EX_i_jal;
 wire ID_EX_i_jalr;
+wire ID_EX_load;
 
 // wires of MEM_WB delcared here because RF will be needing them
    wire [31:0] MEM_WB_rd;
@@ -147,7 +148,7 @@ wire ID_EX_i_jalr;
         .ID_EXmemread_in(ID_EX_MemRead),
         .ID_EXrd_in(ID_EX_rd),
         .ID_EXregwrite_in(ID_EX_RegWrite),
-        .load(load),
+        .load(ID_EX_load),
         .NPCOp(NPCOp),
         .stallout(stall)
     );
@@ -231,8 +232,8 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
 
         .stall(stall), // .flush(flush),
 
-        .sbtype_in(sbtype), .i_jal_in(i_jal), .i_jalr_in(i_jalr), // outputs added by myself
-        .sbtype_out(ID_EX_sbtype), .i_jal_out(ID_EX_i_jal), .i_jalr_out(ID_EX_i_jalr) // outputs added by myself
+        .sbtype_in(sbtype), .i_jal_in(i_jal), .i_jalr_in(i_jalr), .load_in(load),// outputs added by myself
+        .sbtype_out(ID_EX_sbtype), .i_jal_out(ID_EX_i_jal), .i_jalr_out(ID_EX_i_jalr), .load_out(ID_EX_load)  // outputs added by myself
     );
 
     wire [31:0] EX_MEM_PC;
@@ -249,6 +250,7 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
     wire EX_MEM_RegWrite;
     wire [2:0] EX_MEM_WDSel;
     wire [31:0] EX_MEM_imm;
+    wire EX_MEM_load;
 
     wire [1:0] forwardA;
     wire [1:0] forwardB;
@@ -266,11 +268,25 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
         .forwardB(forwardB)
     );
     wire [31:0] A;
-    wire [31:0] ori_B;
-    assign A = (forwardA[0]==1) ? MEM_WB_alures : (forwardA[1]==1) ? EX_MEM_alures : ID_EX_rs1data;
+    // wire [31:0] ori_B;
+    wire [31:0] real_RD2;
+    wire [31:0] MEM_WB_forwarded_data;
+    wire MEM_WB_load;
+
+    assign MEM_WB_forwarded_data = (MEM_WB_load==1) ? MEM_WB_Datain : MEM_WB_alures;  // in two cases we use the MEM forwarding: 1. add with 2 instrs separated; 2. load
+    assign A = (forwardA[0]==1) ? MEM_WB_forwarded_data : (forwardA[1]==1) ? EX_MEM_alures : ID_EX_rs1data;
+    //assign A = (forwardA[0]==1) ? MEM_WB_alures : (forwardA[1]==1) ? EX_MEM_alures : ID_EX_rs1data;
     
-    assign ori_B = (ID_EX_ALUSrc) ? ID_EX_imm : ID_EX_rs2data;
-    assign B = (forwardB[0]==1) ? MEM_WB_alures : (forwardB[1]==1) ? EX_MEM_alures : ori_B;
+
+    // note that, sometimes the forwarded data (rs2) is not used for alu computing, but for memory access
+    // in whatever case, the forwarded data replaces RD2
+    assign real_RD2 = (forwardB[0]==1) ? MEM_WB_forwarded_data : (forwardB[1]==1) ? EX_MEM_alures : ID_EX_rs2data;
+    //assign real_RD2 = (forwardB[0]==1) ? MEM_WB_alures : (forwardB[1]==1) ? EX_MEM_alures : ID_EX_rs2data;
+    
+    assign B = (ID_EX_ALUSrc) ? ID_EX_imm : real_RD2; // what current B should be. In sw case, B is imm.
+    
+    // assign ori_B = (ID_EX_ALUSrc) ? ID_EX_imm : ID_EX_rs2data; // what current B should be. In sw case, B is imm.
+    // assign B = (forwardB[0]==1) ? MEM_WB_alures : (forwardB[1]==1) ? EX_MEM_alures : ori_B;
 	
     
 // instantiation of alu unit
@@ -294,9 +310,11 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
         .rs2_in(ID_EX_rs2), 
         .rd_in(ID_EX_rd),
         .alures_in(aluout), 
-        .rs2_data_in(ID_EX_rs2data),
+        .rs2_data_in(real_RD2), /////////////// !!!!!!!!!!!!!!
         // .Zero_in(Zero),
         .imm_in(ID_EX_imm),
+        .load_in(ID_EX_load),
+        .load_out(EX_MEM_load),
 
         .PC_out(EX_MEM_PC), 
         .inst_out(EX_MEM_inst),
@@ -327,7 +345,6 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
             .NPC(NPC), .pcW(pcW), .EX_MEM_PC(EX_MEM_PC));
 
 
-// assign�???下输�???
 
 assign mem_w = EX_MEM_MemWrite;          // output: memory write signal
 // assign PC_out = ;     // PC address to instruction memory
@@ -348,7 +365,9 @@ assign DMType = EX_MEM_DMType;
       .read_data_in(Data_in), // data from data memory
       .WDSel_in(EX_MEM_WDSel),
       .RegWrite_in(EX_MEM_RegWrite),
+      .load_in(EX_MEM_load),
       
+      .load_out(MEM_WB_load),
       .PC_out(MEM_WB_PC),
       .rd_out(MEM_WB_rd),
       .alures_out(MEM_WB_alures),

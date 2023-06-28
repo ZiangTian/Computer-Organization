@@ -24,9 +24,9 @@ module Forward (
     assign mem_hazard_rs1 = (MEM_WB_RegWrite && (MEM_WB_rd != 0) && (MEM_WB_rd == ID_EX_rs1));
     assign mem_hazard_rs2 = (MEM_WB_RegWrite && (MEM_WB_rd != 0) && (MEM_WB_rd == ID_EX_rs2));
 
-    assign forwardA = (mem_hazard_rs1) ? 2'b01 : (ex_hazard_rs1) ? 2'b10 : 2'b00;
-    assign forwardB = (mem_hazard_rs2) ? 2'b01 : (ex_hazard_rs2) ? 2'b10 : 2'b00;
-    // assign forwardA = (ex_hazard_rs1) ? 2'b10 : (mem_hazard_rs1) ? 2'b01 : 2'b00;
-    // assign forwardB = (ex_hazard_rs2) ? 2'b10 : (mem_hazard_rs2) ? 2'b01 : 2'b00;
+    // assign forwardA = (mem_hazard_rs1) ? 2'b01 : (ex_hazard_rs1) ? 2'b10 : 2'b00;
+    // assign forwardB = (mem_hazard_rs2) ? 2'b01 : (ex_hazard_rs2) ? 2'b10 : 2'b00;
+    assign forwardA = (ex_hazard_rs1) ? 2'b10 : (mem_hazard_rs1) ? 2'b01 : 2'b00;
+    assign forwardB = (ex_hazard_rs2) ? 2'b10 : (mem_hazard_rs2) ? 2'b01 : 2'b00;
     
 endmodule

@@ -10,7 +10,7 @@ module dm(clk, DMWr, addr, din, PC, DMType, dout);
    output [31:0]  dout;      // data output
    
 /* 
-      ctrl_encode_def.v defineï¼š
+      ctrl_encode_def.v defineï¼?
       `define dm_word 3'b000
       `define dm_halfword 3'b001
       `define dm_halfword_unsigned 3'b010
@@ -66,8 +66,8 @@ module dm(clk, DMWr, addr, din, PC, DMType, dout);
             `dm_byte: 
                   dmem[addr[31:2]][7:0] = din[7:0];
          endcase
-         $display("pc = %h: addr = %h, data = %h", PC, {addr [31:2],2'b00}, din);
-         $display("location = %h, data = %h", addr[31:2], dmem[addr[31:2]]);
+         $display("pc = %h: dataaddr = %h, memdata = %h", PC, {addr [31:2],2'b00}, din);
+         $display("location = %h, data = %h", addr[31:2], dmem[addr]);
       end
 
 

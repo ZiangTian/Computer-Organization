@@ -44,7 +44,7 @@
 	sltu x28, x25, x26               #x28=0
 	
 	### Test for shift
-                addi x3, x3, 4   # pay attention to register shift
+	addi x3, x3, 4   # pay attention to register shift
 	sll x27, x26, x3
 	srl x28, x25, x3
 	sra x29, x25, x3
@@ -55,22 +55,22 @@
 	
 	##################
 	# Test Subset 3  #
-	addi x3, x0, 0
-                addi x5,x0, 0xFF
+	addi x3, x0, 0					# x3 = 0
+	addi x5,x0, 0xFF                # x5 = 0xff
 	
 	
 	### Test for store
-	sw x19, 0(x3)
-	sw x21, 4(x3)
-	sw x23, 8(x3)
-	sh x26, 4(x3)
-	sh x19, 10(x3)
-	sb x5, 7(x3)
-	sb x5, 9(x3)
+	sw x19, 0(x3)					# x19 = 0x98763DCC
+	sw x21, 4(x3)					# x21 = 0x98765001
+	sw x23, 8(x3)					# x23 = 0x00001236
+	sh x26, 4(x3)					# x26 = 0x00000236
+	sh x19, 10(x3)					# x19 h = 0x3DCC
+	sb x5, 7(x3)					# x5 = ff
+	sb x5, 9(x3)					# 
 	sb x5, 8(x3)
 	
 	### Test for load
-                lw  x5, 0(x3)           #x5=0x98763DCC
+	lw  x5, 0(x3)           #x5=0x98763DCC
 	sw x5, 12(x3)
 	lh x7, 2(x3)             #x7=0xFFFF9876
 	sw x7, 16(x3)

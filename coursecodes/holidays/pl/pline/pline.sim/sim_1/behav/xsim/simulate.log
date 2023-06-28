@@ -1,0 +1,123 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+counter:	          1, instr: 	23406293
+counter:	          2, instr: 	00001337
+counter:	          3, instr: 	0062e2b3
+counter:	          4, instr: 	98765337
+x 5 = 00000234
+counter:	          5, instr: 	34528393
+x 6 = 00001000
+counter:	          6, instr: 	c0030413
+x 5 = 00001234
+counter:	          7, instr: 	7bc2c493
+x 6 = 98765000
+counter:	          8, instr: 	0343b193
+x 7 = 00001579
+counter:	          9, instr: 	fff2b213
+x 8 = 98764c00
+counter:	         10, instr: 	7654f913
+x 9 = 00001588
+counter:	         11, instr: 	12332a13
+x 3 = 00000000
+counter:	         12, instr: 	405309b3
+x 4 = 00000001
+counter:	         13, instr: 	006a4ab3
+x18 = 00000500
+counter:	         14, instr: 	014a8b33
+x20 = 00000001
+counter:	         15, instr: 	005b0b33
+x19 = 98763dcc
+counter:	         16, instr: 	406b0bb3
+x21 = 98765001
+counter:	         17, instr: 	016becb3
+x22 = 98765002
+counter:	         18, instr: 	016bfd33
+x22 = 98766236
+counter:	         19, instr: 	01acadb3
+x23 = 00001236
+counter:	         20, instr: 	01acbe33
+x25 = 98767236
+counter:	         21, instr: 	00418193
+x26 = 00000236
+counter:	         22, instr: 	003d1db3
+x27 = 00000001
+counter:	         23, instr: 	003cde33
+x28 = 00000000
+counter:	         24, instr: 	403cdeb3
+x 3 = 00000004
+counter:	         25, instr: 	01099d93
+x27 = 00002360
+counter:	         26, instr: 	0049de13
+x28 = 09876723
+counter:	         27, instr: 	4049de93
+x29 = f9876723
+counter:	         28, instr: 	00000193
+x27 = 3dcc0000
+counter:	         29, instr: 	0ff00293
+x28 = 098763dc
+counter:	         30, instr: 	0131a023
+x29 = f98763dc
+counter:	         31, instr: 	0151a223
+x 3 = 00000000
+counter:	         32, instr: 	0171a423
+x 5 = 000000ff
+counter:	         33, instr: 	01a19223
+pc = 00000080: dataaddr = 00000000, memdata = 98763dcc
+location = 00000000, data = 98763dcc
+counter:	         34, instr: 	01319523
+pc = 00000084: dataaddr = 00000004, memdata = 98765001
+location = 00000001, data = 98765001
+counter:	         35, instr: 	005183a3
+pc = 00000088: dataaddr = 00000008, memdata = 00001236
+location = 00000002, data = 00001236
+counter:	         36, instr: 	005184a3
+pc = 0000008c: dataaddr = 00000004, memdata = 00000236
+location = 00000001, data = 98760236
+counter:	         37, instr: 	00518423
+pc = 00000090: dataaddr = 00000008, memdata = 98763dcc
+location = 00000002, data = 00003dcc
+counter:	         38, instr: 	0001a283
+pc = 00000094: dataaddr = 00000004, memdata = 000000ff
+location = 00000001, data = 987602ff
+counter:	         39, instr: 	0051a623
+pc = 00000098: dataaddr = 00000008, memdata = 000000ff
+location = 00000002, data = 00003dff
+counter:	         40, instr: 	00219383
+pc = 0000009c: dataaddr = 00000008, memdata = 000000ff
+location = 00000002, data = 00003dff
+counter:	         41, instr: 	00219383
+x 5 = 98763dcc
+counter:	         42, instr: 	0071a823
+counter:	         43, instr: 	0021d383
+pc = 000000a4: dataaddr = 0000000c, memdata = 98763dcc
+location = 00000003, data = 98763dcc
+counter:	         44, instr: 	0021d383
+x 7 = 98763dcc
+counter:	         45, instr: 	0071aa23
+counter:	         46, instr: 	00318403
+pc = 000000ac: dataaddr = 00000010, memdata = 98763dcc
+location = 00000004, data = 98763dcc
+counter:	         47, instr: 	00318403
+x 7 = 98763dcc
+counter:	         48, instr: 	0081ac23
+counter:	         49, instr: 	0031c403
+pc = 000000b4: dataaddr = 00000014, memdata = 98763dcc
+location = 00000005, data = 98763dcc
+counter:	         50, instr: 	0031c403
+x 8 = 98763dcc
+counter:	         51, instr: 	0081ae23
+counter:	         52, instr: 	0011c403
+pc = 000000bc: dataaddr = 00000018, memdata = 98763dcc
+location = 00000006, data = 98763dcc
+counter:	         53, instr: 	0011c403
+x 8 = 98763dcc
+counter:	         54, instr: 	0281a023
+counter:	         55, instr: 	0001a023
+pc = 000000c4: dataaddr = 0000001c, memdata = 98763dcc
+location = 00000007, data = 98763dcc
+counter:	         56, instr: 	0001a023
+x 8 = 98763dcc
+counter:	         57, instr: 	009074b3
+counter:	         58, instr: 	00729463
+pc = 000000cc: dataaddr = 00000020, memdata = 98763dcc
+location =

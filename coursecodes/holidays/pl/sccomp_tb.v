@@ -12,8 +12,8 @@ module xgriscv_tb();
    
    initial begin
     
-    //$readmemh("E:/imp/Test_37_Instr.dat", xgriscv.U_imem.RAM);
-    $readmemh("E:/imp/ld_sd.dat", xgriscv.U_imem.RAM);
+    $readmemh("E:/imp/Test_37_Instr.dat", xgriscv.U_imem.RAM);
+//    $readmemh("E:/imp/ld_sd.dat", xgriscv.U_imem.RAM);
     
     // $readmemb("E:/file1.txt",memory);
 /*
