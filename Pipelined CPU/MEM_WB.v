@@ -21,21 +21,26 @@ module MEM_WB (
     output reg[31:0] read_data_out, // read from memory
 
     // control signals for wb
-    input [1:0] RegWrite_in,
-    output reg[1:0] RegWrite_out,
-    input [2:0] WDSel_in,
-    output reg[2:0] WDSel_out,
+    input RegWrite_in,
+    output reg RegWrite_out,
+    input [1:0] WDSel_in,
+    output reg[1:0] WDSel_out,
+
+    input load_in,
+    output reg load_out
 
     // control for stall
-    input stall,
-    input flush
+    // input stall
+    // input flush
 );
 
-always @(posedge clk or negedge rst) begin
-    if(!rst || flush) 
+always @(posedge clk, posedge rst) begin
+    if(rst //!!!!!!!!!!!!!!!!!!!!!!
+    // || flush
+    ) 
         begin 
             // inst_out <= 0; 
-            // PC_out <= 0;
+            PC_out <= 0;
             // rs1_out <= 0;
             // rs2_out <= 0;
             rd_out <= 0;
@@ -43,11 +48,12 @@ always @(posedge clk or negedge rst) begin
             read_data_out <= 0;
             RegWrite_out <= 0;
             WDSel_out <= 0; 
+            load_out <= 0;
         end
-    else if(!stall)
+    else 
         begin
             // inst_out <= inst_in; 
-            // PC_out <= PC_in;
+            PC_out <= PC_in;
             // rs1_out <= rs1_in;
             // rs2_out <= rs2_in;
             rd_out <= rd_in;
@@ -55,6 +61,7 @@ always @(posedge clk or negedge rst) begin
             read_data_out <= read_data_in;
             RegWrite_out <= RegWrite_in;
             WDSel_out <= WDSel_in;
+            load_out <= load_in;
         end
 
   end

@@ -10,7 +10,7 @@ module dm(clk, DMWr, addr, din, PC, DMType, dout);
    output [31:0]  dout;      // data output
    
 /* 
-      ctrl_encode_def.v defineï¼š
+      ctrl_encode_def.v defineï¼?
       `define dm_word 3'b000
       `define dm_halfword 3'b001
       `define dm_halfword_unsigned 3'b010
@@ -24,7 +24,7 @@ module dm(clk, DMWr, addr, din, PC, DMType, dout);
       // in this case, we need to write the data into the memory in two times, one is the lower 2 bytes
       // dd == 2'b10 means the address is 2 bytes aligned
       // dd == 2'b11 means the address is 1 byte aligned
-reg [31:0] dmem[4095:0];
+   reg [31:0] dmem[127:0];
 
 //    always @(posedge clk)     // write only when posedge 
 //       if (DMWr) begin
@@ -60,13 +60,14 @@ reg [31:0] dmem[4095:0];
       if (DMWr) begin
          case(DMType)         // only need to implement sw, but did all of sw, sb, sh anyway
             `dm_word: 
-                  dmem[addr[31:2]]<= din[31:0];
+                  dmem[addr[31:2]] = din[31:0];
             `dm_halfword: 
-                  dmem[addr[31:2]][15:0] <= din[15:0];
+                  dmem[addr[31:2]][15:0] = din[15:0];
             `dm_byte: 
-                  dmem[addr[31:2]][7:0] <= din[7:0];
+                  dmem[addr[31:2]][7:0] = din[7:0];
          endcase
-         $display("pc = %h: dataaddr = %h, memdata = %h", PC, {addr [31:2],2'b00}, din);
+//         $display("pc = %h: dataaddr = %h, memdata = %h", PC, {addr [31:2],2'b00}, din);
+//         $display("location = %h, data = %h", addr[31:2], dmem[addr]);
       end
 
 

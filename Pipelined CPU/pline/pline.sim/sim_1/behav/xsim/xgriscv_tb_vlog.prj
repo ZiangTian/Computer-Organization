@@ -1,0 +1,25 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../EXT.v" \
+"../../../../../EX_MEM.v" \
+"../../../../../ID_EX.v" \
+"../../../../../IF_ID.v" \
+"../../../../../MEM_WB.v" \
+"../../../../../NPC.v" \
+"../../../../../PC.v" \
+"../../../../../RF.v" \
+"../../../../../SCPU_test.v" \
+"../../../../../Stall.v" \
+"../../../../../alu.v" \
+"../../../../../ctrl.v" \
+"../../../../../dm.v" \
+"../../../../../forward.v" \
+"../../../../../im.v" \
+"../../../../../sccomp.v" \
+"../../../../../sccomp_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

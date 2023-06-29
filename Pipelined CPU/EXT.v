@@ -6,7 +6,7 @@ module EXT(
 	input	[11:0]			bimm, //instrD[31], instrD[7], instrD[30:25], instrD[11:8], 12 bits
 	input	[19:0]			uimm,
 	input	[19:0]			jimm,
-	input	[5:0]			EXTOp,
+	input	[5:0]			EXTOp,	
 
 	output	reg [31:0] 	       immout);
    

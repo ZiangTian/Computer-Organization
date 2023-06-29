@@ -10,7 +10,8 @@ module EX_MEM (
     input [4:0] rd_in,
     input [31:0] alures_in,
     input [31:0] rs2_data_in,
-    input Zero_in,
+    // input Zero_in,
+    input [31:0] imm_in,
 
     // corresponding outputs
     output reg[31:0] PC_out,
@@ -20,33 +21,39 @@ module EX_MEM (
     output reg[4:0] rd_out,
     output reg[31:0] alures_out,
     output reg[31:0] rs2_data_out, 
-    output reg Zero_out,
+    // output reg Zero_out,
         // the supposed rs2. 
         // when forwarded, this value should be whatever that's passed to alu as rs2.
 
     // control signals for mem
-    input [1:0] MemWrite_in,
+    input MemWrite_in,
     input [2:0] NPCOp_in,
     input [2:0] DMType_in,
-    output reg[1:0] MemWrite_out,
+    output reg MemWrite_out,
     output reg[2:0] NPCOp_out,
     output reg[2:0] DMType_out,
 
     // control signals for wb
-    input [1:0] RegWrite_in,
-    input [2:0] WDSel_in,
-    output reg[1:0] RegWrite_out,
-    output reg[2:0] WDSel_out,
+    input RegWrite_in,
+    input [1:0] WDSel_in,
+    output reg RegWrite_out,
+    output reg[1:0] WDSel_out,
+    output reg[31:0] imm_out,
+
+    input load_in,
+    output reg load_out
 
     // control for stall
-    input stall,
-    input flush
+    // input stall
+    // input flush
 );
 
-always @(posedge clk or negedge rst) begin
-    if(!rst || flush) 
+always @(posedge clk, posedge rst) begin
+    if(rst //!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+    //|| flush
+    ) 
         begin 
-            Zero_out <= 0;
+            // Zero_out <= 0;
             inst_out <= 0; 
             PC_out <= 0;
             rs1_out <= 0;
@@ -61,15 +68,18 @@ always @(posedge clk or negedge rst) begin
             NPCOp_out <= 0;
             DMType_out <= 0;
             WDSel_out <= 0;
+            imm_out<=0;
+            load_out<=0;
         end
-    else if(!stall)
+    else 
         begin
-            Zero_out <= Zero_in;
+            // Zero_out <= Zero_in;
             inst_out <= inst_in; 
             PC_out <= PC_in;
             rs1_out <= rs1_in;
             rs2_out <= rs2_in;
             rd_out <= rd_in;
+            alures_out <= alures_in;
             rs2_data_out <= rs2_data_in;
             // MemRead_out <= MemRead_in;
             MemWrite_out <= MemWrite_in;
@@ -78,6 +88,8 @@ always @(posedge clk or negedge rst) begin
             NPCOp_out <= NPCOp_in;
             DMType_out <= DMType_in;
             WDSel_out <= WDSel_in;
+            imm_out<=imm_in;
+            load_out<=load_in;
         end
 
   end

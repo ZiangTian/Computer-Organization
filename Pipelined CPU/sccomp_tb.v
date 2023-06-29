@@ -1,4 +1,4 @@
-
+`timescale 1ps/1ps
 // testbench for simulation
 module xgriscv_tb();
     
@@ -6,13 +6,14 @@ module xgriscv_tb();
     wire[32-1:0]	 pcW;
   
 // instantiation of xgriscv 
-   xgriscv_sc xgriscvp(clk, rstn, pcW);
+   xgriscv_sc xgriscv(clk, rstn, pcW);
 
    integer counter = 0;
    
    initial begin
-      // $readmemh("riscv32_sim7.hex", xgriscvp.U_imem.RAM);
-      $readmemh("Test_37_Instr.dat", xgriscvp.U_imem.RAM);
+    
+     $readmemh("E:/imp/Test_37_Instr.dat", xgriscv.U_imem.RAM);
+    //$readmemh("E:/imp/set2/riscv32_forwarding_sim2.dat", xgriscv.U_imem.RAM);
       clk = 1;
       rstn = 1;
       #5 ;
@@ -25,11 +26,11 @@ module xgriscv_tb();
     if (clk == 1'b1) 
       begin
          counter = counter + 1;
-         // comment these four lines for online judge
          //$display("clock: %d", counter);
          //$display("pc:\t\t%h", xgriscvp.pcF);  // pcF undeclared
-         $display("instr:\t%h", xgriscvp.instr);
-         $display("pcw:\t%h", pcW);
+         //$display("counter:\t%d, instr: \t%h", counter, xgriscv.instr);
+//         $display("instr:\t%h", xgriscv.instr);
+//         $display("pcw:\t%h", pcW);
           if (pcW == 32'h000000ff) // set to the address of the last instruction
           begin
             //$display("pcW:\t\t%h", pcW);
@@ -37,6 +38,6 @@ module xgriscv_tb();
             $stop;
           end
       end
-  end //end always
+  end 
    
 endmodule
