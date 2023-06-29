@@ -402,18 +402,4 @@ begin
 	endcase
 end
 
-// always @*
-// begin
-// 	case(WDSel)
-// 		`WDSel_FromALU: WD<=aluout;
-// 		// `WDSel_FromMEMWord: WD<=Data_in; 
-//         // `WDSel_FromMEMHW: WD<=$signed(Data_in[15:0]);
-//         // `WDSel_FromMEMBT: WD<=$signed(Data_in[7:0]);
-//         // `WDSel_FromMEMHWU: WD<=$unsigned(Data_in[15:0]);
-//         // `WDSel_FromMEMBTU: WD<=$unsigned(Data_in[7:0]);
-// 		`WDSel_FromPC: WD<=PC_out+4;
-//         `WDSel_FromMEM:WD<=Data_in;
-// 	endcase
-// end
-
 endmodule

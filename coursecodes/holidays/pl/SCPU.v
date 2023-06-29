@@ -63,7 +63,7 @@ module SCPU(
 
     // wire [31:0] inst_out;
     wire stall;
-    // wire flush;
+    wire flush;
 
     wire MemWrite_out;
 	
@@ -92,7 +92,7 @@ module SCPU(
     IF_ID U_IF_ID(
         .clk(clk), .rst(reset),
         .inst_in(inst_in), .PC_in(PC_out),
-        .inst_out(IF_ID_inst), .PC_out(IF_ID_PC), .stall(stall)// .flush(flush)
+        .inst_out(IF_ID_inst), .PC_out(IF_ID_PC), .stall(stall), .flush(flush)
     );  
 
     assign iimm_shamt=IF_ID_inst[24:20];
@@ -114,7 +114,7 @@ module SCPU(
 // output wires of ID/EX
 wire [31:0]ID_EX_PC;
 wire [31:0]ID_EX_inst;
-wire [64:0]ID_EX_imm;
+wire [31:0]ID_EX_imm;
 wire [4:0]ID_EX_rs1;
 wire [4:0]ID_EX_rs2;
 wire [4:0]ID_EX_rd;
@@ -127,7 +127,7 @@ wire [1:0] ID_EX_GPRSel;
 
 wire ID_EX_MemWrite;
 wire ID_EX_MemRead;
-// wire [2:0] ID_EX_NPCOp;  // non-exist
+
 wire [2:0] ID_EX_DMType;
 
 wire ID_EX_RegWrite;
@@ -138,10 +138,26 @@ wire ID_EX_i_jal;
 wire ID_EX_i_jalr;
 wire ID_EX_load;
 
+    wire [31:0] EX_MEM_PC;
+    wire [31:0] EX_MEM_inst;
+    wire [4:0] EX_MEM_rs1;
+    wire [4:0] EX_MEM_rs2;
+    wire [4:0] EX_MEM_rd;
+    wire [31:0] EX_MEM_alures;
+    wire [31:0] EX_MEM_rs2data;
+    // wire EX_MEM_Zero;
+    wire EX_MEM_MemWrite;
+    wire [2:0] EX_MEM_DMType;
+    wire [2:0] EX_MEM_NPCOp;
+    wire EX_MEM_RegWrite;
+    wire [1:0] EX_MEM_WDSel;
+    wire [31:0] EX_MEM_imm;
+    wire EX_MEM_load;
+
 // wires of MEM_WB delcared here because RF will be needing them
-   wire [31:0] MEM_WB_rd;
+   wire [4:0] MEM_WB_rd;
    wire [31:0] MEM_WB_alures;
-   wire [4:0] MEM_WB_RegWrite;
+   wire MEM_WB_RegWrite;
    wire [31:0] MEM_WB_Datain;
    wire [1:0] MEM_WB_WDSel;
    wire [31:0] MEM_WB_PC;
@@ -155,7 +171,8 @@ wire ID_EX_load;
         .ID_EXregwrite_in(ID_EX_RegWrite),
         .load(ID_EX_load),
         .NPCOp(NPCOp),
-        .stallout(stall)
+        .stallout(stall),
+        .flushout(flush)
     );
     // assign stall = 0;
 
@@ -228,34 +245,16 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
         .MemWrite_in(MemWrite_out), .DMType_in(ctrl_dm_type),
         .MemWrite_out(ID_EX_MemWrite), .DMType_out(ID_EX_DMType),
         .MemRead_in(MemRead), .MemRead_out(ID_EX_MemRead),
-        // .NPCOp_in(NPCOp),        // implemented in EX
-        // .NPCOp_out(ID_EX_NPCOp), // implemented in EX
 
         // control for wb
         .RegWrite_in(RegWrite), .WDSel_in(WDSel),
         .RegWrite_out(ID_EX_RegWrite), .WDSel_out(ID_EX_WDSel),
 
-        .stall(stall), // .flush(flush),
+        .stall(stall), .flush(flush),
 
         .sbtype_in(sbtype), .i_jal_in(i_jal), .i_jalr_in(i_jalr), .load_in(load),// outputs added by myself
         .sbtype_out(ID_EX_sbtype), .i_jal_out(ID_EX_i_jal), .i_jalr_out(ID_EX_i_jalr), .load_out(ID_EX_load)  // outputs added by myself
     );
-
-    wire [31:0] EX_MEM_PC;
-    wire [31:0] EX_MEM_inst;
-    wire [4:0] EX_MEM_rs1;
-    wire [4:0] EX_MEM_rs2;
-    wire [4:0] EX_MEM_rd;
-    wire [31:0] EX_MEM_alures;
-    wire [31:0] EX_MEM_rs2data;
-    // wire EX_MEM_Zero;
-    wire EX_MEM_MemWrite;
-    wire [2:0] EX_MEM_DMType;
-    wire [2:0] EX_MEM_NPCOp;
-    wire EX_MEM_RegWrite;
-    wire [2:0] EX_MEM_WDSel;
-    wire [31:0] EX_MEM_imm;
-    wire EX_MEM_load;
 
     wire [1:0] forwardA;
     wire [1:0] forwardB;
@@ -346,8 +345,9 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
         // .stall(stall) // .flush(flush)
     );
 
-	NPC U_NPC(.PC(PC_out), .NPCOp(EX_MEM_NPCOp), .IMM(EX_MEM_imm), .aluout(EX_MEM_alures), 
-            .NPC(NPC), .pcW(pcW), .EX_MEM_PC(EX_MEM_PC));
+    // changed to ID_EX
+	NPC U_NPC(.PC(PC_out), .NPCOp(NPCOp), .IMM(ID_EX_imm), .aluout(aluout), 
+            .NPC(NPC), .pcW(pcW), .ID_EX_PC(ID_EX_PC));
 
 
 
@@ -406,19 +406,5 @@ begin
         
 	endcase
 end
-
-// always @*
-// begin
-// 	case(WDSel)
-// 		`WDSel_FromALU: WD<=aluout;
-// 		// `WDSel_FromMEMWord: WD<=Data_in; 
-//         // `WDSel_FromMEMHW: WD<=$signed(Data_in[15:0]);
-//         // `WDSel_FromMEMBT: WD<=$signed(Data_in[7:0]);
-//         // `WDSel_FromMEMHWU: WD<=$unsigned(Data_in[15:0]);
-//         // `WDSel_FromMEMBTU: WD<=$unsigned(Data_in[7:0]);
-// 		`WDSel_FromPC: WD<=PC_out+4;
-//         `WDSel_FromMEM:WD<=Data_in;
-// 	endcase
-// end
 
 endmodule
