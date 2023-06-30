@@ -6,6 +6,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/
 INFO: [VRFC 10-311] analyzing module ID_EX
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/IF_ID.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IF_ID
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/INT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module INT_SAVER
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/MEM_WB.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MEM_WB
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/NPC.v" into library xil_defaultlib
@@ -16,7 +18,7 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/
 INFO: [VRFC 10-311] analyzing module RF
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU_test.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module SCPU
-INFO: [VRFC 10-2458] undeclared symbol MemRead, assumed default net type wire [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU_test.v:185]
+INFO: [VRFC 10-2458] undeclared symbol MemRead, assumed default net type wire [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU_test.v:191]
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/Stall.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Stall
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/alu.v" into library xil_defaultlib

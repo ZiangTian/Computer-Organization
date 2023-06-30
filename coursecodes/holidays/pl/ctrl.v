@@ -1,4 +1,4 @@
-// `include "ctrl_encode_def.v"
+`include "ctrl_encode_def.v"
 
 //123
 module ctrl(Op, Funct7, Funct3, 
@@ -70,7 +70,6 @@ module ctrl(Op, Funct7, Funct3,
     wire i_slti   =  itype_r& ~Funct3[2]& Funct3[1]& ~Funct3[0];     // slti 010
     wire i_sltiu  =  itype_r& ~Funct3[2]& Funct3[1]& Funct3[0];      // sltiu 011
   
-	
   // jalr
 	  wire i_jalr =Op[6]&Op[5]&~Op[4]&~Op[3]&Op[2]&Op[1]&Op[0];//jalr 1100111
 

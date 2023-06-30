@@ -4,6 +4,7 @@ module SCPU(
     input      reset,          // reset
     input [31:0]  inst_in,     // instruction
     input [31:0]  Data_in,     // data from data memory
+    input INT,                 // interrupt signal  // counter0_out
 
     output [31:0] PC_out,      // PC address to instruction memory
 
@@ -13,7 +14,6 @@ module SCPU(
                 // input  [4:0] reg_sel,    // register selection (for debug use)
                 // output [31:0] reg_data,  // selected register data (for debug use)
     output [31:0] pcW,
-
     // control signals for dm
     output [2:0] DMType,
     output    mem_w          // output: memory write signal
@@ -61,6 +61,8 @@ module SCPU(
     wire flush;
 
     wire MemWrite_out;
+
+    wire eret;
 	
 	// assign iimm_shamt=inst_in[24:20];
 	// assign iimm=inst_in[31:20];
@@ -105,6 +107,7 @@ module SCPU(
     assign rd = IF_ID_inst[11:7];  // rd
     assign Imm12 =IF_ID_inst[31:20];// 12-bit immediate
     assign IMM = IF_ID_inst[31:12];  // 20-bit immediate
+    assign eret = (IF_ID_inst == 32'h00200073);
 
 // output wires of ID/EX
 wire [31:0]ID_EX_PC;
@@ -132,6 +135,7 @@ wire ID_EX_sbtype;
 wire ID_EX_i_jal;
 wire ID_EX_i_jalr;
 wire ID_EX_load;
+wire ID_EX_eret;
 
     wire [31:0] EX_MEM_PC;
     wire [31:0] EX_MEM_inst;
@@ -165,6 +169,8 @@ wire ID_EX_load;
         .ID_EXrd_in(ID_EX_rd),
         .ID_EXregwrite_in(ID_EX_RegWrite),
         .load(ID_EX_load),
+        .INT(INT),
+        .eret(ID_EX_eret),
         .NPCOp(NPCOp),
         .stallout(stall),
         .flushout(flush)
@@ -247,6 +253,8 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
 
         .stall(stall), .flush(flush),
 
+        .eret_in(eret), .eret_out(ID_EX_eret),
+
         .sbtype_in(sbtype), .i_jal_in(i_jal), .i_jalr_in(i_jalr), .load_in(load),// outputs added by myself
         .sbtype_out(ID_EX_sbtype), .i_jal_out(ID_EX_i_jal), .i_jalr_out(ID_EX_i_jalr), .load_out(ID_EX_load)  // outputs added by myself
     );
@@ -297,8 +305,17 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
 
 // instantiation of branch unit
 
-// instantiation of ex/mem reg
+// instantiation of INT_SAVER
+    // inputs
+    wire [31:0] cause;
+    // outputs
+    wire [31:0] int_saver_cause;
+    wire [31:0] SEPC;
 
+    INT_SAVER U_int_saver(INT, ID_EX_PC, cause, SEPC, int_saver_cause);
+
+
+// instantiation of ex/mem reg
 
     EX_MEM U_EX_MEM(
         .clk(clk), 
@@ -335,14 +352,17 @@ wire [31:0] write_back_data;  // assign write_back_data = (Memtoreg)? MEM_WB_rea
         .RegWrite_in(ID_EX_RegWrite), 
         .WDSel_in(ID_EX_WDSel),
         .RegWrite_out(EX_MEM_RegWrite), 
-        .WDSel_out(EX_MEM_WDSel)
+        .WDSel_out(EX_MEM_WDSel),
+
+        .INT(INT)
 
         // .stall(stall) // .flush(flush)
     );
 
     // changed to ID_EX
 	NPC U_NPC(.PC(PC_out), .NPCOp(NPCOp), .IMM(ID_EX_imm), .aluout(aluout), 
-            .NPC(NPC), .pcW(pcW), .ID_EX_PC(ID_EX_PC));
+            .NPC(NPC), .pcW(pcW), .ID_EX_PC(ID_EX_PC),
+            .INT(INT), .eret(ID_EX_eret), .SEPC(SEPC));
 
 
 

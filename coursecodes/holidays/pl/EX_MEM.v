@@ -41,7 +41,8 @@ module EX_MEM (
     output reg[31:0] imm_out,
 
     input load_in,
-    output reg load_out
+    output reg load_out,
+    input INT
 
     // control for stall
     // input stall
@@ -49,9 +50,7 @@ module EX_MEM (
 );
 
 always @(posedge clk, posedge rst) begin
-    if(rst //!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-    //|| flush
-    ) 
+    if(rst || INT) 
         begin 
             // Zero_out <= 0;
             inst_out <= 0; 

@@ -15,6 +15,9 @@ module Stall (
     // when branch taken
     input[2:0] NPCOp,
 
+    input INT,
+    input eret,
+
     output reg stallout,
     output reg flushout
 
@@ -33,7 +36,7 @@ module Stall (
     end
 
     always @(*) begin
-        if (NPCOp!=3'b000) flushout<=1;
+        if (NPCOp!=3'b000 || INT || eret) flushout<=1;
         else flushout<=0;
     end
 endmodule

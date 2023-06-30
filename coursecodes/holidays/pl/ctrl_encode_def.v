@@ -61,3 +61,6 @@
 `define dm_byte 3'b011
 `define dm_byte_unsigned 3'b100
 
+`define system 7'b1110011
+
+
