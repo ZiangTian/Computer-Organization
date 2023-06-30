@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Thu Jun 29 09:32:13 2023
+| Date             : Fri Jun 30 18:10:44 2023
 | Host             : Benjamin running 64-bit major release  (build 9200)
 | Command          : report_power -file top_SCPU_power_routed.rpt -pb top_SCPU_power_summary_routed.pb -rpx top_SCPU_power_routed.rpx
 | Design           : top_SCPU
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     5045 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     2076 |     63400 |            3.27 |
+| Slice Logic    |    <0.001 |     5040 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     2071 |     63400 |            3.27 |
 |   CARRY4       |    <0.001 |       63 |     15850 |            0.40 |
 |   Register     |    <0.001 |     2134 |    126800 |            1.68 |
 |   BUFG         |    <0.001 |        9 |        32 |           28.13 |
-|   F7/F8 Muxes  |    <0.001 |      447 |     63400 |            0.71 |
+|   F7/F8 Muxes  |    <0.001 |      432 |     63400 |            0.68 |
 |   Others       |     0.000 |       28 |       --- |             --- |
-| Signals        |    <0.001 |     3741 |       --- |             --- |
+| Signals        |    <0.001 |     3729 |       --- |             --- |
 | Block RAM      |    <0.001 |        1 |       135 |            0.74 |
 | I/O            |     0.002 |       55 |       210 |           26.19 |
 | Static Power   |     0.097 |          |           |                 |

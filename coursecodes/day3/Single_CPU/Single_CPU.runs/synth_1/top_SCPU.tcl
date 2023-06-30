@@ -17,8 +17,10 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param synth.incrementalSynthesisCache C:/Users/Benjamin/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-17364-Benjamin/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,6 +40,7 @@ add_files {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/
 add_files {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/test/test.coe}}
 add_files {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/D_mem.coe}}
 add_files {{E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/I_mem.coe}}
+add_files {{e:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/dayn/I_mem_tza.coe}}
 read_verilog -library xil_defaultlib {
   {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/Counter_3_IO.v}
   {E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/ctrl_encode_def.v}

@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 28948 
+INFO: Helper process launched with PID 15080 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 494.594 ; gain = 101.352
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 494.984 ; gain = 100.895
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_SCPU' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/new/top_SCPU.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Enter' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/Enter.v:21]
@@ -35,8 +35,8 @@ WARNING: [Synth 8-5788] Register clr0_reg in module Counter_x is has both Set an
 WARNING: [Synth 8-3848] Net counter1 in module/entity Counter_x does not have driver. [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/Counter_3_IO.v:36]
 WARNING: [Synth 8-3848] Net counter2 in module/entity Counter_x does not have driver. [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/Counter_3_IO.v:36]
 INFO: [Synth 8-6155] done synthesizing module 'Counter_x' (3#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/IO/IO/Counter_3_IO.v:21]
-INFO: [Synth 8-6157] synthesizing module 'ROM_D' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-14272-Benjamin/realtime/ROM_D_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ROM_D' (4#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-14272-Benjamin/realtime/ROM_D_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ROM_D' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-15316-Benjamin/realtime/ROM_D_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ROM_D' (4#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-15316-Benjamin/realtime/ROM_D_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'dm_controller' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:17]
 INFO: [Synth 8-226] default block is never used [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:59]
 INFO: [Synth 8-226] default block is never used [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:69]
@@ -45,8 +45,8 @@ INFO: [Synth 8-226] default block is never used [E:/One Drive/OneDrive - whu.edu
 INFO: [Synth 8-226] default block is never used [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:102]
 INFO: [Synth 8-155] case statement is not full and has no default [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:84]
 INFO: [Synth 8-6155] done synthesizing module 'dm_controller' (5#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day4/dm_controller.v:17]
-INFO: [Synth 8-6157] synthesizing module 'RAM_B' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-14272-Benjamin/realtime/RAM_B_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'RAM_B' (6#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-14272-Benjamin/realtime/RAM_B_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'RAM_B' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-15316-Benjamin/realtime/RAM_B_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'RAM_B' (6#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/.Xil/Vivado-15316-Benjamin/realtime/RAM_B_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'SCPU' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:2]
 INFO: [Synth 8-6157] synthesizing module 'IF_ID' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/IF_ID.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (7#1) [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/IF_ID.v:1]
@@ -125,7 +125,7 @@ WARNING: [Synth 8-3331] design Counter_x has unconnected port clk1
 WARNING: [Synth 8-3331] design Counter_x has unconnected port clk2
 WARNING: [Synth 8-3331] design Enter has unconnected port clk
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 551.117 ; gain = 157.875
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 551.578 ; gain = 157.488
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -141,10 +141,10 @@ WARNING: [Synth 8-3295] tying undriven pin U_ID_EX:NPCOp_in[0] to constant 0 [E:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 551.117 ; gain = 157.875
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 551.578 ; gain = 157.488
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 551.117 ; gain = 157.875
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 551.578 ; gain = 157.488
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -161,24 +161,24 @@ Finished Parsing XDC File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerO
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/icf.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_SCPU_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/icf.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_SCPU_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_SCPU_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 916.004 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 914.832 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 916.047 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 914.844 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 916.047 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 916.047 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 914.844 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 914.844 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 916.047 ; gain = 522.805
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 914.844 ; gain = 520.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 916.047 ; gain = 522.805
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 914.844 ; gain = 520.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -186,7 +186,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for U2_ROMD. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for U4_RAM_B. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 916.047 ; gain = 522.805
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 914.844 ; gain = 520.754
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "rf_reg[31]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "rf_reg[30]" won't be mapped to RAM because it is too sparse
@@ -227,7 +227,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'wea_mem_reg' [E:/One Drive/
 WARNING: [Synth 8-327] inferring latch for variable 'C_reg' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/alu.v:16]
 WARNING: [Synth 8-327] inferring latch for variable 'WD_reg' [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/holidays/pl/SCPU.v:212]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 916.047 ; gain = 522.805
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 914.844 ; gain = 520.754
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -257,7 +257,7 @@ Detailed RTL Component Info :
 	   5 Input     33 Bit        Muxes := 1     
 	   2 Input     33 Bit        Muxes := 3     
 	   4 Input     33 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 16    
+	   2 Input     32 Bit        Muxes := 17    
 	   4 Input     32 Bit        Muxes := 2     
 	   6 Input     32 Bit        Muxes := 1     
 	  19 Input     32 Bit        Muxes := 2     
@@ -284,6 +284,10 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module top_SCPU 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
 Module clk_div 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -419,7 +423,7 @@ INFO: [Synth 8-3886] merging instance 'U1_SCPU/U_ID_EX/WDSel_out_reg[0]' (FDC) t
 INFO: [Synth 8-3886] merging instance 'U1_SCPU/U_EX_MEM/WDSel_out_reg[0]' (FDC) to 'U1_SCPU/U_EX_MEM/load_out_reg'
 INFO: [Synth 8-3886] merging instance 'U1_SCPU/U_MEM_WB/WDSel_out_reg[0]' (FDC) to 'U1_SCPU/U_MEM_WB/load_out_reg'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 916.047 ; gain = 522.805
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:18 . Memory (MB): peak = 914.844 ; gain = 520.754
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -431,13 +435,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:26 . Memory (MB): peak = 916.047 ; gain = 522.805
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:24 . Memory (MB): peak = 914.844 ; gain = 520.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:27 . Memory (MB): peak = 925.395 ; gain = 532.152
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:25 . Memory (MB): peak = 921.312 ; gain = 527.223
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -449,7 +453,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 965.879 ; gain = 572.637
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:26 . Memory (MB): peak = 962.809 ; gain = 568.719
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -505,7 +509,7 @@ CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin 
 CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[1]
 CRITICAL WARNING: [Synth 8-4442] BlackBox module U4_MIO_BUS has unconnected pin PC[0]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 965.879 ; gain = 572.637
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 962.809 ; gain = 568.719
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -518,7 +522,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 965.879 ; gain = 572.637
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 962.809 ; gain = 568.719
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -530,25 +534,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 965.879 ; gain = 572.637
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 962.809 ; gain = 568.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 965.879 ; gain = 572.637
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 962.809 ; gain = 568.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 965.879 ; gain = 572.637
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 962.809 ; gain = 568.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 965.879 ; gain = 572.637
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 962.809 ; gain = 568.719
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -578,8 +582,8 @@ Report Cell Usage:
 |6     |SSeg7_bbox_3       |     1|
 |7     |BUFG               |     8|
 |8     |CARRY4             |    63|
-|9     |LUT1               |    53|
-|10    |LUT2               |   168|
+|9     |LUT1               |    52|
+|10    |LUT2               |   200|
 |11    |LUT3               |   124|
 |12    |LUT4               |   200|
 |13    |LUT5               |   384|
@@ -598,26 +602,26 @@ Report Instance Areas:
 +------+-------------------+--------------+------+
 |      |Instance           |Module        |Cells |
 +------+-------------------+--------------+------+
-|1     |top                |              |  4464|
-|2     |  U1_SCPU          |SCPU          |  3850|
+|1     |top                |              |  4495|
+|2     |  U1_SCPU          |SCPU          |  3880|
 |3     |    U_EXT          |EXT           |     1|
-|4     |    U_EX_MEM       |EX_MEM        |   190|
-|5     |    U_ID_EX        |ID_EX         |   801|
+|4     |    U_EX_MEM       |EX_MEM        |   221|
+|5     |    U_ID_EX        |ID_EX         |   800|
 |6     |    U_IF_ID        |IF_ID         |   215|
 |7     |    U_MEM_WB       |MEM_WB        |   506|
 |8     |    U_PC           |PC            |    73|
 |9     |    U_RF           |RF            |  1993|
 |10    |    U_alu          |alu           |    39|
 |11    |  U3_dm_controller |dm_controller |    68|
-|12    |  U8_clk_div       |clk_div       |    43|
+|12    |  U8_clk_div       |clk_div       |    44|
 |13    |  U9_Counter       |Counter_x     |   153|
 +------+-------------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 965.879 ; gain = 572.637
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 962.809 ; gain = 568.719
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 32 critical warnings and 10 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:24 . Memory (MB): peak = 965.879 ; gain = 207.707
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:29 . Memory (MB): peak = 965.879 ; gain = 572.637
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 962.809 ; gain = 205.453
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 962.809 ; gain = 568.719
 INFO: [Project 1-571] Translating synthesized netlist
 Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SPIO.edf]
 Finished Parsing EDIF File [E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/edf_file/edf_file/SPIO.edf]
@@ -1142,7 +1146,7 @@ Resolution: The tool has removed redundant OBUF. To resolve this warning, check 
 WARNING: [Opt 31-36] Removing redundant OBUF, led_o_OBUF[0]_inst, from the path connected to top-level port: led_o[0] 
 Resolution: The tool has removed redundant OBUF. To resolve this warning, check for redundant OBUF in the input design.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 965.879 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 962.809 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 132 instances were transformed.
   LD => LDCE: 128 instances
@@ -1151,10 +1155,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 103 Infos, 323 Warnings, 32 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 965.879 ; gain = 584.168
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 965.879 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:30 . Memory (MB): peak = 962.809 ; gain = 580.254
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 962.809 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'E:/One Drive/OneDrive - whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.runs/synth_1/top_SCPU.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_SCPU_utilization_synth.rpt -pb top_SCPU_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jun 29 09:31:03 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 30 18:08:42 2023...
