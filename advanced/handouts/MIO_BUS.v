@@ -20,7 +20,11 @@ module MIO_BUS(input clk,
 					output reg GPIOf0000000_we,
 					output reg GPIOe0000000_we,
 					output reg counter_we,
-					output reg[31:0]Peripheral_in				// 从外设传入的数据信号
+					output reg[31:0]Peripheral_in,				// 从外设传入的数据信号
+
+					output reg[9:0] addr_to_vram,
+					output reg[31:0] data_to_vram,
+					output reg en_write_vram
 					);
 	always @(*) begin
 			Cpu_data4bus = 0;
@@ -61,10 +65,15 @@ module MIO_BUS(input clk,
 					data_ram_we = 0;
 					Cpu_data4bus = {11'b00000000000,BTN,SW};
 				end
+				4'b1101:begin
+					addr_to_vram = addr_bus[9:0];
+					data_to_vram = Cpu_data2bus;
+					en_write_vram = mem_w;
+				end
 				default: begin
-					Cpu_data4bus = ram_data_out;
+					Cpu_data4bus = ram_data_out;  // data read from dm 
 					ram_data_in = Cpu_data2bus;
-					ram_addr = addr_bus[11:2];
+					ram_addr = addr_bus[11:2]; // addrbus 背送到dmf_controller产生控制信号，以及通过bus送到RAM_B
 					data_ram_we = mem_w;
 				end
 			endcase

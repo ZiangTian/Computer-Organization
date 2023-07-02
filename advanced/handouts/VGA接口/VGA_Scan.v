@@ -30,8 +30,8 @@ module VGA_Scan(input clk, rst, 					//25MHz
 reg[9:0]HCount;						//VGA horizontal counter (0-799): pixels
 reg[9:0]VCount;						//VGA vertical   counter (0-524): lines
 reg HActive=0, VActive=0;
-wire[8:0]row;
-wire[9:0]col;
+// wire[8:0]row;
+// wire[9:0]col;
 
 // 水平同步脉冲生成：用于同步显示器在水平方向上的扫描，标志着一行图像的开始和结束。
 // 当水平同步脉冲激活时，显示器会开始扫描下一行像素。通过水平同步脉冲，

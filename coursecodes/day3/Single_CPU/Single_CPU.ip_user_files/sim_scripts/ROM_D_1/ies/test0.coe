@@ -1,0 +1,4 @@
+;1.asm
+memory_initialization_radix=16;
+memory_initialization_vector=
+0ff00113,00300293,01e29293,00000313,07f00393,00629023,00228293,00130313,fff38393,fe0398e3;

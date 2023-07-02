@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module VGAIO(input clk, rst,							//100MHz时钟
-				 input [15:0]VRAMOUT,					//文本显示编码输入，用于显示文本内容
+				 input [15:0]VRAMOUT,					//文本显示编码输入，用于显示文本内容  // dpo
 				 input [12:0]Pixel,						//图形显示像素输入：en_RRRR_GGGG_BBBB
 				 input [13:0]Test,						//测试显示像素输入：en_RRRR_GGGG_BBBB
 				 input [31:0]Din,							//显示寄存器输入
@@ -31,7 +31,7 @@ module VGAIO(input clk, rst,							//100MHz时钟
 				 output[9:0]col,			// pixel ram col address, 640 pixels
 				 output[3:0]R, G, B,
 				 output reg HSYNC, VSYNC,
-				 output[12:0]VRAMA,					//文本显示缓冲地址
+				 output[12:0]VRAMA,					//文本显示缓冲地址  /// dpra
 				 output rdn									//VAM地址
 				 );
 		wire[11:0] pixel_in = Pixel[11:0];
@@ -86,7 +86,7 @@ reg[31:0]MODE=32'h40000001;								//缺省状态640*480、文本、8*8字库
 								
 	font		Font8(.a(font_addr[10:0]), .spo(Font8out));	//8*8字库发生器ROM访问Font88
 							  						
-	Font1616		Font16(clk, font_addr, Font16out);				//16*16字库发生器ROM访问
+	// Font1616		Font16(clk, font_addr, Font16out);				//16*16字库发生器ROM访问
 
 	wire Font8dot  = MODE[6:4]==3'b000 ? Font8out[~col[2:0]] : 1'b0; 			//取当前8*8字符显示点
 	wire Font8Bdot = MODE[6:4]==3'b000 && VRAM_BUF[14:12]!=3'b000 ? 

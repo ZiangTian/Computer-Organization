@@ -29,8 +29,32 @@ module top_SCPU(
     output [7:0] disp_an_o,
     output [7:0] disp_seg_o,
 
-    output [15:0] led_o
+    output [15:0] led_o,
+
+//    output wire [8:0] row,
+//    output wire [9:0] col,
+    output wire [3:0] VGA_R,VGA_G,VGA_B,
+    output VGA_HS, VGA_VS
+//    output rdn
     );
+
+/*
+set_property -dict { PACKAGE_PIN A3    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[0] }]; #IO_L8N_T1_AD14N_35 Sch=vga_r[0]
+set_property -dict { PACKAGE_PIN B4    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[1] }]; #IO_L7N_T1_AD6N_35 Sch=vga_r[1]
+set_property -dict { PACKAGE_PIN C5    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[2] }]; #IO_L1N_T0_AD4N_35 Sch=vga_r[2]
+set_property -dict { PACKAGE_PIN A4    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[3] }]; #IO_L8P_T1_AD14P_35 Sch=vga_r[3]
+set_property -dict { PACKAGE_PIN C6    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[0] }]; #IO_L1P_T0_AD4P_35 Sch=vga_g[0]
+set_property -dict { PACKAGE_PIN A5    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[1] }]; #IO_L3N_T0_DQS_AD5N_35 Sch=vga_g[1]
+set_property -dict { PACKAGE_PIN B6    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[2] }]; #IO_L2N_T0_AD12N_35 Sch=vga_g[2]
+set_property -dict { PACKAGE_PIN A6    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[3] }]; #IO_L3P_T0_DQS_AD5P_35 Sch=vga_g[3]
+set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[0] }]; #IO_L2P_T0_AD12P_35 Sch=vga_b[0]
+set_property -dict { PACKAGE_PIN C7    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[1] }]; #IO_L4N_T0_35 Sch=vga_b[1]
+set_property -dict { PACKAGE_PIN D7    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[2] }]; #IO_L6N_T0_VREF_35 Sch=vga_b[2]
+set_property -dict { PACKAGE_PIN D8    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[3] }]; #IO_L4P_T0_35 Sch=vga_b[3]
+set_property -dict { PACKAGE_PIN B11   IOSTANDARD LVCMOS33 } [get_ports { VGA_HS }]; #IO_L4P_T0_15 Sch=vga_hs
+set_property -dict { PACKAGE_PIN B12   IOSTANDARD LVCMOS33 } [get_ports { VGA_VS }]; #IO_L3N_T0_DQS_AD1N_15 Sch=vga_vs
+*/
+
 
 // U10_Enter
     // outputs of U10_Enter
@@ -204,7 +228,9 @@ wire  [31:0] pcW;
     );
 
 // U4_MIO
-
+    wire [8:0] addr_to_vram;
+    wire [15:0] data_to_vram;
+    wire en_write_vram;
 
     MIO_BUS U4_MIO_BUS(
         .clk(clk),
@@ -228,7 +254,11 @@ wire  [31:0] pcW;
         .GPIOf0000000_we(GPIOf0000000_we),
         .GPIOe0000000_we(GPIOe0000000_we),
         .counter_we(counter_we),
-        .Peripheral_in(Peripheral_in)
+        .Peripheral_in(Peripheral_in),
+
+        .addr_to_vram(addr_to_vram),
+        .data_to_vram(data_to_vram),
+        .en_write_vram(en_write_vram)
     );
 
 // U5_Multi_8CH32
@@ -278,6 +308,64 @@ wire  [31:0] pcW;
         
         .seg_an(seg_an),
         .seg_sout(seg_sout)
+    );
+
+// VRAM
+    
+    wire [12:0] dpra;
+    wire [15:0] dpo;
+
+    VRAM U7_VRAM(
+        // in 
+        .clk(clk),
+        .a(addr_to_vram),
+        .d(data_to_vram),
+        .dpra(dpra),
+        .we(mem_w),
+
+        // out
+        .dpo(dpo)
+    );
+    
+    /*
+    set_property -dict { PACKAGE_PIN A3    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[0] }]; #IO_L8N_T1_AD14N_35 Sch=vga_r[0]
+set_property -dict { PACKAGE_PIN B4    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[1] }]; #IO_L7N_T1_AD6N_35 Sch=vga_r[1]
+set_property -dict { PACKAGE_PIN C5    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[2] }]; #IO_L1N_T0_AD4N_35 Sch=vga_r[2]
+set_property -dict { PACKAGE_PIN A4    IOSTANDARD LVCMOS33 } [get_ports { VGA_R[3] }]; #IO_L8P_T1_AD14P_35 Sch=vga_r[3]
+set_property -dict { PACKAGE_PIN C6    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[0] }]; #IO_L1P_T0_AD4P_35 Sch=vga_g[0]
+set_property -dict { PACKAGE_PIN A5    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[1] }]; #IO_L3N_T0_DQS_AD5N_35 Sch=vga_g[1]
+set_property -dict { PACKAGE_PIN B6    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[2] }]; #IO_L2N_T0_AD12N_35 Sch=vga_g[2]
+set_property -dict { PACKAGE_PIN A6    IOSTANDARD LVCMOS33 } [get_ports { VGA_G[3] }]; #IO_L3P_T0_DQS_AD5P_35 Sch=vga_g[3]
+set_property -dict { PACKAGE_PIN B7    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[0] }]; #IO_L2P_T0_AD12P_35 Sch=vga_b[0]
+set_property -dict { PACKAGE_PIN C7    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[1] }]; #IO_L4N_T0_35 Sch=vga_b[1]
+set_property -dict { PACKAGE_PIN D7    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[2] }]; #IO_L6N_T0_VREF_35 Sch=vga_b[2]
+set_property -dict { PACKAGE_PIN D8    IOSTANDARD LVCMOS33 } [get_ports { VGA_B[3] }]; #IO_L4P_T0_35 Sch=vga_b[3]
+set_property -dict { PACKAGE_PIN B11   IOSTANDARD LVCMOS33 } [get_ports { VGA_HS }]; #IO_L4P_T0_15 Sch=vga_hs
+set_property -dict { PACKAGE_PIN B12   IOSTANDARD LVCMOS33 } [get_ports { VGA_VS }]; #IO_L3N_T0_DQS_AD1N_15 Sch=vga_vs
+    
+    */
+    wire rdn;
+    wire row;
+    wire col;
+    
+    VGAIO U8_VGAIO(
+        .VRAMOUT(dpo),
+        .Pixel(),
+        .Test(),
+        .Din(32'h40000001),
+        .Regaddr(),
+        .Cursor(),
+        .Blink(),
+
+        .row(row),
+        .col(col),
+        .R(VGA_R),
+        .G(VGA_G),
+        .B(VGA_B),
+        .HSYNC(VGA_HS),
+        .VSYNC(VGA_VS),
+        .VRAMA(dpra),
+        .rdn(rdn)
     );
 
 assign disp_an_o = seg_an;
