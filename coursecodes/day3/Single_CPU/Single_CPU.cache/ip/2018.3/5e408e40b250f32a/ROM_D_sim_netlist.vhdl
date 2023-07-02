@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
 -- Date        : Sat Jul  1 17:38:42 2023
 -- Host        : Benjamin running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {E:/One Drive/OneDrive -
---               whu.edu.cn/Learning/computerOrg/lab_related/Computer-Organization/coursecodes/day3/Single_CPU/Single_CPU.srcs/sources_1/ip/ROM_D_1/ROM_D_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+--               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ ROM_D_sim_netlist.vhdl
 -- Design      : ROM_D
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,16 +14,14 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity ROM_D_rom is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rom is
   port (
     spo : out STD_LOGIC_VECTOR ( 30 downto 0 );
     a : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ROM_D_rom : entity is "rom";
-end ROM_D_rom;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rom;
 
-architecture STRUCTURE of ROM_D_rom is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rom is
   signal \spo[10]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal \spo[10]_INST_0_i_2_n_0\ : STD_LOGIC;
   signal \spo[11]_INST_0_i_1_n_0\ : STD_LOGIC;
@@ -1110,18 +1108,16 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity ROM_D_dist_mem_gen_v8_0_12_synth is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12_synth is
   port (
     spo : out STD_LOGIC_VECTOR ( 30 downto 0 );
     a : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ROM_D_dist_mem_gen_v8_0_12_synth : entity is "dist_mem_gen_v8_0_12_synth";
-end ROM_D_dist_mem_gen_v8_0_12_synth;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12_synth;
 
-architecture STRUCTURE of ROM_D_dist_mem_gen_v8_0_12_synth is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12_synth is
 begin
-\gen_rom.rom_inst\: entity work.ROM_D_rom
+\gen_rom.rom_inst\: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_rom
      port map (
       a(9 downto 0) => a(9 downto 0),
       spo(30 downto 0) => spo(30 downto 0)
@@ -1131,7 +1127,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity ROM_D_dist_mem_gen_v8_0_12 is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 is
   port (
     a : in STD_LOGIC_VECTOR ( 9 downto 0 );
     d : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1152,74 +1148,72 @@ entity ROM_D_dist_mem_gen_v8_0_12 is
     qdpo : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   attribute C_ADDR_WIDTH : integer;
-  attribute C_ADDR_WIDTH of ROM_D_dist_mem_gen_v8_0_12 : entity is 10;
+  attribute C_ADDR_WIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 10;
   attribute C_DEFAULT_DATA : string;
-  attribute C_DEFAULT_DATA of ROM_D_dist_mem_gen_v8_0_12 : entity is "0";
+  attribute C_DEFAULT_DATA of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is "0";
   attribute C_DEPTH : integer;
-  attribute C_DEPTH of ROM_D_dist_mem_gen_v8_0_12 : entity is 1024;
+  attribute C_DEPTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 1024;
   attribute C_ELABORATION_DIR : string;
-  attribute C_ELABORATION_DIR of ROM_D_dist_mem_gen_v8_0_12 : entity is "./";
+  attribute C_ELABORATION_DIR of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is "./";
   attribute C_FAMILY : string;
-  attribute C_FAMILY of ROM_D_dist_mem_gen_v8_0_12 : entity is "artix7";
+  attribute C_FAMILY of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is "artix7";
   attribute C_HAS_CLK : integer;
-  attribute C_HAS_CLK of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_CLK of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_D : integer;
-  attribute C_HAS_D of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_D of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_DPO : integer;
-  attribute C_HAS_DPO of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_DPO of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_DPRA : integer;
-  attribute C_HAS_DPRA of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_DPRA of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_I_CE : integer;
-  attribute C_HAS_I_CE of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_I_CE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO : integer;
-  attribute C_HAS_QDPO of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_QDPO of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO_CE : integer;
-  attribute C_HAS_QDPO_CE of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_QDPO_CE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO_CLK : integer;
-  attribute C_HAS_QDPO_CLK of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_QDPO_CLK of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO_RST : integer;
-  attribute C_HAS_QDPO_RST of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_QDPO_RST of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QDPO_SRST : integer;
-  attribute C_HAS_QDPO_SRST of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_QDPO_SRST of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QSPO : integer;
-  attribute C_HAS_QSPO of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_QSPO of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QSPO_CE : integer;
-  attribute C_HAS_QSPO_CE of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_QSPO_CE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QSPO_RST : integer;
-  attribute C_HAS_QSPO_RST of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_QSPO_RST of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_QSPO_SRST : integer;
-  attribute C_HAS_QSPO_SRST of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_QSPO_SRST of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_HAS_SPO : integer;
-  attribute C_HAS_SPO of ROM_D_dist_mem_gen_v8_0_12 : entity is 1;
+  attribute C_HAS_SPO of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_HAS_WE : integer;
-  attribute C_HAS_WE of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_HAS_WE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_MEM_INIT_FILE : string;
-  attribute C_MEM_INIT_FILE of ROM_D_dist_mem_gen_v8_0_12 : entity is "ROM_D.mif";
+  attribute C_MEM_INIT_FILE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is "ROM_D.mif";
   attribute C_MEM_TYPE : integer;
-  attribute C_MEM_TYPE of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_MEM_TYPE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_PARSER_TYPE : integer;
-  attribute C_PARSER_TYPE of ROM_D_dist_mem_gen_v8_0_12 : entity is 1;
+  attribute C_PARSER_TYPE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_PIPELINE_STAGES : integer;
-  attribute C_PIPELINE_STAGES of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_PIPELINE_STAGES of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_QCE_JOINED : integer;
-  attribute C_QCE_JOINED of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_QCE_JOINED of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_QUALIFY_WE : integer;
-  attribute C_QUALIFY_WE of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_QUALIFY_WE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_READ_MIF : integer;
-  attribute C_READ_MIF of ROM_D_dist_mem_gen_v8_0_12 : entity is 1;
+  attribute C_READ_MIF of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_REG_A_D_INPUTS : integer;
-  attribute C_REG_A_D_INPUTS of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_REG_A_D_INPUTS of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_REG_DPRA_INPUT : integer;
-  attribute C_REG_DPRA_INPUT of ROM_D_dist_mem_gen_v8_0_12 : entity is 0;
+  attribute C_REG_DPRA_INPUT of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 0;
   attribute C_SYNC_ENABLE : integer;
-  attribute C_SYNC_ENABLE of ROM_D_dist_mem_gen_v8_0_12 : entity is 1;
+  attribute C_SYNC_ENABLE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 1;
   attribute C_WIDTH : integer;
-  attribute C_WIDTH of ROM_D_dist_mem_gen_v8_0_12 : entity is 32;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of ROM_D_dist_mem_gen_v8_0_12 : entity is "dist_mem_gen_v8_0_12";
-end ROM_D_dist_mem_gen_v8_0_12;
+  attribute C_WIDTH of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 : entity is 32;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12;
 
-architecture STRUCTURE of ROM_D_dist_mem_gen_v8_0_12 is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12 is
   signal \<const0>\ : STD_LOGIC;
   signal \^spo\ : STD_LOGIC_VECTOR ( 31 downto 1 );
 begin
@@ -1325,7 +1319,7 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-\synth_options.dist_mem_inst\: entity work.ROM_D_dist_mem_gen_v8_0_12_synth
+\synth_options.dist_mem_inst\: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12_synth
      port map (
       a(9 downto 0) => a(9 downto 0),
       spo(30 downto 0) => \^spo\(31 downto 1)
@@ -1335,22 +1329,22 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity ROM_D is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     a : in STD_LOGIC_VECTOR ( 9 downto 0 );
     spo : out STD_LOGIC_VECTOR ( 31 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of ROM_D : entity is true;
+  attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of ROM_D : entity is "ROM_D,dist_mem_gen_v8_0_12,{}";
+  attribute CHECK_LICENSE_TYPE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "ROM_D,dist_mem_gen_v8_0_12,{}";
   attribute downgradeipidentifiedwarnings : string;
-  attribute downgradeipidentifiedwarnings of ROM_D : entity is "yes";
+  attribute downgradeipidentifiedwarnings of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of ROM_D : entity is "dist_mem_gen_v8_0_12,Vivado 2018.3";
-end ROM_D;
+  attribute x_core_info of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "dist_mem_gen_v8_0_12,Vivado 2018.3";
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
-architecture STRUCTURE of ROM_D is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   signal NLW_U0_dpo_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_U0_qdpo_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_U0_qspo_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -1419,7 +1413,7 @@ architecture STRUCTURE of ROM_D is
   attribute c_width : integer;
   attribute c_width of U0 : label is 32;
 begin
-U0: entity work.ROM_D_dist_mem_gen_v8_0_12
+U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_dist_mem_gen_v8_0_12
      port map (
       a(9 downto 0) => a(9 downto 0),
       clk => '0',

@@ -241,8 +241,6 @@ wire  [31:0] pcW;
     wire[7:0] LE_out;
     wire[7:0] point_out;
     
-    wire [31:0]data5_in;
-    assign data5_in = (mem_w == 1) ? Data_out : 32'b0;
     Multi_8CH32 U5_Multi_8CH32(
         .clk(IO_clk_i),
         .rst(rst_i),
@@ -256,7 +254,7 @@ wire  [31:0] pcW;
         .data2(spo),
         .data3(counter_out),
         .data4(Addr_out),
-        .data5(data5_in),    // modified
+        .data5(Data_out),    // modified
         .data6(Cpu_data4bus),
 
         .Disp_num(Disp_num),

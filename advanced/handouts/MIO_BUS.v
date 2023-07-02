@@ -1,9 +1,9 @@
 module MIO_BUS(input clk,
 					input rst,
 					input[4:0]BTN, // 按钮
-					input[15:0]SW, // ???
+					input[15:0]SW, // 拨码开关
 					input[31:0]PC,
-					input mem_w, // 写内??
+					input mem_w, // 写内存使能
 					input[31:0]Cpu_data2bus,				//data from CPU
 					input[31:0]addr_bus, // 地址总线
 					input[31:0]ram_data_out, // ram输出数据
@@ -20,7 +20,7 @@ module MIO_BUS(input clk,
 					output reg GPIOf0000000_we,
 					output reg GPIOe0000000_we,
 					output reg counter_we,
-					output reg[31:0]Peripheral_in
+					output reg[31:0]Peripheral_in				// 从外设传入的数据信号
 					);
 	always @(*) begin
 			Cpu_data4bus = 0;
